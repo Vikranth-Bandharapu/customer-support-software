@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Customer Support Command Center — OmniDesk AI</title>
+  <meta name="description" content="OmniDesk Enterprise Customer Support Command Center. Manage global ticket queues, live SLA countdowns, agent workloads, and real-time telemetry.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-wrapper">
+    <!-- ====================================================================
+         ADMIN SIDEBAR (14 Exact Items)
+         ==================================================================== -->
+    <aside class="dashboard-sidebar" aria-label="Admin Navigation Sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="sidebar-brand-icon"><i class="fa-solid fa-headset"></i></div>
+            <span>OmniDesk</span>
+            <span class="sidebar-role-badge badge-admin-role">Admin</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section-title">Core Operations</div>
+          <!-- 1. Dashboard -->
+          <button class="sidebar-link active" data-view="view-dashboard">
+            <span class="sidebar-link-content"><i class="fa-solid fa-gauge-high"></i> <span>Dashboard</span></span>
+          </button>
+          <!-- 2. Tickets -->
+          <button class="sidebar-link" data-view="view-tickets">
+            <span class="sidebar-link-content"><i class="fa-solid fa-ticket"></i> <span>Tickets</span></span>
+            <span class="sidebar-link-badge">24</span>
+          </button>
+          <!-- 3. Customers -->
+          <button class="sidebar-link" data-view="view-customers">
+            <span class="sidebar-link-content"><i class="fa-solid fa-users"></i> <span>Customers</span></span>
+          </button>
+          <!-- 4. Agents -->
+          <button class="sidebar-link" data-view="view-agents">
+            <span class="sidebar-link-content"><i class="fa-solid fa-user-group"></i> <span>Agents</span></span>
+            <span class="sidebar-link-badge">8 Live</span>
+          </button>
+          <!-- 5. Conversations -->
+          <button class="sidebar-link" data-view="view-conversations">
+            <span class="sidebar-link-content"><i class="fa-solid fa-comments"></i> <span>Conversations</span></span>
+          </button>
+
+          <div class="nav-section-title" style="margin-top: 0.5rem;">Intelligence</div>
+          <!-- 6. Knowledge Base -->
+          <button class="sidebar-link" data-view="view-knowledge-base">
+            <span class="sidebar-link-content"><i class="fa-solid fa-book-bookmark"></i> <span>Knowledge Base</span></span>
+          </button>
+          <!-- 7. SLA -->
+          <button class="sidebar-link" data-view="view-sla">
+            <span class="sidebar-link-content"><i class="fa-solid fa-stopwatch"></i> <span>SLA Governance</span></span>
+          </button>
+          <!-- 8. Analytics -->
+          <button class="sidebar-link" data-view="view-analytics">
+            <span class="sidebar-link-content"><i class="fa-solid fa-chart-line"></i> <span>Analytics</span></span>
+          </button>
+          <!-- 9. Reports -->
+          <button class="sidebar-link" data-view="view-reports">
+            <span class="sidebar-link-content"><i class="fa-solid fa-file-invoice"></i> <span>Reports</span></span>
+          </button>
+
+          <div class="nav-section-title" style="margin-top: 0.5rem;">Communication & Admin</div>
+          <!-- 10. Messages -->
+          <button class="sidebar-link" data-view="view-messages">
+            <span class="sidebar-link-content"><i class="fa-solid fa-comment-dots"></i> <span>Messages</span></span>
+          </button>
+          <!-- 11. Email Center -->
+          <button class="sidebar-link" data-view="view-email-center">
+            <span class="sidebar-link-content"><i class="fa-solid fa-envelope"></i> <span>Email Center</span></span>
+            <span class="sidebar-link-badge" style="background: #ef4444;">4</span>
+          </button>
+          <!-- 12. Notifications -->
+          <button class="sidebar-link" data-view="view-notifications">
+            <span class="sidebar-link-content"><i class="fa-solid fa-bell"></i> <span>Notifications</span></span>
+          </button>
+          <!-- 13. Settings -->
+          <button class="sidebar-link" data-view="view-settings">
+            <span class="sidebar-link-content"><i class="fa-solid fa-gear"></i> <span>Settings</span></span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-card">
+          <img src="assets/images/team-1.webp" alt="Administrator profile avatar" class="sidebar-avatar" width="38" height="38">
+          <div class="sidebar-user-info">
+            <div class="sidebar-user-name user-session-name">Claire Vance</div>
+            <div class="sidebar-user-role">Super Administrator</div>
+          </div>
+        </div>
+        <!-- 14. Logout Button (Functional exception) -->
+        <button class="sidebar-link logout-btn" style="color: #f87171;">
+          <span class="sidebar-link-content"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Sign Out</span></span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ====================================================================
+         MAIN CONTENT REGION
+         ==================================================================== -->
+    <div class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" aria-label="Toggle Navigation Sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-search-wrap">
+            <i class="fa-solid fa-magnifying-glass topbar-search-icon"></i>
+            <input type="text" class="topbar-search-input" placeholder="Search ticket #ID, customer, agent, or tag...">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- 18. SYSTEM STATUS BADGE -->
+          <div class="topbar-status-pill">
+            <span class="status-dot"></span>
+            <span>All Systems Operational (99.98%)</span>
+          </div>
+
+          <button class="topbar-btn" title="System Notifications" onclick="window.showToast('All 4 cloud clusters operating under nominal latency (18ms).', 'info', 'Cluster Health')">
+            <i class="fa-regular fa-bell"></i>
+            <span class="topbar-badge">3</span>
+          </button>
+
+          <!-- 17. QUICK ACTIONS: CREATE TICKET MODAL -->
+          <button class="btn btn-primary btn-sm" onclick="openCreateTicketModal()">
+            <i class="fa-solid fa-plus"></i>
+            <span>New Ticket</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Scrollable Content Body -->
+      <div class="dashboard-content-scroll">
+        
+        <!-- ================================================================
+             VIEW 1: PRIMARY OVERVIEW (Contains >= 15 Meaningful Sections)
+             ================================================================ -->
+        <div class="dashboard-view-panel active-panel" id="view-dashboard">
+          
+          <!-- 1. WELCOME HEADER & COMMAND CENTER TITLE -->
+          <div class="dash-page-header">
+            <div>
+              <h1 class="dash-header-title">Enterprise Customer Support Command Center</h1>
+              <div class="dash-header-subtitle">
+                Welcome back, <span class="user-session-name" style="font-weight: 700; color: #0f172a;">Administrator</span>. Real-time operations snapshot for <span style="font-weight: 600;">October 7, 2026</span>.
+              </div>
+            </div>
+            <div class="dash-header-actions">
+              <button class="btn btn-secondary btn-sm" onclick="window.showToast('Telemetry refreshed from London and US clusters.', 'info', 'Synced')">
+                <i class="fa-solid fa-arrows-rotate"></i> Sync Data
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="window.showToast('Incident response broadcast sent to 8 active agents.', 'success', 'Broadcast Dispatched')">
+                <i class="fa-solid fa-bullhorn"></i> Shift Broadcast
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. KPI OVERVIEW (6 Metric Cards) -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Active Open Queue</span>
+                <div class="kpi-icon icon-box-primary"><i class="fa-solid fa-inbox"></i></div>
+              </div>
+              <div class="kpi-value">142</div>
+              <div class="kpi-trend trend-down"><i class="fa-solid fa-arrow-trend-down"></i> -18% vs yesterday</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">First Response Time</span>
+                <div class="kpi-icon icon-box-secondary"><i class="fa-solid fa-bolt"></i></div>
+              </div>
+              <div class="kpi-value">8m 14s</div>
+              <div class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> 4.2x faster than SLA</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">SLA Compliance</span>
+                <div class="kpi-icon icon-box-success"><i class="fa-solid fa-shield-halved"></i></div>
+              </div>
+              <div class="kpi-value">99.7%</div>
+              <div class="kpi-trend trend-up"><i class="fa-solid fa-check"></i> Zero breaches today</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Customer CSAT</span>
+                <div class="kpi-icon icon-box-warning"><i class="fa-solid fa-star"></i></div>
+              </div>
+              <div class="kpi-value">98.9%</div>
+              <div class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +0.6% this week</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Resolved Today</span>
+                <div class="kpi-icon icon-box-accent"><i class="fa-solid fa-circle-check"></i></div>
+              </div>
+              <div class="kpi-value">318</div>
+              <div class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +44 resolved/hr</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-label">Active Support Agents</span>
+                <div class="kpi-icon icon-box-primary"><i class="fa-solid fa-users"></i></div>
+              </div>
+              <div class="kpi-value">12 / 14</div>
+              <div class="kpi-trend"><span style="color: #10b981;">&bull; 2 on scheduled break</span></div>
+            </div>
+          </div>
+
+          <!-- ANALYTICS ROW: 3. Ticket Volume Analytics & 4. Status Distribution -->
+          <div class="grid-2" style="margin-bottom: 2rem;">
+            <!-- 3. Ticket Volume Analytics -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-chart-column" style="color: var(--primary);"></i> Inbound Hourly Ticket Volume</h3>
+                <span style="font-size: 0.8rem; color: var(--dash-muted);">UTC Today</span>
+              </div>
+              <div class="dash-card-body">
+                <div class="chart-bar-group">
+                  <div class="chart-bar-col"><span class="chart-bar-val">28</span><div class="chart-bar" style="height: 40%;"></div><span class="chart-bar-label">08:00</span></div>
+                  <div class="chart-bar-col"><span class="chart-bar-val">54</span><div class="chart-bar" style="height: 75%;"></div><span class="chart-bar-label">10:00</span></div>
+                  <div class="chart-bar-col"><span class="chart-bar-val">72</span><div class="chart-bar" style="height: 98%;"></div><span class="chart-bar-label">12:00</span></div>
+                  <div class="chart-bar-col"><span class="chart-bar-val">65</span><div class="chart-bar" style="height: 88%;"></div><span class="chart-bar-label">14:00</span></div>
+                  <div class="chart-bar-col"><span class="chart-bar-val">42</span><div class="chart-bar" style="height: 60%;"></div><span class="chart-bar-label">16:00</span></div>
+                  <div class="chart-bar-col"><span class="chart-bar-val">19</span><div class="chart-bar" style="height: 30%;"></div><span class="chart-bar-label">18:00</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Ticket Status Distribution -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-chart-pie" style="color: var(--secondary);"></i> Active Status Distribution</h3>
+                <span class="badge badge-open">Real-Time</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+                  <div>
+                    <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                      <span><strong>New</strong> (Unassigned Inbound)</span>
+                      <span>18 tickets (12%)</span>
+                    </div>
+                    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 12%; background: #4338ca;"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                      <span><strong>Open</strong> (In Progress with Agent)</span>
+                      <span>68 tickets (48%)</span>
+                    </div>
+                    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 48%; background: #0284c7;"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                      <span><strong>Pending</strong> (Customer Reply)</span>
+                      <span>34 tickets (24%)</span>
+                    </div>
+                    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 24%; background: #f59e0b;"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.25rem;">
+                      <span><strong>Resolved</strong> (Awaiting Confirmation)</span>
+                      <span>22 tickets (16%)</span>
+                    </div>
+                    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 16%; background: #10b981;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. SUPPORT PERFORMANCE & 6. AGENT PERFORMANCE LEADERBOARD -->
+          <div class="grid-2" style="margin-bottom: 2rem;">
+            <!-- 5. Support Performance -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-gauge" style="color: var(--primary);"></i> Support Operational Velocity</h3>
+                <span class="badge badge-resolved">Healthy</span>
+              </div>
+              <div class="dash-card-body">
+                <div class="grid-2" style="gap: 1rem; margin-bottom: 1.5rem;">
+                  <div class="card" style="padding: 1rem; background: #f8fafc;">
+                    <div style="font-size: 0.8rem; color: var(--dash-muted);">Avg Handling Time</div>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: #0f172a;">12m 40s</div>
+                  </div>
+                  <div class="card" style="padding: 1rem; background: #f8fafc;">
+                    <div style="font-size: 0.8rem; color: var(--dash-muted);">First Contact Resolution</div>
+                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--success);">74.2%</div>
+                  </div>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--dash-muted); margin: 0;">
+                  Autonomous triage deflected 38 customer inquiries in the last 2 hours without human agent intervention required.
+                </p>
+              </div>
+            </div>
+
+            <!-- 6. Agent Performance Leaderboard -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> Agent Leaderboard</h3>
+                <button class="btn btn-sm btn-secondary" onclick="window.showToast('Agent incentive metrics exported to CSV.', 'info', 'Exported')">Export</button>
+              </div>
+              <div class="dash-card-body" style="padding: 0;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Agent</th>
+                      <th>Solved</th>
+                      <th>CSAT</th>
+                      <th>Avg Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="agent-cell">
+                          <img src="assets/images/team-4.webp" alt="Sarah Jenkins" class="agent-thumb" width="32" height="32">
+                          <strong>Sarah Jenkins</strong>
+                        </div>
+                      </td>
+                      <td>48</td>
+                      <td><span style="color: #10b981; font-weight: 700;">100%</span></td>
+                      <td>6m 12s</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="agent-cell">
+                          <img src="assets/images/team-2.webp" alt="Alex Chen" class="agent-thumb" width="32" height="32">
+                          <strong>Alex Chen</strong>
+                        </div>
+                      </td>
+                      <td>42</td>
+                      <td><span style="color: #10b981; font-weight: 700;">98.5%</span></td>
+                      <td>8m 45s</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="agent-cell">
+                          <img src="assets/images/team-5.webp" alt="Maya Lin" class="agent-thumb" width="32" height="32">
+                          <strong>Maya Lin</strong>
+                        </div>
+                      </td>
+                      <td>39</td>
+                      <td><span style="color: #10b981; font-weight: 700;">97.8%</span></td>
+                      <td>9m 20s</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. TICKET QUEUE & 8. PRIORITY TICKETS (Interactive Table with Filters) -->
+          <div class="dash-card" id="admin-ticket-queue-section">
+            <div class="dash-card-header">
+              <div>
+                <h3 class="dash-card-title"><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Live Ticket Queue</h3>
+                <span style="font-size: 0.8rem; color: var(--dash-muted);">Filtering 6 priority customer incidents</span>
+              </div>
+              <div class="flex-center gap-2">
+                <!-- Status Filter -->
+                <select class="form-control" id="ticket-status-filter" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; width: auto;">
+                  <option value="all">All Statuses</option>
+                  <option value="new">New</option>
+                  <option value="open">Open</option>
+                  <option value="pending">Pending</option>
+                  <option value="resolved">Resolved</option>
+                  <option value="closed">Closed</option>
+                </select>
+                <!-- Priority Filter -->
+                <select class="form-control" id="ticket-priority-filter" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; width: auto;">
+                  <option value="all">All Priorities</option>
+                  <option value="urgent">Urgent</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ticket ID</th>
+                    <th>Customer</th>
+                    <th>Subject &amp; Details</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>SLA Countdown</th>
+                    <th>Assigned Agent</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="ticket-table-rows">
+                  <!-- Row 1: Urgent -->
+                  <tr class="ticket-row" data-status="open" data-priority="urgent">
+                    <td><strong style="color: var(--primary);">#TK-8941</strong></td>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-1.webp" alt="Rachel Adams" class="agent-thumb" width="32" height="32">
+                        <div>
+                          <div>Rachel Adams</div>
+                          <div style="font-size: 0.75rem; color: var(--dash-muted);">FinTech Global</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600;">SAML SSO Callback Gateway Timeout 504</div>
+                      <div style="font-size: 0.75rem; color: var(--dash-muted);">Okta IdP redirect timeout impacting 350 enterprise users.</div>
+                    </td>
+                    <td><span class="badge badge-urgent">Urgent</span></td>
+                    <td><span class="badge badge-open">Open</span></td>
+                    <td>
+                      <div class="sla-timer" style="font-size: 0.95rem;"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">06:12</span></div>
+                    </td>
+                    <td>Alex Chen</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" onclick="viewTicketDetail('TK-8941', 'Rachel Adams', 'SAML SSO Callback Timeout', 'Open', 'Urgent')">Inspect</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: High -->
+                  <tr class="ticket-row" data-status="open" data-priority="high">
+                    <td><strong style="color: var(--primary);">#TK-8938</strong></td>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-2.webp" alt="Marcus Vance" class="agent-thumb" width="32" height="32">
+                        <div>
+                          <div>Marcus Vance</div>
+                          <div style="font-size: 0.75rem; color: var(--dash-muted);">CloudScale Systems</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600;">Webhook Payload Exponential Backoff Exhausted</div>
+                      <div style="font-size: 0.75rem; color: var(--dash-muted);">Need endpoint IP whitelist to resolve 429 rate limit errors.</div>
+                    </td>
+                    <td><span class="badge badge-high">High</span></td>
+                    <td><span class="badge badge-open">Open</span></td>
+                    <td>
+                      <div class="sla-timer" style="font-size: 0.95rem; color: #f59e0b;"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">24:45</span></div>
+                    </td>
+                    <td>Sarah Jenkins</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" onclick="viewTicketDetail('TK-8938', 'Marcus Vance', 'Webhook Retries Exhausted', 'Open', 'High')">Inspect</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Medium -->
+                  <tr class="ticket-row" data-status="pending" data-priority="medium">
+                    <td><strong style="color: var(--primary);">#TK-8930</strong></td>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-3.webp" alt="Elena Rostova" class="agent-thumb" width="32" height="32">
+                        <div>
+                          <div>Elena Rostova</div>
+                          <div style="font-size: 0.75rem; color: var(--dash-muted);">NovaFinance</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600;">HIPAA BAA Agreement Countersignature Request</div>
+                      <div style="font-size: 0.75rem; color: var(--dash-muted);">Forwarded to legal counsel; awaiting confirmation.</div>
+                    </td>
+                    <td><span class="badge badge-medium">Medium</span></td>
+                    <td><span class="badge badge-pending">Pending</span></td>
+                    <td>
+                      <span class="badge badge-resolved">Compliant</span>
+                    </td>
+                    <td>Claire Vance</td>
+                    <td>
+                      <button class="btn btn-sm btn-secondary" onclick="viewTicketDetail('TK-8930', 'Elena Rostova', 'HIPAA BAA Agreement Request', 'Pending', 'Medium')">Inspect</button>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: Resolved -->
+                  <tr class="ticket-row" data-status="resolved" data-priority="low">
+                    <td><strong style="color: var(--primary);">#TK-8924</strong></td>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-4.webp" alt="Sophie Laurent" class="agent-thumb" width="32" height="32">
+                        <div>
+                          <div>Sophie Laurent</div>
+                          <div style="font-size: 0.75rem; color: var(--dash-muted);">Lumina Retail</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div style="font-weight: 600;">French Article Localization Auto-Translator</div>
+                      <div style="font-size: 0.75rem; color: var(--dash-muted);">Configuration verified and customer signed off on resolution.</div>
+                    </td>
+                    <td><span class="badge badge-low">Low</span></td>
+                    <td><span class="badge badge-resolved">Resolved</span></td>
+                    <td>
+                      <span class="badge badge-resolved">Met (+2h)</span>
+                    </td>
+                    <td>Maya Lin</td>
+                    <td>
+                      <button class="btn btn-sm btn-secondary" onclick="viewTicketDetail('TK-8924', 'Sophie Laurent', 'Knowledge Base Localization', 'Resolved', 'Low')">Inspect</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 9. CUSTOMER OVERVIEW & TOP ACCOUNTS -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title"><i class="fa-solid fa-users-viewfinder" style="color: var(--secondary);"></i> Enterprise Customer Accounts</h3>
+              <span class="badge badge-open">Top Tier-1 Accounts</span>
+            </div>
+            <div class="dash-card-body" style="padding: 0;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Company</th>
+                    <th>Total Tickets</th>
+                    <th>CSAT Score</th>
+                    <th>Contract Tier</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-1.webp" alt="Rachel Adams" class="agent-thumb" width="32" height="32">
+                        <strong>Rachel Adams</strong>
+                      </div>
+                    </td>
+                    <td>FinTech Global</td>
+                    <td>14</td>
+                    <td><span style="color: #10b981; font-weight: 700;">100%</span></td>
+                    <td><span class="badge badge-urgent">Enterprise VIP ($120k ARR)</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-secondary" onclick="viewCustomerProfile('Rachel Adams', 'rachel@fintech.io', 'FinTech Global', '+1 (555) 234-5678', '14', '100')">
+                        <i class="fa-solid fa-address-card"></i> 360 Profile
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-2.webp" alt="Marcus Vance" class="agent-thumb" width="32" height="32">
+                        <strong>Marcus Vance</strong>
+                      </div>
+                    </td>
+                    <td>CloudScale Systems</td>
+                    <td>28</td>
+                    <td><span style="color: #10b981; font-weight: 700;">96%</span></td>
+                    <td><span class="badge badge-high">Enterprise Gold ($65k ARR)</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-secondary" onclick="viewCustomerProfile('Marcus Vance', 'm.vance@cloudscale.net', 'CloudScale Systems', '+1 (555) 876-5432', '28', '96')">
+                        <i class="fa-solid fa-address-card"></i> 360 Profile
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="agent-cell">
+                        <img src="assets/images/avatar-3.webp" alt="Elena Rostova" class="agent-thumb" width="32" height="32">
+                        <strong>Elena Rostova</strong>
+                      </div>
+                    </td>
+                    <td>NovaFinance</td>
+                    <td>9</td>
+                    <td><span style="color: #10b981; font-weight: 700;">100%</span></td>
+                    <td><span class="badge badge-open">Growth ($24k ARR)</span></td>
+                    <td>
+                      <button class="btn btn-sm btn-secondary" onclick="viewCustomerProfile('Elena Rostova', 'elena@novafinance.com', 'NovaFinance', '+1 (555) 432-1098', '9', '100')">
+                        <i class="fa-solid fa-address-card"></i> 360 Profile
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 10. SLA MONITORING & 11. CSAT ANALYTICS -->
+          <div class="grid-2" style="margin-bottom: 2rem;">
+            <!-- 10. SLA Monitoring -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-stopwatch" style="color: var(--danger);"></i> SLA Compliance Governance</h3>
+                <span class="badge badge-resolved">99.7% Compliant</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="margin-bottom: 1.25rem;">
+                  <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span>Severity 1 Outages (&lt; 15 min first response)</span>
+                    <strong style="color: #10b981;">100% compliant (4/4)</strong>
+                  </div>
+                  <div class="progress-bar-wrap"><div class="progress-bar-fill progress-success" style="width: 100%;"></div></div>
+                </div>
+                <div style="margin-bottom: 1.25rem;">
+                  <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span>Severity 2 High (&lt; 1 hour first response)</span>
+                    <strong style="color: #10b981;">99.2% compliant (31/32)</strong>
+                  </div>
+                  <div class="progress-bar-wrap"><div class="progress-bar-fill progress-success" style="width: 99%;"></div></div>
+                </div>
+                <div>
+                  <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 0.35rem;">
+                    <span>General Customer Inquiries (&lt; 4 hours resolution)</span>
+                    <strong style="color: #10b981;">99.8% compliant (280/282)</strong>
+                  </div>
+                  <div class="progress-bar-wrap"><div class="progress-bar-fill progress-success" style="width: 99.8%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 11. CSAT Analytics -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Customer CSAT Feedback Stream</h3>
+                <span style="font-size: 0.8rem; color: var(--dash-muted);">Live Ratings</span>
+              </div>
+              <div class="dash-card-body">
+                <div style="display: flex; flex-direction: column; gap: 1rem;">
+                  <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 3px solid var(--success);">
+                    <div class="flex-between" style="margin-bottom: 0.25rem;">
+                      <span style="font-weight: 700; font-size: 0.85rem;">Rachel Adams &bull; FinTech Global</span>
+                      <span style="color: #f59e0b; font-size: 0.8rem;"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p style="font-size: 0.82rem; margin: 0; font-style: italic;">"Alex identified our SAML callback error within 4 minutes. Phenomenal response time!"</p>
+                  </div>
+                  <div style="background: #f8fafc; padding: 0.85rem; border-radius: 8px; border-left: 3px solid var(--success);">
+                    <div class="flex-between" style="margin-bottom: 0.25rem;">
+                      <span style="font-weight: 700; font-size: 0.85rem;">Marcus Vance &bull; CloudScale</span>
+                      <span style="color: #f59e0b; font-size: 0.8rem;"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p style="font-size: 0.82rem; margin: 0; font-style: italic;">"Sarah gave us the exact firewall IP ranges to whitelist. Everything resolved immediately."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. RECENT ACTIVITY & 13. KNOWLEDGE BASE ANALYTICS -->
+          <div class="grid-2" style="margin-bottom: 2rem;">
+            <!-- 12. Recent Activity -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--primary);"></i> Operational Audit Stream</h3>
+                <span class="badge badge-open">Real-Time</span>
+              </div>
+              <div class="dash-card-body">
+                <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                  <li>&bull; <strong>10:48 AM:</strong> Ticket #TK-8941 priority elevated to Urgent by automation rule #3.</li>
+                  <li>&bull; <strong>10:32 AM:</strong> Agent Sarah Jenkins resolved customer ticket #TK-8920 (CSAT 5/5).</li>
+                  <li>&bull; <strong>10:15 AM:</strong> Ingestion gateway processed 42 incoming emails from European queue.</li>
+                  <li>&bull; <strong>09:50 AM:</strong> Administrator Claire Vance approved SLA extension for NovaFinance.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 13. Knowledge Base Analytics -->
+            <div class="dash-card" style="margin-bottom: 0;">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title"><i class="fa-solid fa-book" style="color: var(--secondary);"></i> Knowledge Base Performance</h3>
+                <span style="font-size: 0.8rem; color: var(--dash-muted);">30 Days</span>
+              </div>
+              <div class="dash-card-body">
+                <div class="flex-between" style="margin-bottom: 1rem;">
+                  <div>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">18,420</div>
+                    <div style="font-size: 0.8rem; color: var(--dash-muted);">Articles Viewed</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--success);">42.8%</div>
+                    <div style="font-size: 0.8rem; color: var(--dash-muted);">Ticket Deflection Rate</div>
+                  </div>
+                </div>
+                <div style="font-size: 0.85rem; color: #475569;">
+                  <strong>Top Deflecting Article:</strong> "Configuring Custom Webhook Retries with Exponential Backoff" (620 deflection votes).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15. EMAIL CENTER (Interactive Master-Detail Interface) -->
+          <div class="dash-card" id="admin-email-center-section">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title"><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> Unified Email Center</h3>
+              <div class="flex-center gap-2">
+                <select id="email-filter-select" class="form-control" style="padding: 0.35rem 0.75rem; font-size: 0.85rem; width: auto;">
+                  <option value="all">All Inbound</option>
+                  <option value="unread">Unread Only</option>
+                  <option value="urgent">Urgent Priority</option>
+                </select>
+                <input type="text" id="email-search-input" class="form-control" placeholder="Search emails..." style="padding: 0.35rem 0.75rem; font-size: 0.85rem; width: 180px;">
+              </div>
+            </div>
+
+            <div class="email-center-layout">
+              <!-- Left Master Email List -->
+              <div class="email-list-pane">
+                <div class="email-pane-header">
+                  <span style="font-weight: 700; font-size: 0.88rem;">Customer Inbound Threads</span>
+                  <span class="badge badge-open">4 Threads</span>
+                </div>
+                <div class="email-items-scroll">
+                  <!-- Email 1 -->
+                  <div class="email-item unread active" data-email-id="email-1" data-priority="urgent">
+                    <div class="email-item-header">
+                      <span class="email-sender">Marcus Vance</span>
+                      <span class="email-date">10:42 AM</span>
+                    </div>
+                    <div class="email-subject">Critical: SSO SAML 2.0 Integration Callback Timeout</div>
+                    <div class="email-snippet">We are experiencing recurring 504 gateway timeout issues when our enterprise IdP...</div>
+                  </div>
+
+                  <!-- Email 2 -->
+                  <div class="email-item unread" data-email-id="email-2" data-priority="high">
+                    <div class="email-item-header">
+                      <span class="email-sender">Elena Rostova</span>
+                      <span class="email-date">09:15 AM</span>
+                    </div>
+                    <div class="email-subject">Inquiry: HIPAA BAA Agreement &amp; Enterprise SLA Tier</div>
+                    <div class="email-snippet">NovaFinance is preparing to onboard 4,000 healthcare finance accounts onto...</div>
+                  </div>
+
+                  <!-- Email 3 -->
+                  <div class="email-item" data-email-id="email-3" data-priority="medium">
+                    <div class="email-item-header">
+                      <span class="email-sender">Devon Patel</span>
+                      <span class="email-date">Yesterday</span>
+                    </div>
+                    <div class="email-subject">Webhook Payload Retries Failing on Endpoints</div>
+                    <div class="email-snippet">Our ingestion listener at /api/v2/webhooks has failed to receive event payloads...</div>
+                  </div>
+
+                  <!-- Email 4 -->
+                  <div class="email-item" data-email-id="email-4" data-priority="low">
+                    <div class="email-item-header">
+                      <span class="email-sender">Sophie Laurent</span>
+                      <span class="email-date">Yesterday</span>
+                    </div>
+                    <div class="email-subject">Knowledge Base Multilingual Localization Sync</div>
+                    <div class="email-snippet">We have completed translation for 45 self-service support articles into French...</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Detail Pane -->
+              <div class="email-detail-pane" id="email-detail-content">
+                <div class="email-detail-header">
+                  <div class="flex-between" style="margin-bottom: 0.75rem;">
+                    <span class="badge badge-urgent">Urgent Priority</span>
+                    <span class="email-date"><i class="fa-regular fa-clock"></i> Today, 10:42 AM</span>
+                  </div>
+                  <h3 class="email-detail-subject">Critical: SSO SAML 2.0 Integration Callback Timeout</h3>
+                  <div class="email-meta-row">
+                    <div class="email-sender-info">
+                      <div class="brand-icon" style="width: 36px; height: 36px; font-size: 0.85rem;"><i class="fa-solid fa-user"></i></div>
+                      <div>
+                        <div style="font-weight: 700; font-size: 0.95rem;">Marcus Vance</div>
+                        <div style="font-size: 0.8rem; color: var(--dash-muted);">m.vance@techcorp.io</div>
+                      </div>
+                    </div>
+                    <div class="flex-center gap-2">
+                      <button class="btn btn-sm btn-secondary" onclick="window.showToast('Email conversation starred for escalation.', 'info', 'Starred')"><i class="fa-regular fa-star"></i> Star</button>
+                      <button class="btn btn-sm btn-primary" onclick="replyEmailPrompt('Marcus Vance')"><i class="fa-solid fa-reply"></i> Reply</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="email-detail-body">
+                  Hello Support Team,<br><br>
+                  We are experiencing recurring 504 gateway timeout issues when our enterprise IdP (Okta) redirects user sessions back to our OmniDesk production domain. Our team is unable to authenticate approximately 350 engineering users at our London headquarters.<br><br>
+                  Could you please inspect the SAML assertion certificate and review our assertion consumer service endpoint logs? This is currently blocking our tier-1 engineering sprint.<br><br>
+                  Best regards,<br>
+                  <strong>Marcus Vance</strong><br>
+                  Chief Security Officer, TechCorp Enterprises
+                </div>
+
+                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--dash-border);">
+                  <h5 style="margin-bottom: 0.75rem;">Quick Reply Template</h5>
+                  <textarea class="form-control" rows="3" placeholder="Type quick reply or macro shortcut (/canned)..." id="email-quick-reply-text"></textarea>
+                  <div class="flex-between" style="margin-top: 0.75rem;">
+                    <button class="btn btn-sm btn-secondary" onclick="insertMacroReply()"><i class="fa-solid fa-bolt"></i> Insert Macro</button>
+                    <button class="btn btn-sm btn-primary" onclick="sendQuickReply()"><i class="fa-solid fa-paper-plane"></i> Send Reply</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 16. REPORTS & EXPORTS -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title"><i class="fa-solid fa-file-export" style="color: var(--primary);"></i> Reports & Audit Exports</h3>
+              <span class="badge badge-open">Compliance Ready</span>
+            </div>
+            <div class="dash-card-body">
+              <div class="grid-3">
+                <div class="card" style="padding: 1.25rem; background: #f8fafc;">
+                  <h5>Weekly SLA Compliance PDF</h5>
+                  <p style="font-size: 0.82rem; margin-bottom: 1rem;">Complete audit breakdown of first responses and breach preventions.</p>
+                  <button class="btn btn-sm btn-secondary" onclick="window.showToast('Generating signed PDF report...', 'info', 'Export Started')"><i class="fa-solid fa-download"></i> Download PDF</button>
+                </div>
+                <div class="card" style="padding: 1.25rem; background: #f8fafc;">
+                  <h5>Raw Event Logs (JSON / CSV)</h5>
+                  <p style="font-size: 0.82rem; margin-bottom: 1rem;">Full event telemetry for data warehousing and BI ingest.</p>
+                  <button class="btn btn-sm btn-secondary" onclick="window.showToast('Compiling CSV dataset (14,200 rows)...', 'info', 'Export Started')"><i class="fa-solid fa-download"></i> Export CSV</button>
+                </div>
+                <div class="card" style="padding: 1.25rem; background: #f8fafc;">
+                  <h5>Agent Workload Distribution</h5>
+                  <p style="font-size: 0.82rem; margin-bottom: 1rem;">Performance scorecards, CSAT trends, and handling durations.</p>
+                  <button class="btn btn-sm btn-secondary" onclick="window.showToast('Compiling agent scorecard metrics...', 'info', 'Export Started')"><i class="fa-solid fa-download"></i> Export Scorecards</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================================================================
+             VIEW 2: TICKETS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-tickets">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Enterprise Ticket Inventory</h2>
+              <div class="dash-header-subtitle">Search, reassign, and audit all tickets across all global queues.</div>
+            </div>
+            <button class="btn btn-primary" onclick="openCreateTicketModal()"><i class="fa-solid fa-plus"></i> New Ticket</button>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>Full multi-channel queue loaded. Use the top filters to search by status, priority, or tags.</p>
+            <div class="flex-between">
+              <span class="badge badge-resolved">24 Tickets in Active View</span>
+              <button class="btn btn-secondary btn-sm" onclick="window.showToast('Queue re-indexed.', 'info', 'Reindexed')">Refresh Queue</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 3: CUSTOMERS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-customers">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Customer 360 Repository</h2>
+              <div class="dash-header-subtitle">Inspect customer ARR contracts, sentiment scores, and open inquiries.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>Select any customer row from the primary overview to launch the detailed Customer 360 drawer.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 4: AGENTS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-agents">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Agent Workload &amp; Shift Management</h2>
+              <div class="dash-header-subtitle">Live agent availability, active tickets assigned, and shift hours.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>8 agents currently active on shift. 2 agents scheduled for APAC evening handover.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 5: CONVERSATIONS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-conversations">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Live Real-Time Conversations</h2>
+              <div class="dash-header-subtitle">Omnichannel real-time streams from in-app widget and WhatsApp.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>14 active visitor chats currently in progress with sub-30ms WebSocket latency.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 6: KNOWLEDGE BASE VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-knowledge-base">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Knowledge Base Content Studio</h2>
+              <div class="dash-header-subtitle">Manage self-serve documentation, localized articles, and deflection rules.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>124 published articles across 6 categories. Deflection efficiency: 42.8%.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 7: SLA GOVERNANCE VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-sla">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">SLA Contract Policy Matrix</h2>
+              <div class="dash-header-subtitle">Configure business hours, holiday calendars, and breach escalations.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>3 active policy tiers: Tier-1 Enterprise (15m), Tier-2 Gold (1h), Standard (4h).</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 8: ANALYTICS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-analytics">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Executive Support Telemetry</h2>
+              <div class="dash-header-subtitle">Historical resolution trends, volume forecasts, and CSAT benchmarks.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>Real-time analytics stream synced with BigQuery warehouse connector.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 9: REPORTS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-reports">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Scheduled Reports &amp; Exports</h2>
+              <div class="dash-header-subtitle">Automated compliance logs, SOC2 audits, and executive summaries.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>Reports generated weekly every Monday at 08:00 UTC.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 10: MESSAGES VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-messages">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Internal Team Side-Conversations</h2>
+              <div class="dash-header-subtitle">Private agent chat threads and incident response channels.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <p>Private encrypted internal communication channel active.</p>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 11: EMAIL CENTER TAB
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-email-center">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Enterprise Email Center</h2>
+              <div class="dash-header-subtitle">Direct access to unified inbound customer threads.</div>
+            </div>
+          </div>
+          <p>Please use the Email Center section in your primary Command Center overview or manage threads here.</p>
+        </div>
+
+        <!-- ================================================================
+             VIEW 12: NOTIFICATIONS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-notifications">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">System &amp; Incident Alerts</h2>
+              <div class="dash-header-subtitle">Operational notifications, SLA warning pings, and cluster events.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <ul style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <li><i class="fa-solid fa-triangle-exclamation" style="color: #ef4444;"></i> Ticket #TK-8941 approaching 75% of SLA first response limit.</li>
+              <li><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Cloud cluster US-East successfully auto-scaled 4 additional workers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ================================================================
+             VIEW 13: SETTINGS VIEW
+             ================================================================ -->
+        <div class="dashboard-view-panel" id="view-settings">
+          <div class="dash-page-header">
+            <div>
+              <h2 class="dash-header-title">Workspace Configuration &amp; RBAC</h2>
+              <div class="dash-header-subtitle">Manage company domain, SAML SSO, encryption keys, and integrations.</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 1.5rem;">
+            <h5>Security &amp; Authentication</h5>
+            <p style="font-size: 0.9rem; margin-bottom: 1rem;">SAML 2.0 Identity Provider: <strong>Okta SSO (Configured &amp; Enforced)</strong></p>
+            <button class="btn btn-secondary btn-sm" onclick="window.showToast('Security audit configuration valid.', 'info', 'Security')">Audit Keys</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Reusable Action Modal -->
+  <div class="dash-modal" id="action-modal">
+    <div class="dash-modal-content">
+      <div class="dash-modal-header">
+        <h3 id="modal-title" style="font-size: 1.25rem; font-weight: 800;">Modal Action</h3>
+        <button class="drawer-close-btn" data-close-modal aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="dash-modal-body" id="modal-body-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

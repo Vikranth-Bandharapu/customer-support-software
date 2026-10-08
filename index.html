@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniDesk AI — Enterprise Customer Support Software & Helpdesk Platform</title>
+  <meta name="description" content="Empower your customer support operations with OmniDesk AI. Unified inbox, intelligent ticket management, real-time SLA countdowns, and automated workflows.">
+  <meta name="keywords" content="customer support software, helpdesk, ticketing system, customer service platform, SLA tracking, AI customer support">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Core & Responsive Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniDesk AI Home">
+        <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
+        <span>OmniDesk<span class="text-gradient">.ai</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-ghost">Login</a>
+        <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+        <!-- CTA Redirects to 404 per strict rule -->
+        <a href="404.html" class="btn btn-primary">Get Started Free</a>
+
+        <button class="hamburger-btn" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="mobile-nav-header">
+        <div class="brand-logo">
+          <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
+          <span>OmniDesk</span>
+        </div>
+        <button class="drawer-close-btn" aria-label="Close Navigation Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="active"><span>Home</span> <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="services.html"><span>Services</span> <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="about.html"><span>About</span> <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="blog.html"><span>Blog</span> <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="contact.html"><span>Contact</span> <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="login.html"><span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+        <a href="signup.html"><span>Sign Up</span> <i class="fa-solid fa-user-plus"></i></a>
+      </nav>
+    </div>
+    <div class="mobile-nav-cta">
+      <a href="404.html" class="btn btn-primary" style="width: 100%;">Get Started Free</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ====================================================================
+         SECTION 1: HERO SECTION (with 3D perspective product mock & floating panels)
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="perspective-grid-3d"></div>
+      <div class="orb-3d orb-3d-primary"></div>
+      <div class="orb-3d orb-3d-cyan"></div>
+      <div class="orb-3d orb-3d-violet"></div>
+      <div class="ambient-glow glow-primary"></div>
+      <div class="ambient-glow glow-secondary"></div>
+
+      <div class="container hero-content">
+        <div class="hero-pill" data-aos="fade-down">
+          <span class="hero-pill-badge">Next-Gen v4.8</span>
+          <span>Autonomous AI Ticket Routing & Unified Omnichannel</span>
+        </div>
+        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+          The Intelligent Support Platform for <span class="text-gradient">High-Velocity Teams</span>
+        </h1>
+        <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+          Unify email, live chat, WhatsApp, and tickets into one lightning-fast workspace. Slash first-response times by 72% with automated triage and enterprise SLA governance.
+        </p>
+
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="300">
+          <a href="404.html" class="btn btn-primary btn-lg">
+            <span>Start Free Trial</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="404.html" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-play"></i>
+            <span>Request Live Demo</span>
+          </a>
+        </div>
+
+        <div class="hero-trust" data-aos="fade-up" data-aos-delay="400">
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>No credit card required</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>14-day full enterprise trial</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>SOC2 Type II & GDPR compliant</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Perspective Hero Stage -->
+      <div class="container hero-stage" data-aos="zoom-in" data-aos-delay="300">
+        <!-- Floating Panels -->
+        <div class="floating-badge floating-badge-1">
+          <div class="icon-box-success" style="width: 38px; height: 38px; margin: 0; font-size: 1rem;"><i class="fa-solid fa-bolt"></i></div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--light-text-muted);">SLA Met Within</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">4m 12s <span style="color: #10b981; font-size: 0.75rem;">(-84%)</span></div>
+          </div>
+        </div>
+
+        <div class="floating-badge floating-badge-2">
+          <div class="icon-box-primary" style="width: 38px; height: 38px; margin: 0; font-size: 1rem;"><i class="fa-solid fa-heart"></i></div>
+          <div>
+            <div style="font-size: 0.75rem; color: #94a3b8;">Customer CSAT Score</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: white;">98.9% Positive</div>
+          </div>
+        </div>
+
+        <div class="floating-badge floating-badge-3">
+          <div class="icon-box-warning" style="width: 38px; height: 38px; margin: 0; font-size: 1rem;"><i class="fa-solid fa-robot"></i></div>
+          <div>
+            <div style="font-size: 0.75rem; color: var(--light-text-muted);">AI Co-pilot Triage</div>
+            <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">1,420 Tickets Auto-Resolved</div>
+          </div>
+        </div>
+
+        <!-- Perspective Mockup Container -->
+        <div class="hero-perspective-wrap" data-tilt>
+          <div class="mockup-window-header">
+            <div class="window-dots">
+              <span class="window-dot dot-red"></span>
+              <span class="window-dot dot-yellow"></span>
+              <span class="window-dot dot-green"></span>
+            </div>
+            <div class="window-title">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>omnidesk-cloud.internal // command-center</span>
+            </div>
+            <div class="window-live-pill">
+              <span class="window-live-indicator"></span>
+              <span>LIVE CLUSTER</span>
+            </div>
+          </div>
+          <div class="hero-mockup-inner">
+            <img src="assets/images/hero-dashboard.webp" alt="OmniDesk Enterprise Command Center User Interface" loading="eager" width="1000" height="600">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: PRODUCT INTRODUCTION (Split layout with product UI)
+         ==================================================================== -->
+    <section class="section section-gradient" id="product-intro">
+      <div class="container">
+        <div class="grid-2">
+          <div data-aos="fade-right">
+            <span class="section-tag section-tag-primary">Architecture Overview</span>
+            <h2 class="section-title">Engineered to Replace Fragmented Helpdesk Sprawl</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Legacy support software divides your agents between siloed tabs, disjointed inboxes, and manual spreadsheet trackers. OmniDesk AI consolidates every customer interaction into a single synchronized real-time ledger.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-primary" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-check"></i></div>
+                <div><strong>Sub-Second Real-Time Synchronization</strong> across global distributed clusters.</div>
+              </div>
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-primary" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-check"></i></div>
+                <div><strong>Automated Sentiment Detection</strong> prioritizes angry customers before escalations occur.</div>
+              </div>
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-primary" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-check"></i></div>
+                <div><strong>Zero-Latency Agent Co-pilot</strong> drafts contextual solutions from internal wiki docs.</div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-secondary">Explore Product Architecture</a>
+          </div>
+
+          <div data-aos="fade-left">
+            <div class="card glass-card" style="padding: 1.25rem;">
+              <img src="assets/images/product-inbox.webp" alt="OmniDesk Unified Multi-Channel Support Inbox Interface" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: CUSTOMER SUPPORT PROBLEMS (Pain points solved)
+         ==================================================================== -->
+    <section class="section section-dark" id="support-problems">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-dark">The Support Bottleneck</span>
+          <h2 class="section-title">Why Traditional Support Desks Break at Scale</h2>
+          <p class="section-subtitle">
+            Growing customer volume exposes structural friction in outdated ticketing tools. Here is why enterprise customer operations fail without automated intelligence.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box-danger icon-box"><i class="fa-solid fa-inbox"></i></div>
+            <h4>Overwhelming Ticket Deluges</h4>
+            <p>Support queues swell during product incidents, causing agents to triage tickets manually instead of resolving urgent issues.</p>
+          </div>
+
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box-warning icon-box"><i class="fa-solid fa-hourglass-half"></i></div>
+            <h4>Snail-Paced Response Latency</h4>
+            <p>Customers wait hours for first responses as tickets sit unassigned in generic shared distribution inboxes.</p>
+          </div>
+
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box-danger icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h4>Silent SLA Breaches</h4>
+            <p>Without live countdown triggers and predictive alerts, high-value enterprise SLA contracts lapse unnoticed.</p>
+          </div>
+
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box-secondary icon-box"><i class="fa-solid fa-comments"></i></div>
+            <h4>Fractured Conversations</h4>
+            <p>Chat threads, emails, and phone call notes are lost across separate tabs, forcing customers to repeat themselves.</p>
+          </div>
+
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box-primary icon-box"><i class="fa-solid fa-eye-slash"></i></div>
+            <h4>Blindspot Operational Visibility</h4>
+            <p>Managers lack actionable telemetry into individual agent bottlenecks, escalation cycles, and recurring bugs.</p>
+          </div>
+
+          <div class="card card-dark card-hover-up" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-box-accent icon-box"><i class="fa-solid fa-face-frown"></i></div>
+            <h4>Plummeting Customer Retention</h4>
+            <p>Frustrated customers churn to competitors when unresolved queries linger without transparent accountability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: UNIFIED SUPPORT INBOX (Email, chat & tickets in one view)
+         ==================================================================== -->
+    <section class="section" id="unified-inbox">
+      <div class="container">
+        <div class="grid-2">
+          <div data-aos="fade-right">
+            <div class="card" style="padding: 1.25rem; border-color: #cbd5e1;">
+              <img src="assets/images/service-omnichannel.webp" alt="Unified Support Inbox Interface with Live Chat and Email" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <span class="section-tag section-tag-primary">Consolidated Inbox</span>
+            <h2 class="section-title">One Unified Stream for Every Conversation</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Stop context switching between six customer portals. OmniDesk routes email, live chat, social messages, and portal tickets into one distraction-free triage stream.
+            </p>
+            <ul style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                <span><strong>Universal Keyboard Navigation:</strong> Speed through queues using hotkeys designed for keyboard-first efficiency.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                <span><strong>Live Collision Warning:</strong> Visual indicator ensures two agents never accidentally answer the same user ticket simultaneously.</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                <i class="fa-solid fa-circle-check" style="color: var(--primary); margin-top: 0.25rem;"></i>
+                <span><strong>Instant Rich-Text Macros:</strong> Insert canned solutions, links, and markdown snippets in a single keystroke.</span>
+              </li>
+            </ul>
+            <a href="404.html" class="btn btn-primary">Try Unified Inbox</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: TICKET MANAGEMENT (Complete visual workflow pipeline)
+         ==================================================================== -->
+    <section class="section section-gradient" id="ticket-workflow">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Lifecycle Governance</span>
+          <h2 class="section-title">The Complete Ticket Management Pipeline</h2>
+          <p class="section-subtitle">
+            From initial inbound ping to verified resolution and feedback survey, watch every customer ticket advance smoothly through structured stages.
+          </p>
+        </div>
+
+        <!-- Visual Step Pipeline -->
+        <div class="workflow-pipeline" data-aos="fade-up">
+          <div class="workflow-step">
+            <div class="step-icon-wrap"><i class="fa-solid fa-bell"></i></div>
+            <span class="step-badge badge-new">Stage 01</span>
+            <div class="step-title">New</div>
+            <p class="step-desc">Inbound ticket logged via email, API, or chat widget with sentiment metadata.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-icon-wrap"><i class="fa-solid fa-folder-open"></i></div>
+            <span class="step-badge badge-open">Stage 02</span>
+            <div class="step-title">Open</div>
+            <p class="step-desc">Auto-assigned to the best-skilled agent based on load, language, and tier.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-icon-wrap"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <span class="step-badge badge-pending">Stage 03</span>
+            <div class="step-title">Pending</div>
+            <p class="step-desc">Awaiting customer response or third-party developer investigation update.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-icon-wrap"><i class="fa-solid fa-circle-check"></i></div>
+            <span class="step-badge badge-resolved">Stage 04</span>
+            <div class="step-title">Resolved</div>
+            <p class="step-desc">Resolution provided and verified against SLA delivery criteria.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-icon-wrap"><i class="fa-solid fa-box-archive"></i></div>
+            <span class="step-badge badge-closed">Stage 05</span>
+            <div class="step-title">Closed</div>
+            <p class="step-desc">CSAT survey delivered, customer sentiment archived for predictive learning.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="404.html" class="btn btn-secondary">Learn More About Workflows</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: CUSTOMER MANAGEMENT (Customer 360 profiles)
+         ==================================================================== -->
+    <section class="section" id="customer-profiles">
+      <div class="container">
+        <div class="grid-2">
+          <div data-aos="fade-right">
+            <span class="section-tag section-tag-primary">Customer 360 Intelligence</span>
+            <h2 class="section-title">Deep Context Before You Type a Single Word</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Never ask a customer for their account ID again. OmniDesk surfaces rich CRM history, recent purchase invoices, contract MRR tier, and sentiment health directly alongside ticket conversations.
+            </p>
+            <div class="grid-2" style="margin-bottom: 2rem;">
+              <div class="card" style="padding: 1.25rem;">
+                <div style="font-size: 1.75rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;" data-counter="100" data-suffix="%">100%</div>
+                <div style="font-size: 0.85rem; color: var(--light-text-muted);">Unified Customer History</div>
+              </div>
+              <div class="card" style="padding: 1.25rem;">
+                <div style="font-size: 1.75rem; font-weight: 800; color: var(--success); margin-bottom: 0.25rem;" data-counter="4.9" data-decimals="1" data-suffix="/5">4.9/5</div>
+                <div style="font-size: 0.85rem; color: var(--light-text-muted);">Avg Satisfaction Score</div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-primary">Discover Customer CRM</a>
+          </div>
+
+          <div data-aos="fade-left">
+            <div class="card" style="padding: 1.25rem; border-color: #cbd5e1;">
+              <img src="assets/images/customer-360.webp" alt="Customer 360 Profile and Conversation History Card" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: AUTOMATION (Trigger -> Condition -> Action -> Result)
+         ==================================================================== -->
+    <section class="section section-dark" id="automation">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-dark">No-Code Logic Engine</span>
+          <h2 class="section-title">Build Powerful Automated Support Workflows</h2>
+          <p class="section-subtitle">
+            Eliminate repetitive tasks with visual rule triggers. Automatically route VIP accounts, escalate SLA hazards, and tag critical security vulnerabilities.
+          </p>
+        </div>
+
+        <div class="automation-diagram" data-aos="fade-up">
+          <!-- Step 1: Trigger -->
+          <div class="auto-node card-dark">
+            <div class="auto-connector"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="icon-box-primary icon-box"><i class="fa-solid fa-bolt"></i></div>
+            <span class="badge badge-new" style="margin-bottom: 0.5rem;">01. Trigger</span>
+            <h4 style="margin-bottom: 0.5rem;">Inbound Event</h4>
+            <p style="font-size: 0.85rem;">New ticket received containing keywords: "URGENT", "SAML", or "DOWNTIME".</p>
+          </div>
+
+          <!-- Step 2: Condition -->
+          <div class="auto-node card-dark">
+            <div class="auto-connector"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="icon-box-warning icon-box"><i class="fa-solid fa-filter"></i></div>
+            <span class="badge badge-pending" style="margin-bottom: 0.5rem;">02. Condition</span>
+            <h4 style="margin-bottom: 0.5rem;">Rule Verification</h4>
+            <p style="font-size: 0.85rem;">Customer account tier matches Enterprise Gold ($50k+ ARR) and time > 15m.</p>
+          </div>
+
+          <!-- Step 3: Action -->
+          <div class="auto-node card-dark">
+            <div class="auto-connector"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="icon-box-danger icon-box"><i class="fa-solid fa-gears"></i></div>
+            <span class="badge badge-urgent" style="margin-bottom: 0.5rem;">03. Action</span>
+            <h4 style="margin-bottom: 0.5rem;">Autonomous Dispatch</h4>
+            <p style="font-size: 0.85rem;">Reassign priority to Urgent, alert on-call engineer in Slack channel #ops-fire.</p>
+          </div>
+
+          <!-- Step 4: Result -->
+          <div class="auto-node card-dark">
+            <div class="icon-box-success icon-box"><i class="fa-solid fa-chart-line"></i></div>
+            <span class="badge badge-resolved" style="margin-bottom: 0.5rem;">04. Result</span>
+            <h4 style="margin-bottom: 0.5rem;">Instant Resolution</h4>
+            <p style="font-size: 0.85rem;">SLA compliance protected; first response delivered within 3 minutes.</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="404.html" class="btn btn-outline-white">Explore Automation Builder</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: KNOWLEDGE BASE (Articles, search & customer self-service)
+         ==================================================================== -->
+    <section class="section" id="knowledge-base">
+      <div class="container">
+        <div class="grid-2">
+          <div data-aos="fade-right">
+            <div class="card" style="padding: 1.25rem;">
+              <img src="assets/images/knowledge-base.webp" alt="Knowledge Base Self-Service Customer Portal" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            </div>
+          </div>
+
+          <div data-aos="fade-left">
+            <span class="section-tag section-tag-primary">Self-Service Portal</span>
+            <h2 class="section-title">Deflect 45% of Support Tickets Before They Are Filed</h2>
+            <p style="margin-bottom: 1.5rem;">
+              Provide an intuitive branded knowledge center with real-time semantic search. Customers find exact step-by-step solutions instantly, freeing your engineers for complex inquiries.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-accent" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><strong>AI Semantic Search:</strong> Understands user intent even when exact keywords aren't typed.</div>
+              </div>
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-accent" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-code-branch"></i></div>
+                <div><strong>Versioned Documentation:</strong> Maintain separate docs for API v1, v2, and beta SDKs.</div>
+              </div>
+              <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+                <div class="icon-box-accent" style="width: 32px; height: 32px; margin: 0; font-size: 0.9rem;"><i class="fa-solid fa-globe"></i></div>
+                <div><strong>42+ Language Translations:</strong> Automatic localized rendering based on browser headers.</div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-secondary">Explore Knowledge Center</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 9: OMNICHANNEL SUPPORT (Multi-channel integration)
+         ==================================================================== -->
+    <section class="section section-gradient" id="omnichannel">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Universal Channel Coverage</span>
+          <h2 class="section-title">Meet Customers Wherever They Reach Out</h2>
+          <p class="section-subtitle">
+            Seamlessly bridge conversations across email, live chat, WhatsApp, SMS, voice, and social networks without losing historical context.
+          </p>
+        </div>
+
+        <div class="grid-4" data-aos="fade-up">
+          <div class="card card-hover-up text-center" style="text-align: center;">
+            <div class="icon-box-primary icon-box" style="margin: 0 auto 1.25rem auto;"><i class="fa-solid fa-envelope"></i></div>
+            <h4>Smart Email Ingestion</h4>
+            <p style="font-size: 0.88rem;">Bi-directional email threading with automatic attachment antivirus scanning.</p>
+          </div>
+
+          <div class="card card-hover-up text-center" style="text-align: center;">
+            <div class="icon-box-secondary icon-box" style="margin: 0 auto 1.25rem auto;"><i class="fa-solid fa-comments"></i></div>
+            <h4>In-App Live Chat</h4>
+            <p style="font-size: 0.88rem;">Sub-50ms WebSocket widget with screen-sharing and audio note recording.</p>
+          </div>
+
+          <div class="card card-hover-up text-center" style="text-align: center;">
+            <div class="icon-box-success icon-box" style="margin: 0 auto 1.25rem auto;"><i class="fa-brands fa-whatsapp"></i></div>
+            <h4>WhatsApp & SMS</h4>
+            <p style="font-size: 0.88rem;">Official Meta Business API integration for global instant messaging support.</p>
+          </div>
+
+          <div class="card card-hover-up text-center" style="text-align: center;">
+            <div class="icon-box-accent icon-box" style="margin: 0 auto 1.25rem auto;"><i class="fa-brands fa-slack"></i></div>
+            <h4>Slack & Teams Connect</h4>
+            <p style="font-size: 0.88rem;">Support your B2B customers right inside their shared Slack workspaces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 10: TEAM COLLABORATION (Internal notes, assignments, mentions)
+         ==================================================================== -->
+    <section class="section" id="team-collaboration">
+      <div class="container">
+        <div class="grid-2">
+          <div data-aos="fade-right">
+            <span class="section-tag section-tag-primary">Internal Synergy</span>
+            <h2 class="section-title">Collaborate on Complex Customer Issues Without Clutter</h2>
+            <p style="margin-bottom: 1.5rem;">
+              When difficult bugs arise, pull engineers and product managers into private internal ticket side-conversations. Resolve escalations 3x faster without messy email forwards.
+            </p>
+            <div class="card" style="background: #f8fafc; border-left: 4px solid var(--primary); margin-bottom: 2rem;">
+              <div style="font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-lock" style="color: var(--primary);"></i>
+                <span>Private Agent Notes & @Mentions</span>
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 0;">
+                Leave yellow-flagged private internal notes visible only to teammates. Customers never see internal debug discussion or sensitive database query snippets.
+              </p>
+            </div>
+            <a href="404.html" class="btn btn-secondary">Learn About Team Features</a>
+          </div>
+
+          <div data-aos="fade-left">
+            <div class="card" style="padding: 1.25rem;">
+              <img src="assets/images/about-story.webp" alt="Engineering Support Team Collaborating on Complex Issue" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 11: SLA MANAGEMENT (Countdown timers & escalation)
+         ==================================================================== -->
+    <section class="section section-dark" id="sla-management">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-dark">Contract Reliability</span>
+          <h2 class="section-title">Zero SLA Breaches Guaranteed by Design</h2>
+          <p class="section-subtitle">
+            Configure dynamic Service Level Agreements by account tier, business hours, and severity. Track live timers down to the exact second.
+          </p>
+        </div>
+
+        <div class="grid-3" data-aos="fade-up">
+          <div class="card card-dark sla-card sla-urgent">
+            <div class="flex-between" style="margin-bottom: 1rem;">
+              <span class="badge badge-urgent">Tier-1 Enterprise</span>
+              <div class="sla-timer"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">08:42</span></div>
+            </div>
+            <h4>First Response Target</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 1rem;">Target: Under 15 Minutes. Automated manager pager notification triggers at 5m remaining.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill progress-danger" style="width: 78%;"></div>
+            </div>
+          </div>
+
+          <div class="card card-dark sla-card" style="border-left-color: var(--warning);">
+            <div class="flex-between" style="margin-bottom: 1rem;">
+              <span class="badge badge-high">High Priority</span>
+              <div class="sla-timer" style="color: var(--warning);"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">44:19</span></div>
+            </div>
+            <h4>Resolution SLA Window</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 1rem;">Target: Under 2 Hours. Ticket assigned to Senior Reliability Engineer Alex Chen.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill progress-warning" style="width: 45%;"></div>
+            </div>
+          </div>
+
+          <div class="card card-dark sla-card" style="border-left-color: var(--success);">
+            <div class="flex-between" style="margin-bottom: 1rem;">
+              <span class="badge badge-resolved">General Queue</span>
+              <div class="sla-timer" style="color: var(--success);"><i class="fa-solid fa-circle-check"></i> <span>Compliant</span></div>
+            </div>
+            <h4>Monthly SLA Compliance</h4>
+            <p style="font-size: 0.88rem; margin-bottom: 1rem;">99.94% of 14,800 customer tickets resolved well inside contracted delivery limits.</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill progress-success" style="width: 99%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="404.html" class="btn btn-primary">Configure Custom SLAs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 12: ANALYTICS & REPORTING (Realistic metrics & volume)
+         ==================================================================== -->
+    <section class="section" id="analytics">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Actionable Intelligence</span>
+          <h2 class="section-title">Deep Operational Analytics in Real Time</h2>
+          <p class="section-subtitle">
+            Uncover peak ticket influx hours, agent performance distributions, and customer friction trends with comprehensive dashboards.
+          </p>
+        </div>
+
+        <div class="grid-4" style="margin-bottom: 3rem;">
+          <div class="card text-center" data-aos="fade-up" data-aos-delay="100">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--primary);" data-counter="99.4" data-decimals="1" data-suffix="%">99.4%</div>
+            <div style="font-weight: 600; margin-top: 0.25rem;">SLA Adherence</div>
+            <p style="font-size: 0.82rem; margin: 0;">Across 40,000+ tickets</p>
+          </div>
+
+          <div class="card text-center" data-aos="fade-up" data-aos-delay="200">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--secondary);" data-counter="14" data-suffix="m">14m</div>
+            <div style="font-weight: 600; margin-top: 0.25rem;">Avg First Response</div>
+            <p style="font-size: 0.82rem; margin: 0;">Down from 2.4 hours</p>
+          </div>
+
+          <div class="card text-center" data-aos="fade-up" data-aos-delay="300">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--success);" data-counter="98.7" data-decimals="1" data-suffix="%">98.7%</div>
+            <div style="font-weight: 600; margin-top: 0.25rem;">Customer CSAT</div>
+            <p style="font-size: 0.82rem; margin: 0;">Over 12,000 ratings</p>
+          </div>
+
+          <div class="card text-center" data-aos="fade-up" data-aos-delay="400">
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--accent);" data-counter="4.8" data-decimals="1" data-suffix="x">4.8x</div>
+            <div style="font-weight: 600; margin-top: 0.25rem;">Agent Throughput</div>
+            <p style="font-size: 0.82rem; margin: 0;">With AI macro routing</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.25rem;" data-aos="zoom-in">
+          <img src="assets/images/analytics-preview.webp" alt="Real-Time Analytics Dashboard and Performance Heatmaps" style="border-radius: var(--radius-md); width: 100%;" loading="lazy" width="800" height="450">
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 13: CUSTOMER SATISFACTION (CSAT & Feedback)
+         ==================================================================== -->
+    <section class="section section-gradient" id="csat">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Customer Voice</span>
+          <h2 class="section-title">Turn Every Ticket Into Brand Loyalty</h2>
+          <p class="section-subtitle">
+            Automated 1-click survey micro-prompts collect authentic customer feedback without adding survey fatigue.
+          </p>
+        </div>
+
+        <div class="grid-3" data-aos="fade-up">
+          <div class="card card-hover-up">
+            <div style="color: #f59e0b; margin-bottom: 1rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-style: italic; margin-bottom: 1.5rem;">
+              "OmniDesk cut our average resolution time by more than half within our first three weeks. Our enterprise customers constantly compliment how fast our team replies."
+            </p>
+            <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+              <img src="assets/images/avatar-1.webp" alt="Samantha Miller" style="width: 44px; height: 44px; border-radius: 50%;" width="44" height="44">
+              <div>
+                <div style="font-weight: 700; font-size: 0.95rem;">Samantha Miller</div>
+                <div style="font-size: 0.8rem; color: var(--light-text-muted);">VP of Support, CloudSphere</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover-up">
+            <div style="color: #f59e0b; margin-bottom: 1rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-style: italic; margin-bottom: 1.5rem;">
+              "The live SLA countdown badges prevent issues from ever slipping through the cracks. It's the most dependable customer management tool we've ever evaluated."
+            </p>
+            <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+              <img src="assets/images/avatar-2.webp" alt="David Sterling" style="width: 44px; height: 44px; border-radius: 50%;" width="44" height="44">
+              <div>
+                <div style="font-weight: 700; font-size: 0.95rem;">David Sterling</div>
+                <div style="font-size: 0.8rem; color: var(--light-text-muted);">Head of Operations, FinPulse</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover-up">
+            <div style="color: #f59e0b; margin-bottom: 1rem;">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p style="font-style: italic; margin-bottom: 1.5rem;">
+              "Our support agents actually enjoy their workspace now. Zero lag, beautiful typography, and keyboard shortcuts that make daily triage an absolute breeze."
+            </p>
+            <div class="flex-center" style="justify-content: flex-start; gap: 0.75rem;">
+              <img src="assets/images/avatar-3.webp" alt="Elena Rodriguez" style="width: 44px; height: 44px; border-radius: 50%;" width="44" height="44">
+              <div>
+                <div style="font-weight: 700; font-size: 0.95rem;">Elena Rodriguez</div>
+                <div style="font-size: 0.8rem; color: var(--light-text-muted);">Customer Experience Lead, Acme SaaS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 14: INTEGRATIONS (Ecosystem connectivity)
+         ==================================================================== -->
+    <section class="section" id="integrations">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Ecosystem Connectivity</span>
+          <h2 class="section-title">Integrates With Your Tech Stack in Minutes</h2>
+          <p class="section-subtitle">
+            Connect your CRM, developer trackers, notification channels, and data warehouses with one-click OAuth authorizations.
+          </p>
+        </div>
+
+        <div class="grid-4" data-aos="fade-up">
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-slack" style="font-size: 2.25rem; color: #4a154b; margin-bottom: 0.75rem;"></i>
+            <h5>Slack</h5>
+            <p style="font-size: 0.82rem;">Real-time incident channel alerts</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-jira" style="font-size: 2.25rem; color: #0052cc; margin-bottom: 0.75rem;"></i>
+            <h5>Jira Software</h5>
+            <p style="font-size: 0.82rem;">Link tickets to developer bug issues</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-salesforce" style="font-size: 2.25rem; color: #00a1e0; margin-bottom: 0.75rem;"></i>
+            <h5>Salesforce</h5>
+            <p style="font-size: 0.82rem;">Bi-directional enterprise contact sync</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-github" style="font-size: 2.25rem; color: #24292e; margin-bottom: 0.75rem;"></i>
+            <h5>GitHub</h5>
+            <p style="font-size: 0.82rem;">Trigger pull request deployments</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-shopify" style="font-size: 2.25rem; color: #96bf48; margin-bottom: 0.75rem;"></i>
+            <h5>Shopify</h5>
+            <p style="font-size: 0.82rem;">Inspect orders and initiate refunds</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-stripe" style="font-size: 2.25rem; color: #635bff; margin-bottom: 0.75rem;"></i>
+            <h5>Stripe</h5>
+            <p style="font-size: 0.82rem;">View subscription MRR & invoice status</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-brands fa-hubspot" style="font-size: 2.25rem; color: #ff7a59; margin-bottom: 0.75rem;"></i>
+            <h5>HubSpot</h5>
+            <p style="font-size: 0.82rem;">Marketing attribution and lead scoring</p>
+          </div>
+          <div class="card text-center" style="padding: 1.75rem 1.25rem;">
+            <i class="fa-solid fa-code" style="font-size: 2.25rem; color: var(--primary); margin-bottom: 0.75rem;"></i>
+            <h5>REST API & Webhooks</h5>
+            <p style="font-size: 0.82rem;">Custom telemetry and event streaming</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="404.html" class="btn btn-secondary">Explore All 120+ Integrations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 15: FAQ ACCORDION (Interactive questions)
+         ==================================================================== -->
+    <section class="section section-gradient" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag section-tag-primary">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Find answers to common technical, migration, security, and pricing inquiries.
+          </p>
+        </div>
+
+        <div class="faq-accordion" data-aos="fade-up">
+          <div class="faq-item active">
+            <button class="faq-header" type="button">
+              <span>How does OmniDesk AI migrate data from our existing helpdesk?</span>
+              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-content" style="max-height: 200px;">
+              <p>We provide automated 1-click migration connectors for Zendesk, Freshdesk, Intercom, and Jira Service Management. Historical ticket threads, agent assignments, customer profiles, and custom tags migrate with zero downtime.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-header" type="button">
+              <span>Is my customer conversational data used to train public AI models?</span>
+              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-content">
+              <p>No. Never. OmniDesk AI operates on dedicated tenant-isolated models. Your data is encrypted at rest with AES-256 and in transit via TLS 1.3. We maintain SOC2 Type II, HIPAA, and GDPR compliance certifications.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-header" type="button">
+              <span>Can we customize SLA policies for different customer subscription tiers?</span>
+              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-content">
+              <p>Yes. You can configure granular SLA matrices based on customer ARR, subscription plan, priority level, custom tags, or region. OmniDesk alerts managers when tickets approach 75% of their SLA deadline.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-header" type="button">
+              <span>How does agent role-based access control (RBAC) work?</span>
+              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-content">
+              <p>OmniDesk supports precise RBAC profiles. Administrators maintain full oversight over billing, integrations, and global metrics, while Support Agents focus strictly on queue resolution, macros, and personal productivity metrics.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-header" type="button">
+              <span>What channels are included in the omnichannel plan?</span>
+              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="faq-content">
+              <p>Every account includes Email, In-app WebSocket Live Chat, WhatsApp Business, SMS, Slack Connect, and our Knowledge Base portal out of the box with zero per-channel surcharge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 16: FINAL CTA (Full-width high conversion -> 404.html)
+         ==================================================================== -->
+    <section class="section section-dark" id="final-cta" style="background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 100%);">
+      <div class="container text-center" data-aos="zoom-in" style="text-align: center;">
+        <span class="section-tag section-tag-dark">Get Started Today</span>
+        <h2 class="section-title" style="max-width: 780px; margin: 0 auto 1.5rem auto;">
+          Transform Your Customer Support Experience in Under 10 Minutes
+        </h2>
+        <p class="section-subtitle" style="max-width: 620px; margin: 0 auto 2.5rem auto;">
+          Join over 3,200 fast-growing organizations delivering world-class customer resolutions with OmniDesk AI. No credit card required.
+        </p>
+        <div class="hero-cta-group">
+          <!-- CTA Redirects to 404 per strict rule -->
+          <a href="404.html" class="btn btn-primary btn-lg">
+            <span>Start Your 14-Day Free Trial</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="404.html" class="btn btn-outline-white btn-lg">
+            <span>Schedule Enterprise Demo</span>
+          </a>
+        </div>
+        <div style="font-size: 0.88rem; color: #94a3b8; margin-top: 1.5rem;">
+          Questions? Talk to our solution architects 24/7 via live chat.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: white;">
+            <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
+            <span>OmniDesk<span class="text-gradient">.ai</span></span>
+          </a>
+          <p>
+            Enterprise customer support and helpdesk management software built for modern teams. Deliver delightful resolutions at global scale.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="footer-social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="404.html" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <div class="footer-links">
+            <a href="services.html">Omnichannel Inbox</a>
+            <a href="services.html">Ticket Management</a>
+            <a href="services.html">SLA Countdown</a>
+            <a href="services.html">Automation Engine</a>
+            <a href="services.html">Knowledge Base</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="about.html#story">Our Story</a>
+            <a href="about.html#team">Leadership Team</a>
+            <a href="blog.html">Industry Blog</a>
+            <a href="contact.html">Global Offices</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support & Access</h5>
+          <div class="footer-links">
+            <a href="contact.html">Contact Support</a>
+            <a href="login.html">Platform Login</a>
+            <a href="signup.html">Create Account</a>
+            <a href="admin-dashboard.html">Admin Command Center</a>
+            <a href="agent-dashboard.html">Agent Workspace</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Stay Updated</h5>
+          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem;">
+            Subscribe to our weekly dispatch on customer retention and AI support.
+          </p>
+          <form class="footer-newsletter-form">
+            <input type="email" class="footer-newsletter-input" placeholder="Enter your work email..." required>
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 OmniDesk AI Inc. All rights reserved. SOC2 Type II Certified.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="404.html" style="color: #64748b;">Privacy Policy</a>
+          <a href="404.html" style="color: #64748b;">Terms of Service</a>
+          <a href="404.html" style="color: #64748b;">Security Architecture</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/validation.js"></script>
+</body>
+</html>

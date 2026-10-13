@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!sidebar) return;
     sidebar.classList.add('open');
     document.body.classList.add('sidebar-open');
+    document.documentElement.classList.add('sidebar-open');
     if (overlay) overlay.classList.add('active');
     if (sidebarToggle) {
       const icon = sidebarToggle.querySelector('i');
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!sidebar) return;
     sidebar.classList.remove('open');
     document.body.classList.remove('sidebar-open');
+    document.documentElement.classList.remove('sidebar-open');
     if (overlay) overlay.classList.remove('active');
     if (sidebarToggle) {
       const icon = sidebarToggle.querySelector('i');
@@ -136,13 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const isValid = window.validationUtils ? window.validationUtils.validateForm(form) : true;
       if (!isValid) {
         if (typeof showToast === 'function') {
-          showToast('Validation error: Please fill in required fields. Redirecting...', 'error');
+          showToast('Please fill in all required fields.', 'error');
         }
-        // First it validates the data with error message, after it redirects to 404
-        setTimeout(() => {
-          window.location.href = '404.html';
-        }, 1200);
-        return;
+        return; // Do NOT redirect on validation error!
       }
 
       if (typeof showToast === 'function') {
@@ -150,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       setTimeout(() => {
         window.location.href = '404.html';
-      }, 500);
+      }, 800);
     });
   });
 

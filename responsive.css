@@ -49,6 +49,7 @@ input, select, textarea {
   .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
   .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  .footer-col p { max-width: 100%; }
   
   h1 { font-size: 3rem; }
   .hero-title { font-size: 2.75rem; }
@@ -112,7 +113,7 @@ input, select, textarea {
     cursor: pointer;
     color: var(--secondary-color);
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
-    z-index: 1002;
+    z-index: 1003 !important;
     transition: all 0.2s ease;
   }
   
@@ -124,14 +125,18 @@ input, select, textarea {
     max-width: 85vw;
     height: 100vh;
     height: 100dvh;
-    background: var(--bg-white);
+    background: #ffffff !important;
     flex-direction: column;
     padding: 5.5rem 1.75rem 2rem;
     box-shadow: -10px 0 35px rgba(15, 23, 42, 0.25);
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     align-items: stretch;
-    z-index: 1001;
+    z-index: 1002 !important;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
   }
   .nav-menu.active { right: 0; }
   
@@ -143,10 +148,10 @@ input, select, textarea {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    z-index: 1000;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998 !important;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -157,9 +162,17 @@ input, select, textarea {
     opacity: 1;
     pointer-events: auto;
   }
+  html.menu-open,
   body.menu-open {
     overflow: hidden !important;
-    touch-action: none;
+    height: 100% !important;
+    touch-action: none !important;
+    -webkit-overflow-scrolling: auto;
+  }
+  body.menu-open .header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    z-index: 1001 !important;
   }
   .nav-link {
     display: flex;
@@ -220,72 +233,89 @@ input, select, textarea {
     gap: 0.75rem !important;
   }
   
-  /* Footer Centered in Mobile View */
+  /* Footer Responsive Alignment */
   .footer {
     padding: 3.5rem 0 2rem;
-    text-align: center;
+    text-align: left;
   }
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
+    gap: 2.25rem;
+    text-align: left;
   }
   .footer-col {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
   }
   .footer-col .logo {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 1rem;
-    text-align: center;
+    display: inline-block;
+    margin: 0 0 0.85rem 0;
+    text-align: left;
   }
   .footer-col .logo-img {
-    margin: 0 auto;
+    margin: 0;
     display: block;
   }
   .footer-col p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 440px;
+    text-align: left;
+    margin: 0.5rem 0 0 0;
+    max-width: 100% !important;
+    color: #94A3B8;
+    line-height: 1.6;
   }
   .footer-col .social-icons {
-    justify-content: center !important;
-    margin: 1.5rem auto 0 !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center;
+    gap: 0.85rem;
+    margin: 1.25rem 0 0 0 !important;
   }
   .footer-col h4 {
-    text-align: center;
-    margin-bottom: 1rem;
+    text-align: left;
+    margin-bottom: 1.15rem;
     width: 100%;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
   }
   .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .footer-links li {
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.85rem;
   }
   .footer-links a {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 0.65rem;
+    color: #94a3b8;
+  }
+  .footer-links a i {
+    width: 18px;
     text-align: center;
+    flex-shrink: 0;
   }
   .footer-links a:hover {
     padding-left: 0;
-    transform: translateY(-2px);
+    transform: translateX(4px);
+    color: #ffffff;
   }
   .footer-bottom {
     text-align: center;
     padding-top: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #64748b;
   }
   
   /* Forms */

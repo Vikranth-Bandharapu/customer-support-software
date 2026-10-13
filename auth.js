@@ -103,23 +103,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isValid = window.validationUtils ? window.validationUtils.validateForm(contactForm) : true;
       if (!isValid) {
-        showToast('Validation error: Please fill in all required fields. Redirecting...', 'error');
-        // First it validates data with error message, after it redirects to 404
-        setTimeout(() => {
-          window.location.href = '404.html';
-        }, 1200);
+        showToast('Please fill in all required fields correctly before submitting.', 'error');
+        // Do NOT redirect when validation fails - keep the user on the page to fix errors!
         return;
       }
 
-      showToast('Message submitted successfully! Redirecting...', 'success');
+      showToast('Thank you! Your message has been submitted successfully. Redirecting...', 'success');
+      contactForm.reset();
       setTimeout(() => {
         window.location.href = '404.html';
-      }, 500);
+      }, 1000);
     });
   }
 
   // 4. UNIVERSAL FORM HANDLER FOR ANY OTHER FORM ON THE WEBSITE
-  // Validates data first with error message, then redirects to 404.html
+  // Validates data first: if invalid, stops submission and displays errors; if valid, redirects to 404.html
   document.querySelectorAll('form').forEach(form => {
     if (form.id === 'loginForm' || form.id === 'signupForm' || form.id === 'contactForm' || form.closest('.dashboard-content')) {
       return; // Already specifically handled above or handled by dashboard.js
@@ -130,18 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const isValid = window.validationUtils ? window.validationUtils.validateForm(form) : true;
       if (!isValid) {
-        showToast('Validation error: Please fill in required fields. Redirecting...', 'error');
-        // First it validates data with error message, after it redirects to 404
-        setTimeout(() => {
-          window.location.href = '404.html';
-        }, 1200);
+        showToast('Please fill in all required fields.', 'error');
+        // Do NOT redirect when validation fails!
         return;
       }
 
       showToast('Submitted successfully! Redirecting...', 'success');
       setTimeout(() => {
         window.location.href = '404.html';
-      }, 500);
+      }, 800);
     });
   });
 });

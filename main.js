@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.remove('active');
       if (navOverlay) navOverlay.classList.remove('active');
       document.body.classList.remove('menu-open');
+      document.documentElement.classList.remove('menu-open');
       if (mobileToggle) {
         const icon = mobileToggle.querySelector('i');
         if (icon) {
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (navOverlay) navOverlay.classList.add('active');
         document.body.classList.add('menu-open');
+        document.documentElement.classList.add('menu-open');
       } else {
         closeMobileNav();
       }
@@ -47,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navOverlay) {
       navOverlay.addEventListener('click', closeMobileNav);
+      navOverlay.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+      }, { passive: false });
     }
 
     // Close when tapping nav link
@@ -63,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) closeMobileNav();
     });
+
+    // Lock background scroll on touch devices while mobile menu is open
+    document.addEventListener('touchmove', (e) => {
+      if (document.body.classList.contains('menu-open')) {
+        if (!e.target.closest('.nav-menu')) {
+          e.preventDefault();
+        }
+      }
+    }, { passive: false });
   }
 
   // Sticky Header
@@ -99,4 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Global CTA / Placeholder Button Redirection to 404.html
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('button, a');
+    if (!btn) return;
+
+    // Ignore interactive UI components
+    if (btn.classList.contains('mobile-toggle') ||
+        btn.classList.contains('sidebar-toggle') ||
+        btn.classList.contains('accordion-header') ||
+        btn.hasAttribute('data-tab') ||
+        btn.closest('.nav-menu') ||
+        btn.type === 'submit') {
+      return;
+    }
+
+    const href = btn.getAttribute('href');
+    if (href === '#' || href === '' || btn.getAttribute('data-cta') === 'true' || (btn.tagName === 'BUTTON' && !btn.hasAttribute('onclick') && btn.type !== 'submit')) {
+      e.preventDefault();
+      window.location.href = '404.html';
+    }
+  });
 });
+

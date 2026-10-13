@@ -1,149 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page Not Found &bull; OmniDesk AI</title>
-  <meta name="description" content="The page or preview you are looking for has not been deployed or has moved. Return to OmniDesk home or contact support.">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found - SupportX</title>
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        .error-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 1.25rem;
+            text-align: center;
+            min-height: 60vh;
+        }
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 620px;
+            width: 100%;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #438bf7;
+            letter-spacing: -0.04em;
+            margin: 0 0 0.5rem 0;
+        }
+        .error-title {
+            font-size: 2.35rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin: 0 0 0.85rem 0;
+            letter-spacing: -0.02em;
+        }
+        .error-message {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0 0 2.25rem 0;
+            max-width: 520px;
+        }
+        .error-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .btn-go-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #5046e5;
+            color: white !important;
+            padding: 0.9rem 2.25rem;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 12px 25px -8px rgba(80, 70, 229, 0.45);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .btn-go-back:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px -8px rgba(80, 70, 229, 0.55);
+        }
+        .btn-return-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: white;
+            color: var(--secondary-color) !important;
+            border: 1px solid var(--border-color);
+            padding: 0.9rem 2.25rem;
+            border-radius: 99px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .btn-return-home:hover {
+            border-color: #cbd5e1;
+            background: #f8fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+        }
+        @media (max-width: 640px) {
+            .error-code { font-size: 5rem; }
+            .error-title { font-size: 1.75rem; }
+            .error-message { font-size: 0.95rem; }
+            .btn-go-back, .btn-return-home { width: 100%; justify-content: center; }
+        }
+    </style>
 </head>
-<body style="min-height: 100vh; display: flex; flex-direction: column; background: #0b0f19;">
+<body style="min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-main); overflow-x: hidden;">
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+    <div class="orb-3"></div>
 
-  <!-- Site Header -->
-  <header class="site-header" style="background: rgba(11, 15, 25, 0.85); border-bottom-color: rgba(255, 255, 255, 0.08);">
-    <div class="container header-container">
-      <a href="index.html" class="brand-logo" style="color: white;" aria-label="OmniDesk AI Home">
-        <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
-        <span>OmniDesk<span class="text-gradient">.ai</span></span>
-      </a>
-
-      <nav class="nav-desktop" aria-label="Main Navigation">
-        <a href="index.html" style="color: #94a3b8;">Home</a>
-        <a href="services.html" style="color: #94a3b8;">Services</a>
-        <a href="about.html" style="color: #94a3b8;">About</a>
-        <a href="blog.html" style="color: #94a3b8;">Blog</a>
-        <a href="contact.html" style="color: #94a3b8;">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="login.html" class="btn btn-ghost" style="color: #cbd5e1;">Login</a>
-        <a href="signup.html" class="btn btn-outline-white" style="padding: 0.5rem 1.2rem;">Sign Up</a>
-        <!-- On 404 page, recovery back to home -->
-        <a href="index.html" class="btn btn-primary">Return to Home</a>
-
-        <button class="hamburger-btn" style="color: white;" aria-label="Open Navigation Menu"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-overlay"></div>
-  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
-    <div>
-      <div class="mobile-nav-header">
-        <div class="brand-logo">
-          <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
-          <span>OmniDesk</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link "><i class="fa-solid fa-house"></i> Home</a>
+                <a href="services.html" class="nav-link "><i class="fa-solid fa-layer-group"></i> Services</a>
+                <a href="about.html" class="nav-link "><i class="fa-solid fa-circle-info"></i> About</a>
+                <a href="blog.html" class="nav-link "><i class="fa-solid fa-newspaper"></i> Blog</a>
+                <a href="contact.html" class="nav-link "><i class="fa-solid fa-envelope"></i> Contact</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline "><i class="fa-solid fa-right-to-bracket mr-1"></i> Login</a>
+                    <a href="signup.html" class="btn btn-primary "><i class="fa-solid fa-user-plus mr-1"></i> Sign Up</a>
+                </div>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
-        <button class="drawer-close-btn" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <nav class="mobile-nav-links">
-        <a href="index.html"><span>Home</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="services.html"><span>Services</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="about.html"><span>About</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="blog.html"><span>Blog</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="contact.html"><span>Contact</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="login.html"><span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-        <a href="signup.html"><span>Sign Up</span> <i class="fa-solid fa-user-plus"></i></a>
-      </nav>
-    </div>
-    <div class="mobile-nav-cta">
-      <a href="index.html" class="btn btn-primary" style="width: 100%;">Return to Home</a>
-    </div>
-  </aside>
+    </header>
 
-  <!-- Main 404 Content Section -->
-  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem; position: relative; overflow: hidden;">
-    <div class="perspective-grid-3d"></div>
-    <div class="orb-3d orb-3d-primary"></div>
-    <div class="orb-3d orb-3d-cyan"></div>
-    <div class="orb-3d orb-3d-violet"></div>
-    <div class="ambient-glow glow-primary"></div>
-    <div class="ambient-glow glow-secondary"></div>
-
-    <div class="container container-narrow text-center" style="text-align: center; position: relative; z-index: 10;" data-aos="zoom-in">
-      
-      <!-- Large 404 Animated Visual -->
-      <div style="font-size: 8rem; font-weight: 900; line-height: 1; letter-spacing: -0.05em; margin-bottom: 1rem; font-family: var(--font-mono);" class="text-gradient">
-        404
-      </div>
-
-      <div class="hero-pill" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: #f87171; margin-bottom: 1.5rem;">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <span>Endpoint Route Unresolved</span>
-      </div>
-
-      <h1 class="hero-title" style="color: white; font-size: 2.75rem; margin-bottom: 1.25rem;">
-        This Destination is Currently in Staging or Has Moved
-      </h1>
-
-      <p class="hero-description" style="color: #94a3b8; max-width: 600px; margin: 0 auto 2.5rem auto;">
-        You've reached a protected marketing preview or unrouted resource endpoint. All marketing buttons safely route here during demonstration mode. Use the recovery controls below to return.
-      </p>
-
-      <!-- Recovery Buttons (Functional Exceptions) -->
-      <div class="hero-cta-group">
-        <!-- Recovery Button 1: Back to Home -->
-        <a href="index.html" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-house"></i>
-          <span>Back to Home</span>
-        </a>
-
-        <!-- Recovery Button 2: Go Back via history.back() -->
-        <button onclick="history.back()" class="btn btn-outline-white btn-lg">
-          <i class="fa-solid fa-arrow-left"></i>
-          <span>Go Back to Previous Page</span>
-        </button>
-      </div>
-
-      <!-- Quick Helpful Navigation Links -->
-      <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-        <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">
-          Explore Active Platforms
+    <main class="error-wrapper">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">The link you followed may be broken, or the feature is currently in demonstration mode. Use the navigation links above or below to return.</p>
+            <div class="error-actions">
+                <button onclick="history.back()" class="btn-go-back">
+                    <i class="fa-solid fa-arrow-left"></i> Go Back
+                </button>
+                <a href="index.html" class="btn-return-home">
+                    <i class="fa-solid fa-house"></i> Return to Home
+                </a>
+            </div>
         </div>
-        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-          <a href="services.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Services Showcase</a>
-          <a href="about.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Our Story</a>
-          <a href="blog.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Support Dispatch</a>
-          <a href="contact.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Contact Desk</a>
-          <a href="login.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Platform Login</a>
-          <a href="signup.html" style="color: #a5b4fc; font-weight: 600; font-size: 0.95rem;">Sign Up Free</a>
+    </main>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <img src="assets/logo.webp" alt="Stackly Logo" class="logo-img">
+                    </a>
+                    <p class="text-light" style="color: #94A3B8; margin-top: 1rem; line-height: 1.6; max-width: 320px;">
+                        Enterprise-grade customer support platform designed to streamline ticket management, automate workflows, and deliver delightful support experiences.
+                    </p>
+                    <div class="social-icons" style="margin-top: 1.5rem; display: flex; gap: 0.85rem;">
+                        <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="404.html" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Platform / Capabilities Column -->
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="404.html"><i class="fa-solid fa-inbox"></i> Omnichannel Inbox</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-ticket"></i> Ticketing System</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-robot"></i> AI Automation</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-book-open"></i> Knowledge Base</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-chart-line"></i> CSAT Analytics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Links (Nav Links, No Header Auth Links) -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Legal Column -->
+                <div class="footer-col">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Help & Support</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-comments"></i> Contact Sales</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom with Copyright -->
+            <div class="footer-bottom">
+                &copy; 2026 Stackly Inc. All rights reserved. Designed for exceptional customer support.
+            </div>
         </div>
-      </div>
+    </footer>
 
-    </div>
-  </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer" style="padding: 2.5rem 0 2rem 0;">
-    <div class="container text-center" style="text-align: center; font-size: 0.85rem; color: #64748b;">
-      &copy; 2026 OmniDesk AI Inc. All rights reserved. Zero dead links guarantee.
-    </div>
-  </footer>
-
-  <div id="toast-container"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/animations.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

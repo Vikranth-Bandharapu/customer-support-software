@@ -1,871 +1,798 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Agent Productivity Workspace — OmniDesk AI</title>
-  <meta name="description" content="OmniDesk Support Agent Productivity Workspace. Personal KPIs, assigned tickets, SLA countdown timers, canned macro shortcuts, and unified customer conversations.">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontline Agent Resolution Workspace - SupportX</title>
+    <link rel="icon" type="image/webp" href="assets/logo.webp">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body class="dashboard-body">
-
-  <div class="dashboard-wrapper">
-    <!-- ====================================================================
-         AGENT SIDEBAR (14 Exact Items)
-         ==================================================================== -->
-    <aside class="dashboard-sidebar" aria-label="Support Agent Sidebar">
-      <div>
+    <!-- Agent Sidebar: Exactly 5 Navigation Sections -->
+    <aside class="sidebar">
         <div class="sidebar-header">
-          <div class="sidebar-brand">
-            <div class="sidebar-brand-icon" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);"><i class="fa-solid fa-headset"></i></div>
-            <span>OmniDesk</span>
-            <span class="sidebar-role-badge badge-agent-role">Agent</span>
-          </div>
+            <!-- Logo redirects to the same page -->
+            <a href="agent-dashboard.html" class="sidebar-logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" class="logo-img">
+            </a>
         </div>
 
         <nav class="sidebar-nav">
-          <div class="nav-section-title">My Workspace</div>
-          <!-- 1. Dashboard -->
-          <button class="sidebar-link active" data-view="view-agent-dashboard">
-            <span class="sidebar-link-content"><i class="fa-solid fa-house-laptop"></i> <span>Workspace</span></span>
-          </button>
-          <!-- 2. My Tickets -->
-          <button class="sidebar-link" data-view="view-my-tickets">
-            <span class="sidebar-link-content"><i class="fa-solid fa-inbox"></i> <span>My Tickets</span></span>
-            <span class="sidebar-link-badge">6 Due</span>
-          </button>
-          <!-- 3. Ticket Queue -->
-          <button class="sidebar-link" data-view="view-ticket-queue">
-            <span class="sidebar-link-content"><i class="fa-solid fa-list-ol"></i> <span>Ticket Queue</span></span>
-            <span class="sidebar-link-badge">18 New</span>
-          </button>
-          <!-- 4. Customers -->
-          <button class="sidebar-link" data-view="view-customers">
-            <span class="sidebar-link-content"><i class="fa-solid fa-users"></i> <span>Customers</span></span>
-          </button>
-          <!-- 5. Conversations -->
-          <button class="sidebar-link" data-view="view-conversations">
-            <span class="sidebar-link-content"><i class="fa-solid fa-comments"></i> <span>Conversations</span></span>
-          </button>
-
-          <div class="nav-section-title" style="margin-top: 0.5rem;">Productivity &amp; Tools</div>
-          <!-- 6. Knowledge Base -->
-          <button class="sidebar-link" data-view="view-knowledge-base">
-            <span class="sidebar-link-content"><i class="fa-solid fa-bolt"></i> <span>KB Shortcuts</span></span>
-          </button>
-          <!-- 7. Tasks -->
-          <button class="sidebar-link" data-view="view-tasks">
-            <span class="sidebar-link-content"><i class="fa-solid fa-check-double"></i> <span>Tasks &amp; Follow-ups</span></span>
-          </button>
-          <!-- 8. Calendar -->
-          <button class="sidebar-link" data-view="view-calendar">
-            <span class="sidebar-link-content"><i class="fa-solid fa-calendar-days"></i> <span>Shift Calendar</span></span>
-          </button>
-
-          <div class="nav-section-title" style="margin-top: 0.5rem;">Communications</div>
-          <!-- 9. Messages -->
-          <button class="sidebar-link" data-view="view-messages">
-            <span class="sidebar-link-content"><i class="fa-solid fa-comment-dots"></i> <span>Team Chat</span></span>
-          </button>
-          <!-- 10. Email Center -->
-          <button class="sidebar-link" data-view="view-email-center">
-            <span class="sidebar-link-content"><i class="fa-solid fa-envelope"></i> <span>Email Center</span></span>
-            <span class="sidebar-link-badge" style="background: #10b981;">3</span>
-          </button>
-          <!-- 11. Notifications -->
-          <button class="sidebar-link" data-view="view-notifications">
-            <span class="sidebar-link-content"><i class="fa-solid fa-bell"></i> <span>Notifications</span></span>
-          </button>
-
-          <div class="nav-section-title" style="margin-top: 0.5rem;">Account</div>
-          <!-- 12. Profile -->
-          <button class="sidebar-link" data-view="view-profile">
-            <span class="sidebar-link-content"><i class="fa-solid fa-user"></i> <span>My Profile</span></span>
-          </button>
-          <!-- 13. Settings -->
-          <button class="sidebar-link" data-view="view-settings">
-            <span class="sidebar-link-content"><i class="fa-solid fa-sliders"></i> <span>Preferences</span></span>
-          </button>
+            <a href="#agent-tab-1" class="sidebar-link active" data-tab="agent-tab-1">
+                <i class="fa-solid fa-inbox"></i> My Active Tickets
+            </a>
+            <a href="#agent-tab-2" class="sidebar-link" data-tab="agent-tab-2">
+                <i class="fa-solid fa-comments"></i> Live Chat & Omnichannel
+            </a>
+            <a href="#agent-tab-3" class="sidebar-link" data-tab="agent-tab-3">
+                <i class="fa-solid fa-bolt"></i> Macro & Canned Responses
+            </a>
+            <a href="#agent-tab-4" class="sidebar-link" data-tab="agent-tab-4">
+                <i class="fa-solid fa-address-card"></i> Customer 360 Profiles
+            </a>
+            <a href="#agent-tab-5" class="sidebar-link" data-tab="agent-tab-5">
+                <i class="fa-solid fa-user-clock"></i> My Shift & Performance
+            </a>
         </nav>
-      </div>
 
-      <div class="sidebar-footer">
-        <div class="sidebar-user-card">
-          <img src="assets/images/team-4.webp" alt="Support Agent avatar" class="sidebar-avatar" width="38" height="38">
-          <div class="sidebar-user-info">
-            <div class="sidebar-user-name user-session-name">Sarah Jenkins</div>
-            <div class="sidebar-user-role">Senior Support Specialist</div>
-          </div>
+        <!-- Sidebar Footer with Entered User Email and Logout -->
+        <div class="sidebar-footer">
+            <div class="sidebar-user-card" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(16, 185, 129, 0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0;">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div style="overflow: hidden; flex: 1;">
+                    <span style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; line-height: 1.2;">Agent Email</span>
+                    <span class="sidebar-user-email" style="font-size: 0.82rem; color: #f8fafc; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;" title="agent@supportx.com">agent@supportx.com</span>
+                </div>
+            </div>
+            <a href="index.html" class="sidebar-link" style="color: var(--danger); padding: 0.5rem 0.5rem;">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
         </div>
-        <!-- 14. Logout (Functional Exception) -->
-        <button class="sidebar-link logout-btn" style="color: #f87171;">
-          <span class="sidebar-link-content"><i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Sign Out</span></span>
-        </button>
-      </div>
     </aside>
 
-    <!-- ====================================================================
-         MAIN CONTENT REGION
-         ==================================================================== -->
-    <div class="dashboard-main">
-      <!-- Topbar -->
-      <header class="dashboard-topbar">
-        <div class="topbar-left">
-          <button class="sidebar-toggle-btn" aria-label="Toggle Navigation Sidebar">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <div class="topbar-search-wrap">
-            <i class="fa-solid fa-magnifying-glass topbar-search-icon"></i>
-            <input type="text" class="topbar-search-input" placeholder="Search my assigned tickets, customers, canned macros...">
-          </div>
-        </div>
+    <!-- Sidebar Backdrop Overlay for Mobile -->
+    <div class="sidebar-overlay"></div>
 
-        <div class="topbar-right">
-          <!-- Shift Clock-In Status -->
-          <div class="topbar-status-pill">
-            <span class="status-dot"></span>
-            <span>Clocked In &bull; Shift Ends in 4h 15m</span>
-          </div>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <button class="sidebar-toggle" aria-label="Toggle Navigation"><i class="fa-solid fa-bars"></i></button>
 
-          <!-- Coffee Break Toggle -->
-          <button class="btn btn-secondary btn-sm" onclick="window.showToast('Status set to 15-min coffee break. Incoming chats paused.', 'warning', 'Break Mode')">
-            <i class="fa-solid fa-mug-hot"></i> Take Break
-          </button>
+        <!-- Dynamic 5-Section Content -->
+        <div class="dashboard-content">
 
-          <!-- 20. Quick Actions (New Ticket / Fast Macro) -->
-          <button class="btn btn-primary btn-sm" onclick="openCreateTicketModal()">
-            <i class="fa-solid fa-plus"></i>
-            <span>Log Ticket</span>
-          </button>
-        </div>
-      </header>
-
-      <!-- Scrollable Content Body -->
-      <div class="dashboard-content-scroll">
-        
-        <!-- ================================================================
-             VIEW 1: PRIMARY AGENT WORKSPACE (20 Meaningful Sections)
-             ================================================================ -->
-        <div class="dashboard-view-panel active-panel" id="view-agent-dashboard">
-          
-          <!-- 1. WELCOME & SHIFT HEADER -->
-          <div class="dash-page-header">
-            <div>
-              <h1 class="dash-header-title">Support Agent Productivity Workspace</h1>
-              <div class="dash-header-subtitle">
-                Welcome, <span class="user-session-name" style="font-weight: 700; color: #0f172a;">Sarah Jenkins</span>. Your daily resolution target is <span style="font-weight: 700; color: var(--primary);">82% complete</span>.
-              </div>
-            </div>
-            <div class="dash-header-actions">
-              <button class="btn btn-secondary btn-sm" onclick="window.showToast('Pulling highest-priority ticket from global queue...', 'info', 'Auto-Assign')">
-                <i class="fa-solid fa-hand-holding-hand"></i> Pull Next Ticket
-              </button>
-              <button class="btn btn-primary btn-sm" onclick="window.showToast('All 6 pending customer replies dispatched.', 'success', 'Queue Synced')">
-                <i class="fa-solid fa-paper-plane"></i> Batch Dispatch
-              </button>
-            </div>
-          </div>
-
-          <!-- 2. PERSONAL KPIS (Productivity Target Cards) -->
-          <div class="kpi-grid">
-            <div class="kpi-card" style="border-top: 4px solid var(--primary);">
-              <div class="kpi-header">
-                <span class="kpi-label">Solved Today</span>
-                <div class="kpi-icon icon-box-primary"><i class="fa-solid fa-circle-check"></i></div>
-              </div>
-              <div class="kpi-value">38</div>
-              <div class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Target: 45 / shift</div>
-            </div>
-
-            <div class="kpi-card" style="border-top: 4px solid var(--secondary);">
-              <div class="kpi-header">
-                <span class="kpi-label">My Avg Response</span>
-                <div class="kpi-icon icon-box-secondary"><i class="fa-solid fa-bolt"></i></div>
-              </div>
-              <div class="kpi-value">6m 12s</div>
-              <div class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Fastest on EMEA team</div>
-            </div>
-
-            <div class="kpi-card" style="border-top: 4px solid var(--success);">
-              <div class="kpi-header">
-                <span class="kpi-label">My CSAT Rating</span>
-                <div class="kpi-icon icon-box-success"><i class="fa-solid fa-heart"></i></div>
-              </div>
-              <div class="kpi-value">100%</div>
-              <div class="kpi-trend trend-up"><i class="fa-solid fa-star"></i> 24 straight 5-star reviews</div>
-            </div>
-
-            <div class="kpi-card" style="border-top: 4px solid var(--danger);">
-              <div class="kpi-header">
-                <span class="kpi-label">Active Assigned</span>
-                <div class="kpi-icon icon-box-danger"><i class="fa-solid fa-fire"></i></div>
-              </div>
-              <div class="kpi-value">6</div>
-              <div class="kpi-trend trend-down"><span>2 tickets due within 30m</span></div>
-            </div>
-          </div>
-
-          <!-- 3. OPEN TICKETS & 4. PRIORITY TICKETS (Agent's Workstream) -->
-          <div class="dash-card">
-            <div class="dash-card-header">
-              <h3 class="dash-card-title"><i class="fa-solid fa-inbox" style="color: var(--primary);"></i> My Assigned Active Queue</h3>
-              <div class="flex-center gap-2">
-                <span class="badge badge-urgent">1 Urgent SLA Hazard</span>
-                <span class="badge badge-open">5 Normal</span>
-              </div>
-            </div>
-            <div class="data-table-container">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Ticket ID</th>
-                    <th>Customer</th>
-                    <th>Issue Summary</th>
-                    <th>Priority</th>
-                    <th>Status</th>
-                    <th>9. SLA Countdown</th>
-                    <th>Quick Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Urgent Ticket -->
-                  <tr class="ticket-row" data-status="open" data-priority="urgent">
-                    <td><strong style="color: var(--primary);">#TK-8941</strong></td>
-                    <td>
-                      <div class="agent-cell">
-                        <img src="assets/images/avatar-1.webp" alt="Rachel Adams" class="agent-thumb" width="32" height="32">
-                        <div>
-                          <strong>Rachel Adams</strong>
-                          <div style="font-size: 0.75rem; color: var(--dash-muted);">FinTech Global (Enterprise VIP)</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div style="font-weight: 600;">SAML SSO Callback Gateway Timeout 504</div>
-                      <div style="font-size: 0.78rem; color: var(--dash-muted);">Okta IdP callback timing out for 350 production users.</div>
-                    </td>
-                    <td><span class="badge badge-urgent">Urgent</span></td>
-                    <td><span class="badge badge-open">Open</span></td>
-                    <td>
-                      <div class="sla-timer" style="font-size: 0.95rem;"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">06:12</span></div>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-primary" onclick="viewTicketDetail('TK-8941', 'Rachel Adams', 'SAML SSO Callback Timeout', 'Open', 'Urgent')">Work Ticket</button>
-                    </td>
-                  </tr>
-
-                  <!-- High Ticket -->
-                  <tr class="ticket-row" data-status="open" data-priority="high">
-                    <td><strong style="color: var(--primary);">#TK-8938</strong></td>
-                    <td>
-                      <div class="agent-cell">
-                        <img src="assets/images/avatar-2.webp" alt="Marcus Vance" class="agent-thumb" width="32" height="32">
-                        <div>
-                          <strong>Marcus Vance</strong>
-                          <div style="font-size: 0.75rem; color: var(--dash-muted);">CloudScale Systems</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div style="font-weight: 600;">Webhook Payload Exponential Backoff Exhausted</div>
-                      <div style="font-size: 0.78rem; color: var(--dash-muted);">Whitelisting required for /api/v2 gateway endpoints.</div>
-                    </td>
-                    <td><span class="badge badge-high">High</span></td>
-                    <td><span class="badge badge-open">Open</span></td>
-                    <td>
-                      <div class="sla-timer" style="font-size: 0.95rem; color: #f59e0b;"><i class="fa-solid fa-stopwatch"></i> <span class="live-sla-timer">24:45</span></div>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-primary" onclick="viewTicketDetail('TK-8938', 'Marcus Vance', 'Webhook Retries Exhausted', 'Open', 'High')">Work Ticket</button>
-                    </td>
-                  </tr>
-
-                  <!-- Medium Ticket -->
-                  <tr class="ticket-row" data-status="pending" data-priority="medium">
-                    <td><strong style="color: var(--primary);">#TK-8930</strong></td>
-                    <td>
-                      <div class="agent-cell">
-                        <img src="assets/images/avatar-3.webp" alt="Elena Rostova" class="agent-thumb" width="32" height="32">
-                        <div>
-                          <strong>Elena Rostova</strong>
-                          <div style="font-size: 0.75rem; color: var(--dash-muted);">NovaFinance</div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div style="font-weight: 600;">HIPAA BAA Agreement Countersignature Request</div>
-                      <div style="font-size: 0.78rem; color: var(--dash-muted);">Sent custom BAA draft; awaiting customer legal signoff.</div>
-                    </td>
-                    <td><span class="badge badge-medium">Medium</span></td>
-                    <td><span class="badge badge-pending">Pending</span></td>
-                    <td><span class="badge badge-resolved">Compliant</span></td>
-                    <td>
-                      <button class="btn btn-sm btn-secondary" onclick="viewTicketDetail('TK-8930', 'Elena Rostova', 'HIPAA BAA Agreement Request', 'Pending', 'Medium')">Work Ticket</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- 5. ASSIGNED TICKETS & 6. GLOBAL TICKET QUEUE -->
-          <div class="grid-2" style="margin-bottom: 2rem;">
-            <!-- 5. Quick Ticket State Changer -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-sliders" style="color: var(--primary);"></i> Fast Ticket State Changer</h3>
-                <span class="badge badge-open">Batch Actions</span>
-              </div>
-              <div class="dash-card-body">
-                <p style="font-size: 0.88rem; margin-bottom: 1rem;">Select quick status update for ticket <strong>#TK-8941</strong>:</p>
-                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                  <button class="btn btn-sm btn-secondary" onclick="window.showToast('Status set to Pending Customer Reply.', 'info', 'Status Updated')"><i class="fa-solid fa-clock"></i> Mark Pending</button>
-                  <button class="btn btn-sm btn-secondary" onclick="window.showToast('Escalated to Tier-3 infrastructure team.', 'warning', 'Escalated')"><i class="fa-solid fa-triangle-exclamation"></i> Escalate P1</button>
-                  <button class="btn btn-sm btn-primary" onclick="window.showToast('Ticket marked as Resolved and CSAT survey dispatched.', 'success', 'Ticket Resolved')"><i class="fa-solid fa-circle-check"></i> Mark Resolved</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- 6. Global Queue Pickup -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-hand-holding-hand" style="color: var(--secondary);"></i> Unassigned Global Queue</h3>
-                <span class="badge badge-new">18 Waiting</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                  <div class="flex-between" style="font-size: 0.85rem; background: #f8fafc; padding: 0.65rem 0.85rem; border-radius: 6px;">
+            <!-- SECTION 1: My Active Tickets -->
+            <section id="agent-tab-1" class="tab-pane active">
+                <div class="panel-header" style="margin-bottom: 1.5rem;">
                     <div>
-                      <strong>#TK-8950</strong> &bull; Unable to export audit CSV
-                      <div style="font-size: 0.75rem; color: var(--dash-muted);">David Sterling &bull; FinPulse</div>
+                        <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem;">My Active Ticket Workbench</h1>
+                        <p class="text-light" style="font-size: 0.95rem;">Assigned customer cases requiring investigation, response, and resolution.</p>
                     </div>
-                    <button class="btn btn-sm btn-primary" onclick="window.showToast('Ticket #TK-8950 assigned to your queue.', 'success', 'Claimed')">Claim</button>
-                  </div>
-                  <div class="flex-between" style="font-size: 0.85rem; background: #f8fafc; padding: 0.65rem 0.85rem; border-radius: 6px;">
+                    <div class="panel-actions">
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-filter"></i> Filter Priority</button>
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-plus"></i> Claim Next Ticket</button>
+                    </div>
+                </div>
+
+                <!-- Personal Ticket Counter KPI -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Assigned to Me</p>
+                            <h3>7</h3>
+                        </div>
+                        <div class="kpi-icon blue"><i class="fa-solid fa-inbox"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Urgent SLA Breaches</p>
+                            <h3 style="color:var(--danger);">1</h3>
+                        </div>
+                        <div class="kpi-icon red"><i class="fa-solid fa-fire"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Waiting On Customer</p>
+                            <h3>4</h3>
+                        </div>
+                        <div class="kpi-icon orange"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Resolved Today</p>
+                            <h3 style="color:#059669;">16</h3>
+                        </div>
+                        <div class="kpi-icon green"><i class="fa-solid fa-check-double"></i></div>
+                    </div>
+                </div>
+
+                <!-- 2-Column Split Workbench Layout -->
+                <div class="agent-workbench-grid">
+                    <!-- Left: Ticket Queue List -->
                     <div>
-                      <strong>#TK-8949</strong> &bull; Stripe invoice webhook 404
-                      <div style="font-size: 0.75rem; color: var(--dash-muted);">Elena Rodriguez &bull; Acme SaaS</div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+                            <h3 style="font-size:1.05rem; font-weight:700;">Ticket Queue (4 Ready)</h3>
+                            <span class="text-light" style="font-size:0.8rem;">Auto-refresh: ON</span>
+                        </div>
+
+                        <!-- Ticket Item 1 (Active) -->
+                        <div class="ticket-queue-item active urgent">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
+                                <span class="badge-status urgent"><i class="fa-solid fa-circle-exclamation"></i> Urgent • 14m left</span>
+                                <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8021</span>
+                            </div>
+                            <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem;">SSO SAML Authentication Failing</h4>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.5rem;">Enterprise IdP certificate renewal causing 500 loop for all active staff...</p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem;">
+                                <span style="font-weight:600; color:var(--secondary-color);"><i class="fa-solid fa-user mr-1"></i> Alex Rivera (DevOps Lead)</span>
+                                <span class="text-light">5m ago</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Item 2 -->
+                        <div class="ticket-queue-item high">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
+                                <span class="badge-status high"><i class="fa-solid fa-bolt"></i> High • 45m left</span>
+                                <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8019</span>
+                            </div>
+                            <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem;">Stripe Webhook Duplicate Charges</h4>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.5rem;">Customer charged twice during checkout on annual enterprise plan...</p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem;">
+                                <span style="font-weight:600; color:var(--secondary-color);"><i class="fa-solid fa-user mr-1"></i> Elena Rostova (CFO)</span>
+                                <span class="text-light">22m ago</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Item 3 -->
+                        <div class="ticket-queue-item">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
+                                <span class="badge-status normal"><i class="fa-solid fa-clock"></i> Normal • 2h left</span>
+                                <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8014</span>
+                            </div>
+                            <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem;">Custom Webhook Payload Formatting</h4>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.5rem;">Customer needs JSON schema documentation for custom event dispatch...</p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem;">
+                                <span style="font-weight:600; color:var(--secondary-color);"><i class="fa-solid fa-user mr-1"></i> Marcus Chen</span>
+                                <span class="text-light">1h ago</span>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Item 4 -->
+                        <div class="ticket-queue-item">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
+                                <span class="badge-status away"><i class="fa-solid fa-user-clock"></i> Waiting On Customer</span>
+                                <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8007</span>
+                            </div>
+                            <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.25rem;">Seat Reallocation Permission Error</h4>
+                            <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.5rem;">Requested audit logs from customer domain administrator...</p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.78rem;">
+                                <span style="font-weight:600; color:var(--secondary-color);"><i class="fa-solid fa-user mr-1"></i> Laura Bennett</span>
+                                <span class="text-light">3h ago</span>
+                            </div>
+                        </div>
                     </div>
-                    <button class="btn btn-sm btn-primary" onclick="window.showToast('Ticket #TK-8949 assigned to your queue.', 'success', 'Claimed')">Claim</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- 7. CUSTOMER REQUESTS & 8. TASKS CHECKLIST -->
-          <div class="grid-2" style="margin-bottom: 2rem;">
-            <!-- 7. Customer Requests -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-bell" style="color: #f59e0b;"></i> Incoming Customer Pings</h3>
-                <span class="badge badge-open">Real-Time</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-                  <div style="background: #fdfdfd; border: 1px solid var(--dash-border); padding: 0.85rem; border-radius: 8px;">
-                    <div class="flex-between" style="margin-bottom: 0.25rem;">
-                      <span style="font-weight: 700; font-size: 0.88rem;">Marcus Vance &bull; CloudScale</span>
-                      <span style="font-size: 0.75rem; color: var(--dash-muted);">2m ago</span>
+                    <!-- Right: Active Ticket Inspector & Action Resolver Form -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <div class="inspector-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-color); padding-bottom:1.25rem; margin-bottom:1.25rem;">
+                            <div style="min-width:0;">
+                                <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.4rem; flex-wrap:wrap;">
+                                    <span class="badge-status urgent">SLA URGENT</span>
+                                    <span style="font-size:0.85rem; color:var(--text-light); font-weight:700;">TICKET #TK-8021</span>
+                                </div>
+                                <h2 style="font-size:1.35rem; font-weight:800; color:var(--secondary-color); word-break:break-word;">SSO SAML Authentication Failing (Loop 500)</h2>
+                                <p style="font-size:0.88rem; color:var(--text-light); margin-top:0.25rem; word-break:break-word;">Customer: <strong style="color:var(--secondary-color);">Alex Rivera</strong> (alex.rivera@cloudtech.corp) • Tier: Enterprise Plus</p>
+                            </div>
+                            <div class="inspector-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-share-nodes"></i> Escalate to L3</button>
+                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-phone"></i> Direct Call</button>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Conversation Timeline -->
+                        <div style="background:var(--bg-main); border-radius:0.75rem; padding:1.25rem; margin-bottom:1.5rem; border:1px solid var(--border-color); max-height:260px; overflow-y:auto;">
+                            <div style="margin-bottom:1.25rem;">
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:0.35rem;">
+                                    <strong><i class="fa-solid fa-user-circle mr-1"></i> Alex Rivera (Customer)</strong>
+                                    <span class="text-light">Today, 10:42 AM</span>
+                                </div>
+                                <div style="background:white; padding:0.85rem 1rem; border-radius:0.5rem; border:1px solid var(--border-color); font-size:0.9rem; line-height:1.5;">
+                                    Hello Support Team. We updated our Okta SSO certificate at 10:00 AM. Since then, none of our 450 engineers can log into our workspace. They receive error <code>HTTP 500: SAML signature validation failed</code>. This is blocking our entire team!
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:0.35rem;">
+                                    <strong style="color:var(--primary-color);"><i class="fa-solid fa-headset mr-1"></i> Sarah Jenkins (You)</strong>
+                                    <span class="text-light">Today, 10:48 AM</span>
+                                </div>
+                                <div style="background:#eff6ff; padding:0.85rem 1rem; border-radius:0.5rem; border:1px solid #bfdbfe; font-size:0.9rem; line-height:1.5;">
+                                    Hi Alex, I am actively diagnosing this right now. Our auth logs show your new public X.509 cert fingerprint needs to be refreshed in your tenant configuration. I am drafting the cache purge and updating your fingerprint.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frontline Form: Reply & Update Ticket Status -->
+                        <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.75rem; color:var(--secondary-color);">
+                            <i class="fa-solid fa-reply mr-1"></i> Submit Ticket Response & Status
+                        </h3>
+                        <form novalidate>
+                            <div class="form-row-grid">
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label" for="replyType">Response Type</label>
+                                    <select id="replyType" class="form-control" required>
+                                        <option value="">Select Response Type...</option>
+                                        <option value="public" selected>Public Customer Reply</option>
+                                        <option value="internal">Internal Team Note Only</option>
+                                        <option value="escalation">Escalation Handover Note</option>
+                                    </select>
+                                    <p class="error-message"></p>
+                                </div>
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label" for="ticketStatusUpdate">Ticket Status Disposition</label>
+                                    <select id="ticketStatusUpdate" class="form-control" required>
+                                        <option value="">Select Next Status...</option>
+                                        <option value="pending_customer">Pending Customer Verification</option>
+                                        <option value="resolved">Mark as Resolved</option>
+                                        <option value="in_progress">Keep In Progress</option>
+                                        <option value="escalated">Escalate to Senior Engineering</option>
+                                    </select>
+                                    <p class="error-message"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="resolutionNote">Agent Resolution Message</label>
+                                <textarea id="resolutionNote" class="form-control" rows="4" placeholder="Write your solution, instructions for customer verification, or diagnostic report..." required></textarea>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-actions-row">
+                                <div class="btn-group">
+                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-paperclip"></i> Attach File</button>
+                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-bolt"></i> Insert Macro</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.75rem;">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Send Reply & Update
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <p style="font-size: 0.82rem; margin: 0;">"Sarah, we applied the firewall rule you suggested. Testing now!"</p>
-                  </div>
-                  <div style="background: #fdfdfd; border: 1px solid var(--dash-border); padding: 0.85rem; border-radius: 8px;">
-                    <div class="flex-between" style="margin-bottom: 0.25rem;">
-                      <span style="font-weight: 700; font-size: 0.88rem;">Rachel Adams &bull; FinTech Global</span>
-                      <span style="font-size: 0.75rem; color: var(--dash-muted);">5m ago</span>
+                </div>
+            </section>
+
+
+            <!-- SECTION 2: Live Chat & Omnichannel -->
+            <section id="agent-tab-2" class="tab-pane">
+                <div class="panel-header" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem;">Live Chat & Omnichannel Stream</h1>
+                        <p class="text-light" style="font-size: 0.95rem;">Real-time instant customer communication across Web, WhatsApp, and In-App SDK.</p>
                     </div>
-                    <p style="font-size: 0.82rem; margin: 0;">"Could you join our bridge call for 5 minutes?"</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 8. Tasks Checklist -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-check-double" style="color: var(--primary);"></i> My Shift Task Checklist</h3>
-                <span style="font-size: 0.8rem; color: var(--dash-muted);">3 / 4 Done</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.88rem;">
-                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox" checked onclick="window.showToast('Task updated.', 'info', 'Checklist')">
-                    <span style="text-decoration: line-through; color: var(--dash-muted);">Review morning high-priority SAML alerts</span>
-                  </label>
-                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox" checked onclick="window.showToast('Task updated.', 'info', 'Checklist')">
-                    <span style="text-decoration: line-through; color: var(--dash-muted);">Follow up with NovaFinance on HIPAA legal BAA</span>
-                  </label>
-                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox" checked onclick="window.showToast('Task updated.', 'info', 'Checklist')">
-                    <span style="text-decoration: line-through; color: var(--dash-muted);">Update knowledge article on webhook backoff timeouts</span>
-                  </label>
-                  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                    <input type="checkbox" onclick="window.showToast('Task completed!', 'success', 'Checklist')">
-                    <strong>Submit shift handover notes to Kenji Sato (Tokyo)</strong>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 10. CONVERSATIONS & 11. CUSTOMER PROFILES -->
-          <div class="grid-2" style="margin-bottom: 2rem;">
-            <!-- 10. Conversations -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-comments" style="color: var(--secondary);"></i> Active Live Conversations</h3>
-                <span class="badge badge-resolved"><i class="fa-solid fa-circle" style="font-size: 0.5rem;"></i> 2 Chats Active</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid var(--dash-border); margin-bottom: 0.75rem;">
-                  <div class="flex-between" style="margin-bottom: 0.35rem;">
-                    <strong>Rachel Adams (FinTech Global)</strong>
-                    <span class="badge badge-open">Widget Chat</span>
-                  </div>
-                  <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">"We updated our Okta certificate thumbprint as you recommended."</p>
-                  <button class="btn btn-sm btn-primary" onclick="replyEmailPrompt('Rachel Adams')">Reply in Chat</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- 11. Customer 360 Profile Drawer Preview -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-address-card" style="color: var(--primary);"></i> Customer 360 Quick Card</h3>
-                <button class="btn btn-sm btn-secondary" onclick="viewCustomerProfile('Rachel Adams', 'rachel@fintech.io', 'FinTech Global', '+1 (555) 234-5678', '14', '100')">Full Profile</button>
-              </div>
-              <div class="dash-card-body">
-                <div class="flex-center" style="justify-content: flex-start; gap: 1rem; margin-bottom: 1rem;">
-                  <img src="assets/images/avatar-1.webp" alt="Rachel Adams" style="width: 52px; height: 52px; border-radius: 50%;" width="52" height="52">
-                  <div>
-                    <h4 style="margin: 0; font-size: 1.05rem;">Rachel Adams</h4>
-                    <div style="font-size: 0.85rem; color: var(--dash-muted);">VP Engineering, FinTech Global</div>
-                    <span class="badge badge-urgent" style="margin-top: 0.25rem;">Enterprise VIP ($120k ARR)</span>
-                  </div>
-                </div>
-                <div class="flex-between" style="font-size: 0.85rem; background: #f8fafc; padding: 0.75rem; border-radius: 6px;">
-                  <span>Satisfaction: <strong>100%</strong></span>
-                  <span>Open Tickets: <strong>1</strong></span>
-                  <span>Resolved: <strong>13</strong></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 12. RESOLUTION PROGRESS & 13. CSAT FEEDBACK -->
-          <div class="grid-2" style="margin-bottom: 2rem;">
-            <!-- 12. Resolution Progress -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-chart-line" style="color: var(--primary);"></i> Daily Shift Progress</h3>
-                <span class="badge badge-resolved">82% of Goal</span>
-              </div>
-              <div class="dash-card-body">
-                <div class="flex-between" style="font-size: 0.9rem; margin-bottom: 0.5rem;">
-                  <span>Tickets Solved (38 / 45)</span>
-                  <strong>82%</strong>
-                </div>
-                <div class="progress-bar-wrap" style="height: 10px; margin-bottom: 1.5rem;">
-                  <div class="progress-bar-fill progress-primary" style="width: 82%;"></div>
-                </div>
-                <p style="font-size: 0.85rem; color: var(--dash-muted); margin: 0;">
-                  You need to resolve 7 more tickets over the next 4 hours to exceed your weekly milestone bonus.
-                </p>
-              </div>
-            </div>
-
-            <!-- 13. My Personal CSAT Feedback -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Customer Praise for Sarah</h3>
-                <span style="color: #f59e0b; font-weight: 700;"><i class="fa-solid fa-star"></i> 5.0 Average</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; border-left: 3px solid var(--success);">
-                  <div style="font-weight: 700; font-size: 0.88rem; margin-bottom: 0.25rem;">"Sarah is a rockstar!"</div>
-                  <p style="font-size: 0.82rem; margin: 0; font-style: italic;">
-                    "She walked us through the webhook retries in 5 minutes with zero fluff. Best support engineer we have worked with across any vendor."
-                  </p>
-                  <div style="font-size: 0.75rem; color: var(--dash-muted); margin-top: 0.5rem;">&mdash; Marcus Vance, CloudScale Systems (Today, 10:55 AM)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 14. KNOWLEDGE BASE SHORTCUTS & 15. CALENDAR -->
-          <div class="grid-2" style="margin-bottom: 2rem;">
-            <!-- 14. KB Shortcuts & Macros -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-bolt" style="color: var(--secondary);"></i> Canned Macro Shortcuts</h3>
-                <span style="font-size: 0.8rem; color: var(--dash-muted);">Press / in editor</span>
-              </div>
-              <div class="dash-card-body">
-                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
-                  <div class="flex-between" style="background: #f8fafc; padding: 0.55rem 0.85rem; border-radius: 6px; font-size: 0.85rem;">
-                    <div><code style="color: var(--primary); font-weight: 700;">/sso-okta</code> &mdash; Okta SAML Callback Troubleshooting</div>
-                    <button class="btn btn-sm btn-ghost" onclick="window.showToast('Macro copied to clipboard.', 'info', 'Copied')">Copy</button>
-                  </div>
-                  <div class="flex-between" style="background: #f8fafc; padding: 0.55rem 0.85rem; border-radius: 6px; font-size: 0.85rem;">
-                    <div><code style="color: var(--primary); font-weight: 700;">/webhook-ip</code> &mdash; Outbound Gateway IP Whitelist</div>
-                    <button class="btn btn-sm btn-ghost" onclick="window.showToast('Macro copied to clipboard.', 'info', 'Copied')">Copy</button>
-                  </div>
-                  <div class="flex-between" style="background: #f8fafc; padding: 0.55rem 0.85rem; border-radius: 6px; font-size: 0.85rem;">
-                    <div><code style="color: var(--primary); font-weight: 700;">/hipaa-baa</code> &mdash; Standard Healthcare BAA Submission</div>
-                    <button class="btn btn-sm btn-ghost" onclick="window.showToast('Macro copied to clipboard.', 'info', 'Copied')">Copy</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 15. Calendar & Scheduled Follow-ups -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-calendar-days" style="color: var(--primary);"></i> Scheduled Follow-ups</h3>
-                <span class="badge badge-open">Today</span>
-              </div>
-              <div class="dash-card-body">
-                <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.75rem;">
-                  <li><strong>11:30 AM:</strong> Follow-up video call with FinTech Global architecture team.</li>
-                  <li><strong>02:00 PM:</strong> Weekly team sync with VP of Support Aaliyah Washington.</li>
-                  <li><strong>04:45 PM:</strong> Shift handover debrief with Tokyo operations team.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- 16. MESSAGES & 17. EMAIL CENTER -->
-          <div class="dash-card" id="agent-email-center-section">
-            <div class="dash-card-header">
-              <h3 class="dash-card-title"><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> Support Agent Email &amp; Communications Center</h3>
-              <span class="badge badge-open">Agent View</span>
-            </div>
-            <div class="email-center-layout">
-              <!-- Left Master Email List -->
-              <div class="email-list-pane">
-                <div class="email-pane-header">
-                  <span style="font-weight: 700; font-size: 0.88rem;">Assigned Customer Inbound</span>
-                  <span class="badge badge-open">4 Threads</span>
-                </div>
-                <div class="email-items-scroll">
-                  <div class="email-item unread active" data-email-id="email-1" data-priority="urgent">
-                    <div class="email-item-header">
-                      <span class="email-sender">Marcus Vance</span>
-                      <span class="email-date">10:42 AM</span>
+                    <div class="panel-actions">
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-volume-high"></i> Sound Alerts: ON</button>
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-user-plus"></i> Accept Incoming Chat</button>
                     </div>
-                    <div class="email-subject">Critical: SSO SAML 2.0 Integration Callback Timeout</div>
-                    <div class="email-snippet">We are experiencing recurring 504 gateway timeout issues when our enterprise IdP...</div>
-                  </div>
-
-                  <div class="email-item unread" data-email-id="email-2" data-priority="high">
-                    <div class="email-item-header">
-                      <span class="email-sender">Elena Rostova</span>
-                      <span class="email-date">09:15 AM</span>
-                    </div>
-                    <div class="email-subject">Inquiry: HIPAA BAA Agreement &amp; Enterprise SLA Tier</div>
-                    <div class="email-snippet">NovaFinance is preparing to onboard 4,000 healthcare finance accounts onto...</div>
-                  </div>
-
-                  <div class="email-item" data-email-id="email-3" data-priority="medium">
-                    <div class="email-item-header">
-                      <span class="email-sender">Devon Patel</span>
-                      <span class="email-date">Yesterday</span>
-                    </div>
-                    <div class="email-subject">Webhook Payload Retries Failing on Endpoints</div>
-                    <div class="email-snippet">Our ingestion listener at /api/v2/webhooks has failed to receive event payloads...</div>
-                  </div>
-
-                  <div class="email-item" data-email-id="email-4" data-priority="low">
-                    <div class="email-item-header">
-                      <span class="email-sender">Sophie Laurent</span>
-                      <span class="email-date">Yesterday</span>
-                    </div>
-                    <div class="email-subject">Knowledge Base Multilingual Localization Sync</div>
-                    <div class="email-snippet">We have completed translation for 45 self-service support articles into French...</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Detail Pane -->
-              <div class="email-detail-pane" id="email-detail-content">
-                <div class="email-detail-header">
-                  <div class="flex-between" style="margin-bottom: 0.75rem;">
-                    <span class="badge badge-urgent">Urgent Priority</span>
-                    <span class="email-date"><i class="fa-regular fa-clock"></i> Today, 10:42 AM</span>
-                  </div>
-                  <h3 class="email-detail-subject">Critical: SSO SAML 2.0 Integration Callback Timeout</h3>
-                  <div class="email-meta-row">
-                    <div class="email-sender-info">
-                      <div class="brand-icon" style="width: 36px; height: 36px; font-size: 0.85rem;"><i class="fa-solid fa-user"></i></div>
-                      <div>
-                        <div style="font-weight: 700; font-size: 0.95rem;">Marcus Vance</div>
-                        <div style="font-size: 0.8rem; color: var(--dash-muted);">m.vance@techcorp.io</div>
-                      </div>
-                    </div>
-                    <div class="flex-center gap-2">
-                      <button class="btn btn-sm btn-secondary" onclick="window.showToast('Email conversation starred for escalation.', 'info', 'Starred')"><i class="fa-regular fa-star"></i> Star</button>
-                      <button class="btn btn-sm btn-primary" onclick="replyEmailPrompt('Marcus Vance')"><i class="fa-solid fa-reply"></i> Reply</button>
-                    </div>
-                  </div>
                 </div>
 
-                <div class="email-detail-body">
-                  Hello Support Team,<br><br>
-                  We are experiencing recurring 504 gateway timeout issues when our enterprise IdP (Okta) redirects user sessions back to our OmniDesk production domain. Our team is unable to authenticate approximately 350 engineering users at our London headquarters.<br><br>
-                  Could you please inspect the SAML assertion certificate and review our assertion consumer service endpoint logs? This is currently blocking our tier-1 engineering sprint.<br><br>
-                  Best regards,<br>
-                  <strong>Marcus Vance</strong><br>
-                  Chief Security Officer, TechCorp Enterprises
+                <div class="agent-workbench-grid">
+                    <!-- Left: Active Chat Sessions -->
+                    <div>
+                        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.75rem;">Active Conversations (3)</h3>
+
+                        <!-- Chat session 1 (Active) -->
+                        <div class="chat-session-item active">
+                            <div style="position:relative;">
+                                <img src="assets/user-1.webp" alt="David Kim" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                                <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#10b981; border-radius:50%; border:2px solid white;"></span>
+                            </div>
+                            <div style="flex:1; overflow:hidden;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <strong style="font-size:0.9rem;">David Kim</strong>
+                                    <span style="font-size:0.75rem; color:var(--text-light);">Just now</span>
+                                </div>
+                                <p style="font-size:0.8rem; color:var(--text-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Can you help me export my contact CSV?</p>
+                                <span style="font-size:0.7rem; font-weight:700; color:#0284c7;"><i class="fa-solid fa-globe mr-1"></i> Web Widget</span>
+                            </div>
+                        </div>
+
+                        <!-- Chat session 2 -->
+                        <div class="chat-session-item">
+                            <div style="position:relative;">
+                                <img src="assets/user-2.webp" alt="Maria Garcia" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                                <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#10b981; border-radius:50%; border:2px solid white;"></span>
+                            </div>
+                            <div style="flex:1; overflow:hidden;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <strong style="font-size:0.9rem;">Maria Garcia</strong>
+                                    <span style="font-size:0.75rem; color:var(--text-light);">2m ago</span>
+                                </div>
+                                <p style="font-size:0.8rem; color:var(--text-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Thank you! The coupon code worked.</p>
+                                <span style="font-size:0.7rem; font-weight:700; color:#16a34a;"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</span>
+                            </div>
+                        </div>
+
+                        <!-- Chat session 3 -->
+                        <div class="chat-session-item">
+                            <div style="position:relative;">
+                                <img src="assets/user-3.webp" alt="James Wilson" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
+                                <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#f59e0b; border-radius:50%; border:2px solid white;"></span>
+                            </div>
+                            <div style="flex:1; overflow:hidden;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <strong style="font-size:0.9rem;">James Wilson</strong>
+                                    <span style="font-size:0.75rem; color:var(--text-light);">5m ago</span>
+                                </div>
+                                <p style="font-size:0.8rem; color:var(--text-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">App crashes when clicking billing tab.</p>
+                                <span style="font-size:0.7rem; font-weight:700; color:#9333ea;"><i class="fa-solid fa-mobile mr-1"></i> iOS Mobile SDK</span>
+                            </div>
+                        </div>
+
+                        <!-- Omnichannel Status Card -->
+                        <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:0.75rem; padding:1rem; margin-top:1rem;">
+                            <h4 style="font-size:0.85rem; font-weight:700; text-transform:uppercase; color:var(--text-light); margin-bottom:0.5rem;">Queue Health</h4>
+                            <div style="display:flex; justify-content:space-between; font-size:0.85rem; margin-bottom:0.35rem;">
+                                <span>Avg Response Time:</span>
+                                <strong>42 seconds</strong>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+                                <span>Active Customer Satisfaction:</span>
+                                <strong style="color:#059669;">99.1%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Live Chat Window & Reply Dispatcher Form -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <div class="chat-header-row" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-color); padding-bottom:1rem; margin-bottom:1rem;">
+                            <div style="display:flex; align-items:center; gap:0.75rem; min-width:0;">
+                                <img src="assets/user-1.webp" alt="David Kim" style="width:42px; height:42px; border-radius:50%; object-fit:cover; flex-shrink:0;">
+                                <div style="overflow:hidden;">
+                                    <strong style="font-size:1.05rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">David Kim</strong>
+                                    <span style="font-size:0.78rem; color:var(--text-light); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Customer ID: #CUST-9921 • Pro Plan ($49/mo)</span>
+                                </div>
+                            </div>
+                            <div class="chat-header-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-desktop"></i> Screen Share</button>
+                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transfer Chat</button>
+                            </div>
+                        </div>
+
+                        <!-- Live Message Stream -->
+                        <div class="chat-stream mb-4">
+                            <div class="chat-bubble customer">
+                                <p>Hi Sarah! I am trying to export all customer contacts from the dashboard to a CSV file, but the download link returns a blank page.</p>
+                                <span style="font-size:0.7rem; color:#94a3b8; display:block; margin-top:0.35rem;">11:15 AM</span>
+                            </div>
+
+                            <div class="chat-bubble agent">
+                                <p>Hello David! Thanks for reaching out. Let me look up your workspace permissions to see if the contact export role is enabled for your profile.</p>
+                                <span style="font-size:0.7rem; color:rgba(255,255,255,0.7); display:block; margin-top:0.35rem;">11:16 AM</span>
+                            </div>
+
+                            <div class="chat-bubble customer">
+                                <p>I am the team administrator, so I should have full permissions. Here is a screenshot of the popup error.</p>
+                                <div style="display:inline-flex; align-items:center; gap:0.5rem; background:#f1f5f9; padding:0.4rem 0.75rem; border-radius:0.5rem; font-size:0.8rem; margin-top:0.35rem; color:var(--secondary-color);">
+                                    <i class="fa-solid fa-image"></i> screenshot-error-403.png (1.2 MB)
+                                </div>
+                                <span style="font-size:0.7rem; color:#94a3b8; display:block; margin-top:0.35rem;">11:17 AM</span>
+                            </div>
+                        </div>
+
+                        <!-- Live Chat Dispatch Form -->
+                        <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.75rem; color:var(--secondary-color);">
+                            <i class="fa-solid fa-paper-plane mr-1"></i> Send Instant Live Reply
+                        </h4>
+                        <form novalidate>
+                            <div class="form-row-grid">
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label" for="chatChannel">Active Dispatch Channel</label>
+                                    <select id="chatChannel" class="form-control" required>
+                                        <option value="">Select Channel...</option>
+                                        <option value="web" selected>Web Widget (Real-time WebSocket)</option>
+                                        <option value="whatsapp">WhatsApp Business API</option>
+                                        <option value="sdk">Mobile Push Notification</option>
+                                    </select>
+                                    <p class="error-message"></p>
+                                </div>
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label class="form-label" for="chatCategory">Session Action Tag</label>
+                                    <select id="chatCategory" class="form-control" required>
+                                        <option value="">Select Tag...</option>
+                                        <option value="bug" selected>Bug Investigation</option>
+                                        <option value="billing">Billing Inquiry</option>
+                                        <option value="feature">Feature Guidance</option>
+                                    </select>
+                                    <p class="error-message"></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="liveChatPayload">Type Message to Customer</label>
+                                <textarea id="liveChatPayload" class="form-control" rows="3" placeholder="Type your instant reply here. Use polite and clear troubleshooting steps..." required></textarea>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-actions-row">
+                                <div class="btn-group">
+                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-face-smile"></i> Emoji</button>
+                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-image"></i> Media</button>
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.75rem;">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SECTION 3: Macro & Canned Responses -->
+            <section id="agent-tab-3" class="tab-pane">
+                <div class="panel-header" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem;">Macro & Canned Response Library</h1>
+                        <p class="text-light" style="font-size: 0.95rem;">Rapid response templates, troubleshooting scripts, and automated snippet shortcuts.</p>
+                    </div>
+                    <div class="panel-actions">
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-download"></i> Export Macro Pack</button>
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Rephrase</button>
+                    </div>
                 </div>
 
-                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--dash-border);">
-                  <h5 style="margin-bottom: 0.75rem;">Insert Canned Resolution Macro</h5>
-                  <textarea class="form-control" rows="3" placeholder="Type quick reply or macro shortcut (/sso-okta)..." id="email-quick-reply-text"></textarea>
-                  <div class="flex-between" style="margin-top: 0.75rem;">
-                    <button class="btn btn-sm btn-secondary" onclick="insertMacroReply()"><i class="fa-solid fa-bolt"></i> Insert Macro</button>
-                    <button class="btn btn-sm btn-primary" onclick="sendQuickReply()"><i class="fa-solid fa-paper-plane"></i> Send Reply</button>
-                  </div>
+                <!-- Macro Template Cards Grid -->
+                <div class="macro-grid">
+                    <!-- Macro Card 1 -->
+                    <div class="macro-card">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                                <span class="badge-status online"><i class="fa-solid fa-tag"></i> General</span>
+                                <code style="font-weight:700; color:var(--primary-color); background:#eff6ff; padding:0.2rem 0.5rem; border-radius:0.35rem;">!greet</code>
+                            </div>
+                            <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.35rem;">Warm Customer Welcome & Inquiry</h3>
+                            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.5; margin-bottom:1rem;">
+                                "Hello {{customer_name}}, thank you for reaching out to SupportX today! My name is Sarah, and I will be happy to assist you with {{issue_summary}}."
+                            </p>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
+                            <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 142 times</span>
+                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Macro Card 2 -->
+                    <div class="macro-card">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                                <span class="badge-status urgent"><i class="fa-solid fa-tag"></i> Billing</span>
+                                <code style="font-weight:700; color:var(--primary-color); background:#eff6ff; padding:0.2rem 0.5rem; border-radius:0.35rem;">!refund</code>
+                            </div>
+                            <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.35rem;">Refund Process & Bank Clearance Timeline</h3>
+                            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.5; margin-bottom:1rem;">
+                                "I have submitted the refund of {{amount}} for invoice #{{invoice_id}}. You will see this credit return to your original payment method in 3-5 business days."
+                            </p>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
+                            <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 89 times</span>
+                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                        </div>
+                    </div>
+
+                    <!-- Macro Card 3 -->
+                    <div class="macro-card">
+                        <div>
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+                                <span class="badge-status high"><i class="fa-solid fa-tag"></i> Technical</span>
+                                <code style="font-weight:700; color:var(--primary-color); background:#eff6ff; padding:0.2rem 0.5rem; border-radius:0.35rem;">!cache</code>
+                            </div>
+                            <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.35rem;">Browser Cache & Session Reset Guide</h3>
+                            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.5; margin-bottom:1rem;">
+                                "Please try performing a hard reload (Ctrl + F5 or Cmd + Shift + R) or open an incognito session to confirm if your local cookie cache is cleared."
+                            </p>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
+                            <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 210 times</span>
+                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- 18. NOTIFICATIONS & 19. PERFORMANCE ANALYTICS -->
-          <div class="grid-2">
-            <!-- 18. Notifications -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-bell" style="color: var(--primary);"></i> Agent Desk Notifications</h3>
-                <span class="badge badge-resolved">Live</span>
-              </div>
-              <div class="dash-card-body">
-                <ul style="font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.75rem;">
-                  <li><i class="fa-solid fa-star" style="color: #f59e0b;"></i> Customer Marcus Vance submitted a 5-star CSAT review for ticket #TK-8938!</li>
-                  <li><i class="fa-solid fa-bullhorn" style="color: var(--primary);"></i> Shift announcement: Staging server scheduled maintenance at 22:00 UTC.</li>
-                </ul>
-              </div>
-            </div>
+                <!-- Create New Custom Macro Form -->
+                <div class="section-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2 class="panel-title"><i class="fa-solid fa-plus-circle mr-2"></i>Create New Agent Macro Template</h2>
+                            <p class="text-light" style="font-size:0.88rem; margin-top:0.25rem;">Add a new reusable response to your personal or team workspace.</p>
+                        </div>
+                    </div>
 
-            <!-- 19. Performance Analytics -->
-            <div class="dash-card" style="margin-bottom: 0;">
-              <div class="dash-card-header">
-                <h3 class="dash-card-title"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> Weekly Performance Scorecard</h3>
-                <span class="badge badge-resolved">Top 1% Agent</span>
-              </div>
-              <div class="dash-card-body">
-                <div class="grid-3" style="text-align: center;">
-                  <div>
-                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">214</div>
-                    <div style="font-size: 0.75rem; color: var(--dash-muted);">Tickets This Week</div>
-                  </div>
-                  <div>
-                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--success);">99.4%</div>
-                    <div style="font-size: 0.75rem; color: var(--dash-muted);">CSAT Average</div>
-                  </div>
-                  <div>
-                    <div style="font-size: 1.4rem; font-weight: 800; color: var(--secondary);">5m 48s</div>
-                    <div style="font-size: 0.75rem; color: var(--dash-muted);">Avg First Reply</div>
-                  </div>
+                    <form novalidate>
+                        <div class="form-row-grid-3">
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label class="form-label" for="macroTitle">Macro Title</label>
+                                <input type="text" id="macroTitle" class="form-control" placeholder="e.g. 2FA Reset Instructions" required>
+                                <p class="error-message"></p>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label class="form-label" for="macroCategory">Category</label>
+                                <select id="macroCategory" class="form-control" required>
+                                    <option value="">Select Category...</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="billing">Billing & Refunds</option>
+                                    <option value="account">Account Management</option>
+                                    <option value="farewell">Resolution & Farewell</option>
+                                </select>
+                                <p class="error-message"></p>
+                            </div>
+                            <div class="form-group" style="margin-bottom:0;">
+                                <label class="form-label" for="macroShortcut">Shortcut Trigger</label>
+                                <input type="text" id="macroShortcut" class="form-control" placeholder="e.g. !2fa_reset" required>
+                                <p class="error-message"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="macroContent">Template Body Text</label>
+                            <textarea id="macroContent" class="form-control" rows="4" placeholder="Enter standard message content. Supports {{customer_name}}, {{ticket_id}} variables..." required></textarea>
+                            <p class="error-message"></p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="padding:0.85rem 2rem;">
+                            <i class="fa-solid fa-floppy-disk mr-1"></i> Save Macro Template
+                        </button>
+                    </form>
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
+
+
+            <!-- SECTION 4: Customer 360 Profiles -->
+            <section id="agent-tab-4" class="tab-pane">
+                <div class="panel-header" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem;">Customer 360 Intelligence Profile</h1>
+                        <p class="text-light" style="font-size: 0.95rem;">Full customer journey history, account health, enterprise plan attributes, and security flags.</p>
+                    </div>
+                    <div class="panel-actions">
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-id-badge"></i> View Contract</button>
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-lock-open"></i> Issue 2FA Bypass</button>
+                    </div>
+                </div>
+
+                <!-- Customer Detail Hero Box -->
+                <div class="customer-hero-card section-panel" style="background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color:white; border:none; margin-bottom:1.5rem; overflow:hidden;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+                        <div style="display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; min-width:0;">
+                            <img src="assets/user-3.webp" alt="Marcus Vance" style="width:72px; height:72px; border-radius:1rem; object-fit:cover; border:3px solid #38bdf8; flex-shrink:0;">
+                            <div style="min-width:0;">
+                                <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.25rem; flex-wrap:wrap;">
+                                    <h2 style="font-size:1.6rem; color:white; margin:0; word-break:break-word;">Marcus Vance</h2>
+                                    <span class="badge-status online" style="background:rgba(56,189,248,0.2); color:#38bdf8;">VIP Enterprise Tier</span>
+                                </div>
+                                <p style="color:#94a3b8; font-size:0.92rem; margin:0; word-break:break-word;">Vice President of Technology • Fintech Global Systems Inc.</p>
+                                <p style="color:#64748b; font-size:0.82rem; margin-top:0.25rem; word-break:break-word;">Customer ID: <strong>CUST-88402</strong> • Account Owner: Sarah Jenkins</p>
+                            </div>
+                        </div>
+
+                        <div class="customer-stats-row">
+                            <div>
+                                <span style="font-size:0.78rem; text-transform:uppercase; color:#94a3b8; letter-spacing:0.05em; display:block;">Lifetime Value</span>
+                                <span style="font-size:1.5rem; font-weight:800; color:#38bdf8;">$24,500</span>
+                            </div>
+                            <div>
+                                <span style="font-size:0.78rem; text-transform:uppercase; color:#94a3b8; letter-spacing:0.05em; display:block;">CSAT Score</span>
+                                <span style="font-size:1.5rem; font-weight:800; color:#10b981;">5.0 / 5.0</span>
+                            </div>
+                            <div>
+                                <span style="font-size:0.78rem; text-transform:uppercase; color:#94a3b8; letter-spacing:0.05em; display:block;">SLA Plan</span>
+                                <span style="font-size:1.5rem; font-weight:800; color:#f59e0b;">Gold 15m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Customer Interaction Timeline -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <h3 class="panel-title" style="margin-bottom:1.25rem;"><i class="fa-solid fa-timeline mr-2"></i>Recent Interaction Timeline</h3>
+                        
+                        <div class="customer-timeline-item">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                                    <strong style="font-size:0.92rem;">Ticket #TK-8021 Escalated to Tier-2</strong>
+                                    <span class="text-light" style="font-size:0.78rem;">Today 10:42 AM</span>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--text-light);">Okta SAML certificate failure reported. Assigned to Sarah Jenkins.</p>
+                            </div>
+                        </div>
+
+                        <div class="customer-timeline-item">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                                    <strong style="font-size:0.92rem;">Plan Renewal: 250 Enterprise Seats</strong>
+                                    <span class="text-light" style="font-size:0.78rem;">3 days ago</span>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--text-light);">Annual contract invoiced and successfully cleared via Stripe ACH.</p>
+                            </div>
+                        </div>
+
+                        <div class="customer-timeline-item">
+                            <div>
+                                <div style="display:flex; justify-content:space-between; margin-bottom:0.25rem;">
+                                    <strong style="font-size:0.92rem;">CSAT Survey Submitted: 5 Stars</strong>
+                                    <span class="text-light" style="font-size:0.78rem;">2 weeks ago</span>
+                                </div>
+                                <p style="font-size:0.85rem; color:var(--text-light);">Customer praised fast resolution of API rate limit expansion.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Account Verification & Security Note Form -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <h3 class="panel-title" style="margin-bottom:1.25rem;"><i class="fa-solid fa-shield-check mr-2"></i>Log Account Verification & Security Note</h3>
+                        <form novalidate>
+                            <div class="form-group">
+                                <label class="form-label" for="verifyCustomerId">Customer Identifier / Email</label>
+                                <input type="text" id="verifyCustomerId" class="form-control" value="marcus.vance@fintechglobal.com" required>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="verificationMethod">Verification Method</label>
+                                <select id="verificationMethod" class="form-control" required>
+                                    <option value="">Select Method...</option>
+                                    <option value="otp" selected>One-Time Security SMS Code</option>
+                                    <option value="idp">Enterprise IdP Federation Token</option>
+                                    <option value="voice">Dedicated Account Manager Voice Confirmation</option>
+                                </select>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="agentAuditNotes">Internal Verification Log Notes</label>
+                                <textarea id="agentAuditNotes" class="form-control" rows="3" placeholder="Enter reason for identity validation, changes authorized, or sensitive ticket overrides..." required></textarea>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-full" style="padding:0.85rem;">
+                                <i class="fa-solid fa-stamp mr-1"></i> Commit Security Audit Record
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- SECTION 5: My Shift & Performance -->
+            <section id="agent-tab-5" class="tab-pane">
+                <div class="panel-header" style="margin-bottom: 1.5rem;">
+                    <div>
+                        <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem;">My Shift & Performance Scorecard</h1>
+                        <p class="text-light" style="font-size: 0.95rem;">Track personal KPIs, resolution velocity, shift handover logs, and daily targets.</p>
+                    </div>
+                    <div class="panel-actions">
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-calendar-days"></i> Roster Calendar</button>
+                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-mug-hot"></i> Request 15m Break</button>
+                    </div>
+                </div>
+
+                <!-- Personal Performance Metrics -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Personal CSAT</p>
+                            <h3 style="color:#059669;">4.96 / 5</h3>
+                        </div>
+                        <div class="kpi-icon green"><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>First Contact Resolution</p>
+                            <h3>94.2%</h3>
+                        </div>
+                        <div class="kpi-icon blue"><i class="fa-solid fa-bullseye"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Avg Handling Time</p>
+                            <h3>6m 45s</h3>
+                        </div>
+                        <div class="kpi-icon purple"><i class="fa-solid fa-stopwatch"></i></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <p>Shift Time Logged</p>
+                            <h3>6h 15m</h3>
+                        </div>
+                        <div class="kpi-icon orange"><i class="fa-solid fa-business-time"></i></div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <!-- Daily Target Goal Progress -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <h3 class="panel-title" style="margin-bottom:1.25rem;"><i class="fa-solid fa-chart-simple mr-2"></i>Daily Target Progress</h3>
+
+                        <div style="margin-bottom:1.25rem;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                                <span>Ticket Resolutions (Target: 20)</span>
+                                <span>16 / 20 (80%)</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width:80%;"></div></div>
+                        </div>
+
+                        <div style="margin-bottom:1.25rem;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                                <span>Live Chat Dispatches (Target: 25)</span>
+                                <span>24 / 25 (96%)</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width:96%; background:#059669;"></div></div>
+                        </div>
+
+                        <div style="margin-bottom:1.25rem;">
+                            <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                                <span>SLA Zero-Breach Milestone</span>
+                                <span>99.4% On-Time</span>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width:99%; background:#38bdf8;"></div></div>
+                        </div>
+
+                        <div style="background:#f8fafc; border:1px solid var(--border-color); border-radius:0.75rem; padding:1rem; margin-top:1.5rem;">
+                            <div style="display:flex; align-items:center; gap:0.75rem;">
+                                <i class="fa-solid fa-medal text-warning" style="font-size:1.75rem; color:#f59e0b;"></i>
+                                <div>
+                                    <strong style="font-size:0.95rem; display:block;">Top Performer of the Week</strong>
+                                    <span style="font-size:0.8rem; color:var(--text-light);">Ranked #1 out of 48 Tier-2 Support Specialists</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shift Handover & Break Request Form -->
+                    <div class="section-panel" style="margin-bottom:0;">
+                        <h3 class="panel-title" style="margin-bottom:1.25rem;"><i class="fa-solid fa-handshake mr-2"></i>Shift Handover & Status Request</h3>
+                        <form novalidate>
+                            <div class="form-group">
+                                <label class="form-label" for="handoverType">Status Event Type</label>
+                                <select id="handoverType" class="form-control" required>
+                                    <option value="">Select Status Event...</option>
+                                    <option value="break">Short Break Request (15 min)</option>
+                                    <option value="meal">Meal Break (45 min)</option>
+                                    <option value="end_of_shift" selected>End of Shift Handover</option>
+                                    <option value="training">Training / Meeting Transition</option>
+                                </select>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="coveringAgent">Covering / Next Agent On-Duty</label>
+                                <input type="text" id="coveringAgent" class="form-control" placeholder="e.g. Liam Ross (Tier-2 EMEA)" required>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="handoverBrief">Handover Briefing & Pending High-Priority Items</label>
+                                <textarea id="handoverBrief" class="form-control" rows="3" placeholder="List any unresolved tickets, customer follow-ups required, or critical system watches..." required></textarea>
+                                <p class="error-message"></p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-full" style="padding:0.85rem;">
+                                <i class="fa-solid fa-paper-plane mr-1"></i> Submit Handover Log
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
         </div>
+    </main>
 
-        <!-- ================================================================
-             VIEW 2: MY TICKETS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-my-tickets">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">My Assigned Tickets</h2>
-              <div class="dash-header-subtitle">Your personal resolution pipeline.</div>
-            </div>
-          </div>
-          <p>Please review your active assignments on the workspace dashboard.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 3: TICKET QUEUE VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-ticket-queue">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Global Ticket Queue</h2>
-              <div class="dash-header-subtitle">Unassigned tickets waiting for pick-up.</div>
-            </div>
-          </div>
-          <p>18 unassigned tickets available in global triage.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 4: CUSTOMERS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-customers">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Customer Directory</h2>
-              <div class="dash-header-subtitle">Search customers and view CRM history.</div>
-            </div>
-          </div>
-          <p>Customer directory loaded.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 5: CONVERSATIONS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-conversations">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Active Live Conversations</h2>
-              <div class="dash-header-subtitle">Real-time chat streams with customers.</div>
-            </div>
-          </div>
-          <p>Live chat stream connected.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 6: KNOWLEDGE BASE SHORTCUTS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-knowledge-base">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Knowledge Base Macros</h2>
-              <div class="dash-header-subtitle">Canned solutions and markdown snippets.</div>
-            </div>
-          </div>
-          <p>Macro repository loaded.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 7: TASKS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-tasks">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Shift Tasks &amp; Reminders</h2>
-              <div class="dash-header-subtitle">Track your personal daily to-dos.</div>
-            </div>
-          </div>
-          <p>Tasks loaded.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 8: CALENDAR VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-calendar">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Shift Schedule &amp; Customer Calls</h2>
-              <div class="dash-header-subtitle">Your personal roster and scheduled meetings.</div>
-            </div>
-          </div>
-          <p>Shift calendar loaded.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 9: MESSAGES VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-messages">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Team Chat &amp; Internal Support</h2>
-              <div class="dash-header-subtitle">Co-worker communication channel.</div>
-            </div>
-          </div>
-          <p>Team chat loaded.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 10: EMAIL CENTER VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-email-center">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Agent Email Center</h2>
-              <div class="dash-header-subtitle">Assigned email threads and customer updates.</div>
-            </div>
-          </div>
-          <p>Email center accessible from primary workspace.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 11: NOTIFICATIONS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-notifications">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Notifications</h2>
-              <div class="dash-header-subtitle">Pings, mentions, and CSAT reviews.</div>
-            </div>
-          </div>
-          <p>All notifications caught up.</p>
-        </div>
-
-        <!-- ================================================================
-             VIEW 12: PROFILE VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-profile">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Agent Profile &amp; Badges</h2>
-              <div class="dash-header-subtitle">Personal info, achievements, and statistics.</div>
-            </div>
-          </div>
-          <div class="card" style="padding: 1.5rem;">
-            <h4>Sarah Jenkins &bull; Senior Support Specialist</h4>
-            <p>Role: Support Agent &bull; EMEA Roster &bull; Certified SLA Master</p>
-          </div>
-        </div>
-
-        <!-- ================================================================
-             VIEW 13: SETTINGS VIEW
-             ================================================================ -->
-        <div class="dashboard-view-panel" id="view-settings">
-          <div class="dash-page-header">
-            <div>
-              <h2 class="dash-header-title">Agent Workspace Preferences</h2>
-              <div class="dash-header-subtitle">Sound alerts, dark mode, keyboard shortcuts.</div>
-            </div>
-          </div>
-          <div class="card" style="padding: 1.5rem;">
-            <h5>Sound Alerts &amp; Pings</h5>
-            <p>Audio notification on incoming VIP ticket: <strong>Enabled (Chime)</strong></p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Reusable Action Modal -->
-  <div class="dash-modal" id="action-modal">
-    <div class="dash-modal-content">
-      <div class="dash-modal-header">
-        <h3 id="modal-title" style="font-size: 1.25rem; font-weight: 800;">Modal Action</h3>
-        <button class="drawer-close-btn" data-close-modal aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="dash-modal-body" id="modal-body-content">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
-  </div>
-
-  <div id="toast-container"></div>
-
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/animations.js"></script>
-  <script src="assets/js/dashboard.js"></script>
+    <script src="validation.js"></script>
+    <script src="auth.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

@@ -1,630 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Our Mission, Story & Team — OmniDesk AI</title>
-  <meta name="description" content="Read the story of OmniDesk AI. Founded by support engineers to replace bloated legacy ticketing systems with empathetic, high-velocity customer support software.">
-  <meta name="keywords" content="about OmniDesk, support engineering story, customer support philosophy, helpdesk team, company mission">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SupportX</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
+<div class="orb-1"></div>
+<div class="orb-2"></div>
+<div class="orb-3"></div>
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="index.html" class="brand-logo" aria-label="OmniDesk AI Home">
-        <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
-        <span>OmniDesk<span class="text-gradient">.ai</span></span>
-      </a>
-
-      <nav class="nav-desktop" aria-label="Main Navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html" class="active">About</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="login.html" class="btn btn-ghost">Login</a>
-        <a href="signup.html" class="btn btn-secondary">Sign Up</a>
-        <a href="404.html" class="btn btn-primary">Get Started Free</a>
-
-        <button class="hamburger-btn" aria-label="Open Navigation Menu"><i class="fa-solid fa-bars"></i></button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-nav-overlay"></div>
-  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
-    <div>
-      <div class="mobile-nav-header">
-        <div class="brand-logo">
-          <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
-          <span>OmniDesk</span>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="services.html" class="nav-link"><i class="fa-solid fa-layer-group"></i> Services</a>
+                <a href="about.html" class="nav-link active"><i class="fa-solid fa-circle-info"></i> About</a>
+                <a href="blog.html" class="nav-link"><i class="fa-solid fa-newspaper"></i> Blog</a>
+                <a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline"><i class="fa-solid fa-right-to-bracket mr-1"></i> Login</a>
+                    <a href="signup.html" class="btn btn-primary"><i class="fa-solid fa-user-plus mr-1"></i> Sign Up</a>
+                </div>
+            </nav>
+            <button class="mobile-toggle" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
         </div>
-        <button class="drawer-close-btn" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <nav class="mobile-nav-links">
-        <a href="index.html"><span>Home</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="services.html"><span>Services</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="about.html" class="active"><span>About</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="blog.html"><span>Blog</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="contact.html"><span>Contact</span> <i class="fa-solid fa-chevron-right"></i></a>
-        <a href="login.html"><span>Login</span> <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-        <a href="signup.html"><span>Sign Up</span> <i class="fa-solid fa-user-plus"></i></a>
-      </nav>
-    </div>
-    <div class="mobile-nav-cta">
-      <a href="404.html" class="btn btn-primary" style="width: 100%;">Get Started Free</a>
-    </div>
-  </aside>
+    </header>
 
-  <main>
-    <!-- 1. ABOUT HERO (Editorial Magazine Headline) -->
-    <section class="section section-dark" style="position: relative; overflow: hidden; padding: 7.5rem 0 5rem 0; background: linear-gradient(180deg, #0b0f19 0%, #111827 100%);">
-      <div class="perspective-grid-3d"></div>
-      <div class="orb-3d orb-3d-primary"></div>
-      <div class="orb-3d orb-3d-cyan"></div>
-      <div class="container container-narrow text-center" style="position: relative; z-index: 2; text-align: center;">
-        <span class="section-tag section-tag-dark" data-aos="fade-down">The OmniDesk Manifesto</span>
-        <h1 class="hero-title" style="color: white; font-size: 3.8rem; line-height: 1.15;" data-aos="fade-up" data-aos-delay="100">
-          We Believe Great Support is the Ultimate <span class="text-gradient">Competitive Moat</span>
-        </h1>
-        <p class="hero-description" style="color: #94a3b8; font-size: 1.3rem;" data-aos="fade-up" data-aos-delay="200">
-          In an era where every product can be cloned overnight, the only lasting differentiator is the speed, empathy, and excellence with which you treat your customers.
-        </p>
-      </div>
+    <!-- 1. About Hero -->
+    <section class="hero" style="background: var(--bg-main); min-height: 50vh; padding-bottom: 4rem;">
+        <div class="container text-center">
+            <span class="badge badge-primary mb-4" >Our Identity</span>
+            <h1 class="hero-title" >We are SupportX</h1>
+            <p class="hero-desc mx-auto" style="max-width: 700px;"  >Building the future of customer relationships, one meaningful conversation at a time. We believe software should feel human.</p>
+        </div>
     </section>
 
-    <!-- 2. COMPANY INTRODUCTION (Full-width Photo Story) -->
-    <section class="section" id="company-intro">
-      <div class="container">
-        <div class="grid-2">
-          <div data-aos="fade-right">
-            <span class="section-tag section-tag-primary">Who We Are</span>
-            <h2 class="section-title">A Company Founded in the Trenches of Support Operations</h2>
-            <p style="margin-bottom: 1.25rem;">
-              OmniDesk was founded in San Francisco in 2021 by three former site reliability and customer engineering leads who spent a decade answering urgent 2 AM customer pagers.
-            </p>
-            <p style="margin-bottom: 1.5rem;">
-              We grew tired of sluggish software that treated customers like numbered tickets on an assembly line. We set out to build an operating system that gives support agents superpowers while preserving human warmth.
-            </p>
-            <div class="flex-center" style="justify-content: flex-start; gap: 2rem;">
-              <div>
-                <div style="font-size: 2.2rem; font-weight: 800; color: var(--primary);" data-counter="3200" data-suffix="+">3,200+</div>
-                <div style="font-size: 0.85rem; color: var(--light-text-muted);">Active Organizations</div>
-              </div>
-              <div>
-                <div style="font-size: 2.2rem; font-weight: 800; color: var(--secondary);" data-counter="140" data-suffix="M+">140M+</div>
-                <div style="font-size: 0.85rem; color: var(--light-text-muted);">Customer Tickets Resolved</div>
-              </div>
+    <!-- 2. Company Intro -->
+    <section data-aos="fade-up">
+        <div class="container text-center max-w-4xl mx-auto">
+            <h2 class="mb-6 text-4xl">A Global Team on a Mission</h2>
+            <p class="text-light text-xl mb-4">Founded in 2026, SupportX started with a simple but profound belief: customer support shouldn't feel like a cold transaction. It should feel like a genuine relationship.</p>
+            <p class="text-light text-lg">Today, our platform powers the support operations of over 10,000 companies across 150 countries, facilitating millions of successful customer interactions every single day.</p>
+        </div>
+    </section>
+
+    <!-- 3. Why it matters -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container grid-2">
+            <div >
+                <img src="assets/about-hero.webp" alt="Why Customer Support Matters" class="shadow-lg tilt-card">
             </div>
-          </div>
-
-          <div data-aos="fade-left">
-            <img src="assets/images/about-hero.webp" alt="OmniDesk Global Engineering Headquarters" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);" loading="lazy" width="800" height="500">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. WHY CUSTOMER SUPPORT MATTERS (Essay section) -->
-    <section class="section section-gradient" id="why-support-matters">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">First Principles</span>
-          <h2 class="section-title">Why Customer Support Matters More Than Marketing</h2>
-        </div>
-        <div class="card" style="padding: 2.5rem; line-height: 1.9; font-size: 1.1rem; color: #334155;" data-aos="fade-up">
-          <p style="margin-bottom: 1.5rem;">
-            Every dollar spent on growth marketing is wasted if a new customer encounters a broken workflow and waits 48 hours for a boilerplate canned response.
-          </p>
-          <blockquote style="border-left: 4px solid var(--primary); padding-left: 1.5rem; margin: 2rem 0; font-style: italic; font-weight: 600; color: #0f172a;">
-            "Customer service is not a cost center to be minimized with robotic call trees. It is your most direct channel for product discovery, retention, and brand advocacy."
-          </blockquote>
-          <p>
-            When customers experience prompt, intelligent help that resolves their pain on first contact, their lifetime value increases by 300%. That is why we engineer software that treats support as high-craftsmanship engineering.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. OUR STORY & ORIGINS (Asymmetric editorial layout) -->
-    <section class="section section-dark" id="story">
-      <div class="container">
-        <div class="grid-2">
-          <div data-aos="fade-right">
-            <img src="assets/images/about-story.webp" alt="Founding team whiteboarding initial OmniDesk architecture" style="border-radius: var(--radius-xl); border: 1px solid rgba(255, 255, 255, 0.1);" loading="lazy" width="800" height="500">
-          </div>
-          <div data-aos="fade-left">
-            <span class="section-tag section-tag-dark">Our Journey</span>
-            <h2 class="section-title">From Late Night Hackathons to Global Infrastructure</h2>
-            <p style="margin-bottom: 1.25rem;">
-              The first version of OmniDesk was built over a grueling 3-month sprint in a cramped garage. Our prototype was tested by seven early-stage developer tools companies who were drowning in user tickets.
-            </p>
-            <p style="margin-bottom: 1.5rem;">
-              Within 60 days, their average resolution time plummeted from 4 hours to 18 minutes. Word of mouth spread through engineering communities, and by late 2022, enterprise Fortune 500 banks were trusting our platform.
-            </p>
-            <a href="404.html" class="btn btn-outline-white">Read Founder Retrospective</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. PRODUCT ORIGIN -->
-    <section class="section" id="product-origin">
-      <div class="container container-narrow text-center" style="text-align: center;">
-        <span class="section-tag section-tag-primary">Genesis</span>
-        <h2 class="section-title">Born From Disillusionment with Legacy Bloat</h2>
-        <p style="font-size: 1.15rem; margin-bottom: 2.5rem;">
-          Traditional helpdesk software was designed in the early 2000s for static email tickets and slow call centers. We asked ourselves a radical question: What would customer support look like if it was rebuilt from scratch for the era of instant real-time AI?
-        </p>
-        <div class="grid-3" data-aos="fade-up">
-          <div class="card text-center">
-            <div class="icon-box-danger icon-box" style="margin: 0 auto 1rem auto;"><i class="fa-solid fa-xmark"></i></div>
-            <h5>Legacy Tools</h5>
-            <p style="font-size: 0.85rem;">Clunky nested menus, slow page reloads, fragmented customer databases, and detached chat windows.</p>
-          </div>
-          <div class="card text-center" style="border-color: var(--primary); background: #fdfdfd;">
-            <div class="icon-box-primary icon-box" style="margin: 0 auto 1rem auto;"><i class="fa-solid fa-check"></i></div>
-            <h5>OmniDesk AI</h5>
-            <p style="font-size: 0.85rem;">Single synchronized inbox, sub-second keyboard shortcuts, automated SLA triggers, and unified CRM.</p>
-          </div>
-          <div class="card text-center">
-            <div class="icon-box-success icon-box" style="margin: 0 auto 1rem auto;"><i class="fa-solid fa-bolt"></i></div>
-            <h5>The Result</h5>
-            <p style="font-size: 0.85rem;">Agents love their tools, tickets close in minutes, and customers recommend your product to everyone.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. MISSION -->
-    <section class="section section-gradient" id="mission">
-      <div class="container">
-        <div class="grid-2">
-          <div data-aos="fade-right">
-            <span class="section-tag section-tag-primary">Our Mission</span>
-            <h2 class="section-title">To Make Exceptional Customer Care Autonomous & Effortless</h2>
-            <p style="margin-bottom: 1.5rem;">
-              We exist to dismantle the artificial barriers between customers and solutions. We believe customer operations teams deserve software crafted with the same design rigor and speed usually reserved for consumer apps.
-            </p>
-            <div class="card" style="background: white; border-left: 4px solid var(--primary);">
-              <h5 style="margin-bottom: 0.25rem;">Our Core Promise</h5>
-              <p style="font-size: 0.9rem; margin: 0;">We will never sacrifice human empathy for mindless robotic scripts. Automation must amplify agent human intellect, not replace genuine connection.</p>
+            <div >
+                <span class="badge badge-warning mb-4">The Differentiator</span>
+                <h2>Why Customer Support Matters</h2>
+                <p class="mt-4 text-light">In a modern world of infinite choices and commoditized features, the only true differentiator left for businesses is how they treat their customers.</p>
+                <p class="mt-4 text-light">Great support isn't just about closing tickets; it's about building brand loyalty, preventing churn, and turning frustrated users into your most vocal advocates. We build the tools that make this possible.</p>
             </div>
-          </div>
-          <div data-aos="fade-left">
-            <div class="card glass-card" style="padding: 2.5rem; text-align: center;">
-              <i class="fa-solid fa-compass" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
-              <h3 style="margin-bottom: 1rem;">100 Million Hours Saved</h3>
-              <p style="font-size: 0.95rem;">Our collective target by 2028: saving 100 million hours of customer frustration and agent burnout across the globe.</p>
+        </div>
+    </section>
+
+    <!-- 4. Our Story -->
+    <section data-aos="fade-up">
+        <div class="container grid-2">
+            <div >
+                <h2>Our Story</h2>
+                <p class="mt-4 text-light">We started as a frustrated team of support agents who were tired of clicking through 5 different browser tabs just to answer a simple question about a customer's billing status.</p>
+                <p class="mt-4 text-light">We realized that existing helpdesks were built for management reporting, not for the agents actually doing the hard work. We decided to flip the script and build a platform focused entirely on agent productivity and happiness.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. VISION -->
-    <section class="section section-dark" id="vision">
-      <div class="container text-center" style="text-align: center; max-width: 860px; margin: 0 auto;">
-        <span class="section-tag section-tag-dark">Our Horizon</span>
-        <h2 class="section-title" style="color: white;">The Autonomous Support Desk of 2030</h2>
-        <p class="section-subtitle" style="color: #94a3b8; margin-bottom: 3rem;">
-          We envision a future where 80% of routine technical triage happens autonomously before an engineer opens their laptop, while complex human empathy challenges receive unlimited, dedicated care.
-        </p>
-        <div class="grid-3" data-aos="fade-up">
-          <div class="card card-dark">
-            <h4>Predictive Healing</h4>
-            <p style="font-size: 0.85rem;">Support systems that detect customer errors in application logs and reach out with the solution before the user files a ticket.</p>
-          </div>
-          <div class="card card-dark">
-            <h4>Universal Speech</h4>
-            <p style="font-size: 0.85rem;">Real-time multi-dialect neural translation allowing any agent in the world to support customers in their native language.</p>
-          </div>
-          <div class="card card-dark">
-            <h4>Zero-Wait Queues</h4>
-            <p style="font-size: 0.85rem;">Elimination of the concept of "waiting on hold" forever across all enterprise digital touchpoints.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. CUSTOMER-FIRST PHILOSOPHY -->
-    <section class="section" id="customer-first">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">Uncompromising Principles</span>
-          <h2 class="section-title">Our Customer-First Philosophy</h2>
-          <p class="section-subtitle">How we make decisions when trade-offs arise between short-term metrics and long-term customer trust.</p>
-        </div>
-
-        <div class="grid-3" data-aos="fade-up">
-          <div class="card card-hover-up">
-            <div class="icon-box-primary icon-box"><i class="fa-solid fa-ear-listen"></i></div>
-            <h4>Radical Listening</h4>
-            <p>Every engineer and product designer spends 4 hours every month in the live support queue answering customer tickets directly.</p>
-          </div>
-          <div class="card card-hover-up">
-            <div class="icon-box-secondary icon-box"><i class="fa-solid fa-shield-cat"></i></div>
-            <h4>No Dark Patterns</h4>
-            <p>We will never charge hidden fees, complicate cancellation buttons, or lock customer historical data behind hostile export paywalls.</p>
-          </div>
-          <div class="card card-hover-up">
-            <div class="icon-box-success icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
-            <h4>Empathy Over SLA Gaming</h4>
-            <p>We celebrate thorough resolutions that genuinely delight customers, rather than superficial canned replies sent just to stop an SLA clock.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. PRODUCT ENGINEERING PHILOSOPHY -->
-    <section class="section section-gradient" id="product-philosophy">
-      <div class="container">
-        <div class="grid-2">
-          <div data-aos="fade-right">
-            <span class="section-tag section-tag-primary">Design Craft</span>
-            <h2 class="section-title">Engineered with Extreme Software Craftsmanship</h2>
-            <p style="margin-bottom: 1.5rem;">
-              We believe business tools should be as snappy, responsive, and delightful as the finest consumer software in the world.
-            </p>
-            <ul style="display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 2rem;">
-              <li><i class="fa-solid fa-bolt" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>Zero Latency:</strong> All UI actions render optimistically with sub-50ms feedback.</li>
-              <li><i class="fa-solid fa-keyboard" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>Keyboard-First:</strong> Every feature is accessible via command palette shortcuts.</li>
-              <li><i class="fa-solid fa-eye" style="color: var(--primary); margin-right: 0.5rem;"></i> <strong>Pixel-Perfect Hierarchy:</strong> Clean typography reduces eye fatigue during long shifts.</li>
-            </ul>
-            <a href="404.html" class="btn btn-primary">Read Engineering Principles</a>
-          </div>
-          <div data-aos="fade-left">
-            <div class="card" style="padding: 1.5rem;">
-              <img src="assets/images/service-ai.webp" alt="Engineering architecture and cognitive AI engine" style="border-radius: var(--radius-md);" loading="lazy" width="800" height="500">
+            <div >
+                <img src="assets/team.webp" alt="The early SupportX team" class="shadow-lg">
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- 10. PRODUCT DEVELOPMENT JOURNEY -->
-    <section class="section" id="development-journey">
-      <div class="container container-narrow">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">Evolution</span>
-          <h2 class="section-title">The Product Development Journey</h2>
-          <p class="section-subtitle">Iterating continuously alongside the world's most demanding customer operations teams.</p>
+    <!-- 5. Product Origin -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container text-center max-w-4xl mx-auto">
+            <h2 class="section-title">Born out of necessity</h2>
+            <p class="section-subtitle">We didn't just study the problem—we lived it. We built the exact tool we always wished we had when we were working in the support trenches.</p>
+            <p class="text-light">Every feature in SupportX exists because a real agent needed it to solve a real problem. No bloatware, no gimmicks. Just pure, refined utility.</p>
         </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;" data-aos="fade-up">
-          <div class="card" style="border-left: 4px solid var(--primary);">
-            <div class="flex-between" style="margin-bottom: 0.5rem;">
-              <strong>Phase I: The Core Ingestion Engine (2021)</strong>
-              <span class="badge badge-resolved">Completed</span>
-            </div>
-            <p style="font-size: 0.9rem; margin: 0;">Rebuilt email and websocket pipeline from the bare metal to guarantee zero dropped messages under extreme DDOS or incident loads.</p>
-          </div>
-          <div class="card" style="border-left: 4px solid var(--secondary);">
-            <div class="flex-between" style="margin-bottom: 0.5rem;">
-              <strong>Phase II: The Visual SLA & Automation Matrix (2023)</strong>
-              <span class="badge badge-resolved">Completed</span>
-            </div>
-            <p style="font-size: 0.9rem; margin: 0;">Introduced countdown timers, multi-tier escalation triggers, and bidirectional webhook connectors for developer issue trackers.</p>
-          </div>
-          <div class="card" style="border-left: 4px solid var(--accent);">
-            <div class="flex-between" style="margin-bottom: 0.5rem;">
-              <strong>Phase III: The Autonomous Co-Pilot & Global Telemetry (2025–2026)</strong>
-              <span class="badge badge-open">Active Release</span>
-            </div>
-            <p style="font-size: 0.9rem; margin: 0;">Launched semantic knowledge synthesis, customer sentiment scoring, and cross-channel identity stitching across 18 edge datacenters.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- 11. TIMELINE (Interactive visual milestone timeline) -->
-    <section class="section section-dark" id="timeline">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-dark">Milestones</span>
-          <h2 class="section-title" style="color: white;">Our Journey Through Time</h2>
-          <p class="section-subtitle" style="color: #94a3b8;">Key milestones that shaped OmniDesk into an enterprise leader.</p>
+    <!-- 6. Mission -->
+    <section data-aos="fade-up">
+        <div class="container text-center bg-primary text-white p-12 shadow-float" style="border-radius: var(--radius); position:relative; overflow:hidden;">
+            <div class="bg-mesh" style="opacity: 0.2;"></div>
+            <h2 style="color: white; margin-bottom: 1.5rem; position:relative; z-index:2;">Our Mission</h2>
+            <p style="font-size: 1.5rem; font-weight: 500; position:relative; z-index:2; max-width: 800px; mx-auto;">To eliminate friction in customer communication globally, empowering businesses to serve their users with unprecedented speed and deep empathy.</p>
         </div>
-
-        <div class="grid-4" data-aos="fade-up">
-          <div class="card card-dark" style="position: relative;">
-            <div style="font-size: 1.75rem; font-weight: 800; color: #38bdf8; margin-bottom: 0.5rem;">2021</div>
-            <h5>Founded in SF</h5>
-            <p style="font-size: 0.85rem;">Seed round secured. First 100 beta customers onboarded from Y Combinator cohorts.</p>
-          </div>
-          <div class="card card-dark" style="position: relative;">
-            <div style="font-size: 1.75rem; font-weight: 800; color: #818cf8; margin-bottom: 0.5rem;">2023</div>
-            <h5>Series A & Global Expansion</h5>
-            <p style="font-size: 0.85rem;">Opened London EMEA headquarters. Reached 1,000 paying SaaS customers.</p>
-          </div>
-          <div class="card card-dark" style="position: relative;">
-            <div style="font-size: 1.75rem; font-weight: 800; color: #34d399; margin-bottom: 0.5rem;">2024</div>
-            <h5>SOC2 Type II & HIPAA</h5>
-            <p style="font-size: 0.85rem;">Achieved gold-standard enterprise compliance and launched Tokyo Asia-Pacific region.</p>
-          </div>
-          <div class="card card-dark" style="position: relative;">
-            <div style="font-size: 1.75rem; font-weight: 800; color: #f472b6; margin-bottom: 0.5rem;">2026</div>
-            <h5>3,200+ Enterprise Desks</h5>
-            <p style="font-size: 0.85rem;">Powering support for over 140 million end-users globally with sub-second SLA compliance.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- 12. TEAM (Leadership & Profiles) -->
-    <section class="section" id="team">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">Leadership</span>
-          <h2 class="section-title">Meet the Team Behind the Platform</h2>
-          <p class="section-subtitle">A seasoned team of engineers, designers, and support veterans dedicated to customer success.</p>
-        </div>
-
-        <div class="grid-3" data-aos="fade-up">
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-1.webp" alt="Claire Vance, CEO & Co-founder" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Claire Vance</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">CEO & Co-founder</div>
-            <p style="font-size: 0.85rem;">Former VP of Customer Engineering at Stripe. 15 years designing mission-critical customer operations.</p>
-          </div>
-
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-2.webp" alt="Marcus Thorne, CTO & Head of Architecture" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Marcus Thorne</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">CTO & Head of AI</div>
-            <p style="font-size: 0.85rem;">Ex-Google Brain systems researcher. Architected large-scale distributed real-time messaging pipelines.</p>
-          </div>
-
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-3.webp" alt="Aaliyah Washington, VP Customer Success" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Aaliyah Washington</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">VP of Customer Success</div>
-            <p style="font-size: 0.85rem;">Previously led support organizations of 400+ agents across three continents at Zendesk and Twilio.</p>
-          </div>
-
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-4.webp" alt="Liam O'Connor, Head of Product Design" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Liam O'Connor</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">Head of Product Design</div>
-            <p style="font-size: 0.85rem;">Obsessive UI/UX designer obsessed with eliminating wasted clicks and reducing cognitive agent fatigue.</p>
-          </div>
-
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-5.webp" alt="Dr. Priya Sharma, Lead Infrastructure Engineer" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Dr. Priya Sharma</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">Lead Security Architect</div>
-            <p style="font-size: 0.85rem;">Specializes in zero-trust cryptographic enclaves and immutable audit logging systems.</p>
-          </div>
-
-          <div class="card text-center card-hover-up">
-            <img src="assets/images/team-6.webp" alt="Kenji Sato, Director of Global Operations" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1.25rem auto; object-fit: cover;" width="110" height="110">
-            <h4>Kenji Sato</h4>
-            <div style="color: var(--primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem;">Director of Operations (APAC)</div>
-            <p style="font-size: 0.85rem;">Directs our 24/7 follow-the-sun global support tier from our downtown Tokyo regional office.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. COMPANY VALUES -->
-    <section class="section section-gradient" id="company-values">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">What We Stand For</span>
-          <h2 class="section-title">Our Guiding Company Values</h2>
-          <p class="section-subtitle">The cultural pillars that guide how we treat our colleagues, our customers, and our code.</p>
-        </div>
-
-        <div class="grid-4" data-aos="fade-up">
-          <div class="card">
-            <div class="icon-box-primary icon-box"><i class="fa-solid fa-gem"></i></div>
-            <h4>Radical Clarity</h4>
-            <p style="font-size: 0.85rem;">We communicate with transparency. No evasive PR speak, no hidden bugs, and no opaque status reports.</p>
-          </div>
-          <div class="card">
-            <div class="icon-box-secondary icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
-            <h4>Deep Empathy</h4>
-            <p style="font-size: 0.85rem;">We remember that behind every error stack trace is a human trying to finish their workday and go home.</p>
-          </div>
-          <div class="card">
-            <div class="icon-box-warning icon-box"><i class="fa-solid fa-gauge-high"></i></div>
-            <h4>Relentless Speed</h4>
-            <p style="font-size: 0.85rem;">Respect people's time. A fast answer with genuine care is the highest form of professional respect.</p>
-          </div>
-          <div class="card">
-            <div class="icon-box-success icon-box"><i class="fa-solid fa-mountain-sun"></i></div>
-            <h4>High Craftsmanship</h4>
-            <p style="font-size: 0.85rem;">We refuse to ship half-baked features. If it isn't resilient, accessible, and fast, it stays in staging.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14. SECURITY & TRUST -->
-    <section class="section section-dark" id="security-trust">
-      <div class="container">
-        <div class="grid-2">
-          <div data-aos="fade-right">
-            <span class="section-tag section-tag-dark">Enterprise Trust</span>
-            <h2 class="section-title">Built Upon Military-Grade Infrastructure</h2>
-            <p style="margin-bottom: 1.5rem;">
-              We know you are entrusting us with your most sensitive customer interactions. That is why security isn't an afterthought checklist—it is engineered into every line of code.
-            </p>
-            <div class="flex-center" style="justify-content: flex-start; gap: 1.5rem; flex-wrap: wrap;">
-              <span class="badge badge-resolved"><i class="fa-solid fa-lock"></i> AES-256 Bit Encryption</span>
-              <span class="badge badge-resolved"><i class="fa-solid fa-shield"></i> SOC2 Type II Certified</span>
-              <span class="badge badge-resolved"><i class="fa-solid fa-globe"></i> ISO/IEC 27001 Certified</span>
+    <!-- 7. Vision -->
+    <section data-aos="fade-up">
+        <div class="container grid-2">
+            <div >
+                <h2>Our Vision</h2>
+                <p class="text-light mt-4">A world where every customer feels heard and valued instantly, and where support agents are elevated from 'ticket-closers' to strategic brand ambassadors.</p>
+                <p class="text-light mt-4">We envision a future where AI handles the routine, freeing human agents to handle the emotional nuance and complex problem-solving that computers never will.</p>
             </div>
-          </div>
-          <div data-aos="fade-left">
-            <div class="card card-dark" style="padding: 2rem;">
-              <h4 style="margin-bottom: 0.75rem;">Bug Bounty Program</h4>
-              <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
-                We partner with HackerOne and run a continuous bug bounty program with over 1,200 verified independent security researchers auditing our endpoints.
-              </p>
-              <a href="404.html" class="btn btn-outline-white btn-sm">Review Trust Center</a>
-            </div>
-          </div>
+            <div ><img src="assets/office.webp" alt="SupportX Global Office" class="shadow-md tilt-card"></div>
         </div>
-      </div>
     </section>
 
-    <!-- 15. ABOUT FAQ -->
-    <section class="section section-gradient" id="about-faq">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-primary">Company FAQ</span>
-          <h2 class="section-title">Common Questions About OmniDesk</h2>
-          <p class="section-subtitle">Answers regarding our company, funding, roadmap, and culture.</p>
+    <!-- 8. Philosophy -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container text-center max-w-3xl mx-auto">
+            <h2 class="section-title">The Customer-First Philosophy</h2>
+            <p class="section-subtitle">If a feature doesn't ultimately serve the end-customer, it doesn't belong in our product.</p>
+            <p class="text-light">We constantly ask ourselves: "How does this button make the customer's day better?" This relentless focus prevents our software from becoming bloated and keeps our interface lightning fast.</p>
         </div>
-
-        <div class="faq-accordion" data-aos="fade-up">
-          <div class="faq-item active">
-            <button class="faq-header" type="button">
-              <span>Where is OmniDesk headquartered?</span>
-              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-            </button>
-            <div class="faq-content" style="max-height: 200px;">
-              <p>Our global headquarters are located at 450 Mission Street, San Francisco, California, with primary international regional operations hubs in London (EMEA) and Tokyo (APAC).</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-header" type="button">
-              <span>Is OmniDesk profitable and well-capitalized?</span>
-              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-            </button>
-            <div class="faq-content">
-              <p>Yes. OmniDesk has been cash-flow positive since Q3 2024 and maintains over 4 years of operational cash runway backed by tier-1 institutional investors.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-header" type="button">
-              <span>Are you hiring remote engineers and customer advocates?</span>
-              <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-            </button>
-            <div class="faq-content">
-              <p>Yes! We operate on a remote-first hybrid philosophy across North America, Europe, and Asia-Pacific. Check our careers board for open technical roles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- 16. FINAL STORY CTA (Redirects to 404 per strict rule) -->
-    <section class="section section-dark" style="background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 100%);">
-      <div class="container text-center" style="text-align: center;" data-aos="zoom-in">
-        <span class="section-tag section-tag-dark">Be Part of the Future</span>
-        <h2 class="section-title" style="max-width: 760px; margin: 0 auto 1.5rem auto;">
-          Join Thousands of Support Leaders Elevating Their Customer Experience
-        </h2>
-        <p class="section-subtitle" style="max-width: 600px; margin: 0 auto 2.5rem auto;">
-          Experience what happens when customer support software is engineered with love, precision, and human empathy.
-        </p>
-        <div class="hero-cta-group">
-          <!-- CTA Redirects to 404 per strict rule -->
-          <a href="404.html" class="btn btn-primary btn-lg">Join the OmniDesk Movement</a>
-          <a href="404.html" class="btn btn-outline-white btn-lg">Explore Open Careers</a>
+    <!-- 9. Product Philosophy -->
+    <section data-aos="fade-up">
+        <div class="container grid-3">
+            <div class="card text-center" >
+                <i class="fa-solid fa-wand-magic-sparkles fa-3x mb-6 text-primary"></i>
+                <h3 class="mb-4">Simplicity</h3>
+                <p class="text-light">Incredibly complex logic operating under the hood, presented as a brilliantly simple interface on the screen. We abstract the difficult parts away.</p>
+            </div>
+            <div class="card text-center"  >
+                <i class="fa-solid fa-gauge-high fa-3x mb-6 text-primary"></i>
+                <h3 class="mb-4">Speed</h3>
+                <p class="text-light">Milliseconds matter in support. Our application architecture is obsessively optimized for immediate feedback and zero-latency loading times.</p>
+            </div>
+            <div class="card text-center"  >
+                <i class="fa-solid fa-heart fa-3x mb-6 text-primary"></i>
+                <h3 class="mb-4">Empathy</h3>
+                <p class="text-light">Software designed for human connection. We surface sentiment analysis and rich context so agents can respond with appropriate emotional intelligence.</p>
+            </div>
         </div>
-      </div>
     </section>
-  </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="brand-logo" style="color: white;">
-            <div class="brand-icon"><i class="fa-solid fa-headset"></i></div>
-            <span>OmniDesk<span class="text-gradient">.ai</span></span>
-          </a>
-          <p>Enterprise customer support and helpdesk management software built for modern teams. Deliver delightful resolutions at global scale.</p>
-          <div class="footer-socials">
-            <a href="404.html" class="footer-social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="404.html" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="404.html" class="footer-social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="404.html" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
+    <!-- 10. Dev Journey -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container text-center max-w-4xl mx-auto">
+            <h2 class="section-title">The Development Journey</h2>
+            <p class="text-light mt-4 text-lg">From a weekend hackathon prototype to a globally distributed enterprise platform, our engineering journey has been defined by rewriting, iterating, and relentlessly optimizing for scale.</p>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Platform</h5>
-          <div class="footer-links">
-            <a href="services.html">Omnichannel Inbox</a>
-            <a href="services.html">Ticket Management</a>
-            <a href="services.html">SLA Countdown</a>
-            <a href="services.html">Automation Engine</a>
-            <a href="services.html">Knowledge Base</a>
-          </div>
+    <!-- 11. Timeline -->
+    <section data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title text-center mb-12">Our Milestones</h2>
+            <div class="mx-auto" style="max-width: 600px; position:relative;">
+                <div style="border-left: 3px solid var(--primary-color); padding-left: 2.5rem; margin-bottom: 3rem; position:relative;">
+                    <div style="position:absolute; left:-10px; top:0; width:18px; height:18px; border-radius:50%; background:var(--primary-color);"></div>
+                    <h4 class="text-primary" style="font-size:1.5rem;">2023</h4>
+                    <p class="font-bold mb-2">The Weekend Hackathon</p>
+                    <p class="text-light">Initial prototype built by our founders in a tiny apartment. It crashed constantly, but the core idea was proven.</p>
+                </div>
+                <div style="border-left: 3px solid var(--primary-color); padding-left: 2.5rem; margin-bottom: 3rem; position:relative;">
+                    <div style="position:absolute; left:-10px; top:0; width:18px; height:18px; border-radius:50%; background:var(--primary-color);"></div>
+                    <h4 class="text-primary" style="font-size:1.5rem;">2024</h4>
+                    <p class="font-bold mb-2">Seed Funding & Series A</p>
+                    <p class="text-light">Secured $15M in funding from top-tier VC firms. Reached our first 1,000 paying customers and expanded the team to 50 people.</p>
+                </div>
+                <div style="border-left: 3px solid var(--primary-color); padding-left: 2.5rem; position:relative;">
+                    <div style="position:absolute; left:-10px; top:0; width:18px; height:18px; border-radius:50%; background:var(--primary-color);"></div>
+                    <h4 class="text-primary" style="font-size:1.5rem;">2026</h4>
+                    <p class="font-bold mb-2">Launch of SupportX 2.0 Enterprise</p>
+                    <p class="text-light">Complete rewrite of the platform introducing generative AI, omnichannel routing, and enterprise-grade security protocols.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Company</h5>
-          <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="about.html#story">Our Story</a>
-            <a href="about.html#team">Leadership Team</a>
-            <a href="blog.html">Industry Blog</a>
-            <a href="contact.html">Global Offices</a>
-          </div>
+    <!-- 12. Team -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-12">Leadership Team</h2>
+            <div class="grid-3 text-center">
+                <div >
+                    <img src="assets/team-1.webp" alt="CEO Jane Doe" class="rounded-full mx-auto mb-6" style="width:180px; height:180px; object-fit:cover; border: 4px solid white; box-shadow: var(--shadow-md);">
+                    <h4>Jane Doe</h4>
+                    <p class="text-primary font-bold mb-2">Co-Founder & CEO</p>
+                    <p class="text-light text-sm px-4">Former Head of Customer Experience at a Fortune 500 company. Jane brings 15 years of operational expertise.</p>
+                </div>
+                <div  >
+                    <img src="assets/team-2.webp" alt="CTO John Smith" class="rounded-full mx-auto mb-6" style="width:180px; height:180px; object-fit:cover; border: 4px solid white; box-shadow: var(--shadow-md);">
+                    <h4>John Smith</h4>
+                    <p class="text-primary font-bold mb-2">Co-Founder & CTO</p>
+                    <p class="text-light text-sm px-4">Distributed systems architect. John ensures SupportX stays online and lightning fast for millions of concurrent users.</p>
+                </div>
+                <div  >
+                    <img src="assets/team-3.webp" alt="COO Alice Wong" class="rounded-full mx-auto mb-6" style="width:180px; height:180px; object-fit:cover; border: 4px solid white; box-shadow: var(--shadow-md);">
+                    <h4>Alice Wong</h4>
+                    <p class="text-primary font-bold mb-2">Chief Operating Officer</p>
+                    <p class="text-light text-sm px-4">Scaling expert. Alice manages our global expansion, compliance, and our own internal support operations.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Support & Access</h5>
-          <div class="footer-links">
-            <a href="contact.html">Contact Support</a>
-            <a href="login.html">Platform Login</a>
-            <a href="signup.html">Create Account</a>
-            <a href="admin-dashboard.html">Admin Command Center</a>
-            <a href="agent-dashboard.html">Agent Workspace</a>
-          </div>
+    <!-- 13. Values -->
+    <section data-aos="fade-up">
+        <div class="container text-center max-w-4xl mx-auto">
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-subtitle">These aren't just words on a wall. This is how we hire, fire, and build.</p>
+            <div class="grid-3 mt-8">
+                <div class="card p-6"><h4 class="mb-2">Radical Transparency</h4><p class="text-light text-sm">We share everything internally. Context is crucial.</p></div>
+                <div class="card p-6"><h4 class="mb-2">Extreme Ownership</h4><p class="text-light text-sm">No finger-pointing. We own our mistakes and fix them.</p></div>
+                <div class="card p-6"><h4 class="mb-2">Quiet Excellence</h4><p class="text-light text-sm">We let our product and our service do the talking.</p></div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col">
-          <h5>Stay Updated</h5>
-          <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem;">Subscribe to our weekly dispatch on customer retention and AI support.</p>
-          <form class="footer-newsletter-form">
-            <input type="email" class="footer-newsletter-input" placeholder="Enter your work email..." required>
-            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe to newsletter"><i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+    <!-- 14. Trust -->
+    <section data-aos="fade-up" class="bg-light">
+        <div class="container grid-2">
+            <div >
+                <span class="badge badge-success mb-4">Security</span>
+                <h2>Built on Absolute Trust</h2>
+                <p class="text-light mt-4">When you use SupportX, you are trusting us with your company's most sensitive data—your customer conversations.</p>
+                <p class="text-light mt-4">We do not take this responsibility lightly. From our independent third-party penetration testing to our strict internal access policies, security is woven into the very fabric of our culture.</p>
+            </div>
+            <div  class="text-center">
+                <i class="fa-solid fa-shield-halved fa-8x text-primary" style="filter: drop-shadow(0 20px 30px rgba(99,102,241,0.3));"></i>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="footer-bottom">
-        <div>&copy; 2026 OmniDesk AI Inc. All rights reserved. SOC2 Type II Certified.</div>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="404.html" style="color: #64748b;">Privacy Policy</a>
-          <a href="404.html" style="color: #64748b;">Terms of Service</a>
-          <a href="404.html" style="color: #64748b;">Security Architecture</a>
+    <!-- 15. FAQ -->
+    <section data-aos="fade-up">
+        <div class="container max-w-3xl mx-auto">
+            <h2 class="section-title text-center">Company FAQ</h2>
+            <div class="mt-8">
+                <div class="card mb-4" style="padding: 0; overflow: hidden;">
+                    <h4 class="accordion-header cursor-pointer">Where are you located? <i class="fa-solid fa-chevron-down float-right"></i></h4>
+                    <div class="accordion-content text-light" style="max-height:0; overflow:hidden; transition: max-height 0.3s ease; padding: 0 2rem;">
+                        <p style="padding-bottom: 1.5rem;">While our official headquarters is in San Francisco, CA, we are a digital-first, fully remote company. Our team is distributed across 14 different time zones, which perfectly enables us to provide true 24/7 support to our own customers.</p>
+                    </div>
+                </div>
+                <div class="card mb-4" style="padding: 0; overflow: hidden;">
+                    <h4 class="accordion-header cursor-pointer">Are you currently hiring? <i class="fa-solid fa-chevron-down float-right"></i></h4>
+                    <div class="accordion-content text-light" style="max-height:0; overflow:hidden; transition: max-height 0.3s ease; padding: 0 2rem;">
+                        <p style="padding-bottom: 1.5rem;">Yes! We are always looking for exceptionally talented engineers, designers, and customer success managers who share our obsession with reducing friction. Check out our careers portal for open roles.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <div id="toast-container"></div>
+    <!-- 16. Final CTA -->
+    <section data-aos="fade-up" class="bg-primary text-white">
+        <div class="container text-center py-12">
+            <h2 style="color: white; font-size: 3rem; margin-bottom: 1.5rem;">Join our journey</h2>
+            <p class="mb-8 max-w-2xl mx-auto" style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">Help us build the next generation of customer experience software.</p>
+            <div style="display:flex; justify-content:center; gap: 1rem;">
+                <a href="404.html" class="btn btn-secondary mt-4"><i class="fa-solid fa-briefcase mr-2"></i> View Open Careers</a>
+                <a href="404.html" class="btn btn-outline mt-4" style="border-color: rgba(255,255,255,0.5); color:white;"><i class="fa-solid fa-rocket mr-2"></i> Try Our Product</a>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/animations.js"></script>
-  <script src="assets/js/validation.js"></script>
+            <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        <img src="assets/logo.webp" alt="Stackly Logo" class="logo-img">
+                    </a>
+                    <p class="text-light" style="color: #94A3B8; margin-top: 1rem; line-height: 1.6; max-width: 320px;">
+                        Enterprise-grade customer support platform designed to streamline ticket management, automate workflows, and deliver delightful support experiences.
+                    </p>
+                    <div class="social-icons" style="margin-top: 1.5rem; display: flex; gap: 0.85rem;">
+                        <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="404.html" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Platform / Capabilities Column -->
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="404.html"><i class="fa-solid fa-inbox"></i> Omnichannel Inbox</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-ticket"></i> Ticketing System</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-robot"></i> AI Automation</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-book-open"></i> Knowledge Base</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-chart-line"></i> CSAT Analytics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Links (Nav Links, No Header Auth Links) -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-newspaper"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Legal Column -->
+                <div class="footer-col">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Help & Support</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-comments"></i> Contact Sales</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom with Copyright -->
+            <div class="footer-bottom">
+                &copy; 2026 Stackly Inc. All rights reserved. Designed for exceptional customer support.
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="validation.js"></script>
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -137,56 +137,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
-  // Handle Global Buttons & CTAs gracefully without 404
+  // Handle Global CTA Buttons -> Redirect to 404.html
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('button, a');
+    const btn = e.target.closest('button, .btn, .btn-cta, .action-cta, a.btn, [data-cta]');
     if (!btn) return;
 
-    // Ignore interactive UI components & valid navigation links
+    // Ignore interactive UI components, normal navigation, and sidebar components
     if (btn.classList.contains('mobile-toggle') ||
         btn.classList.contains('sidebar-toggle') ||
         btn.classList.contains('accordion-header') ||
         btn.classList.contains('open-article-btn') ||
-        btn.hasAttribute('data-tab') ||
-        btn.closest('.nav-menu') ||
-        btn.type === 'submit') {
+        btn.classList.contains('close-reader') ||
+        btn.classList.contains('sidebar-link') ||
+        btn.closest('.sidebar')) {
       return;
     }
 
     const href = btn.getAttribute('href');
-    
-    // Check if it was marked as a data-cta or placeholder #
-    if (href === '#' || href === '' || btn.getAttribute('data-cta') === 'true') {
-      const text = btn.textContent.trim().toLowerCase();
-      
-      // If it's a trial, sign up, or get started CTA -> go to signup.html
-      if (text.includes('trial') || text.includes('sign up') || text.includes('get started') || text.includes('try')) {
-        e.preventDefault();
-        window.location.href = 'signup.html';
-        return;
-      }
-      
-      // If it's a demo, sales, or contact CTA -> go to contact.html
-      if (text.includes('demo') || text.includes('sales') || text.includes('contact') || text.includes('talk')) {
-        e.preventDefault();
-        window.location.href = 'contact.html';
-        return;
-      }
-      
-      // If it's an explore or feature CTA -> go to services.html
-      if (text.includes('explore') || text.includes('feature') || text.includes('tour') || text.includes('service')) {
-        e.preventDefault();
-        window.location.href = 'services.html';
-        return;
-      }
 
-      // If button has an action, provide clean feedback
-      if (btn.tagName === 'BUTTON') {
-        e.preventDefault();
-        safeToast('Action executed successfully.', 'success');
-        return;
-      }
+    // Allow Login link and Home / Back navigation
+    if (href === 'login.html' || (href && href.endsWith('login.html'))) {
+      return;
     }
+
+    if (btn.textContent.trim().toLowerCase().includes('go back') || 
+        btn.textContent.trim().toLowerCase().includes('return to home')) {
+      return;
+    }
+
+    // Form submit button inside a form: let form validation handle it!
+    if (btn.closest('form') && (btn.type === 'submit' || !btn.getAttribute('type'))) {
+      return;
+    }
+
+    // Every other CTA button on the website redirects to 404.html
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = '404.html';
   });
 });
 

@@ -73,8 +73,8 @@
                         <p class="text-light" style="font-size: 0.95rem;">Assigned customer cases requiring investigation, response, and resolution.</p>
                     </div>
                     <div class="panel-actions">
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-filter"></i> Filter Priority</button>
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-plus"></i> Claim Next Ticket</button>
+                        <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-filter"></i> Filter Priority</button>
+                        <button type="button" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-plus"></i> Claim Next Ticket</button>
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                         </div>
 
                         <!-- Ticket Item 1 (Active) -->
-                        <div class="ticket-queue-item active urgent">
+                        <div class="ticket-queue-item active urgent" data-ticket="0">
                             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
                                 <span class="badge-status urgent"><i class="fa-solid fa-circle-exclamation"></i> Urgent • 14m left</span>
                                 <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8021</span>
@@ -134,7 +134,7 @@
                         </div>
 
                         <!-- Ticket Item 2 -->
-                        <div class="ticket-queue-item high">
+                        <div class="ticket-queue-item high" data-ticket="1">
                             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
                                 <span class="badge-status high"><i class="fa-solid fa-bolt"></i> High • 45m left</span>
                                 <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8019</span>
@@ -148,7 +148,7 @@
                         </div>
 
                         <!-- Ticket Item 3 -->
-                        <div class="ticket-queue-item">
+                        <div class="ticket-queue-item" data-ticket="2">
                             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
                                 <span class="badge-status normal"><i class="fa-solid fa-clock"></i> Normal • 2h left</span>
                                 <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8014</span>
@@ -162,7 +162,7 @@
                         </div>
 
                         <!-- Ticket Item 4 -->
-                        <div class="ticket-queue-item">
+                        <div class="ticket-queue-item" data-ticket="3">
                             <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.35rem;">
                                 <span class="badge-status away"><i class="fa-solid fa-user-clock"></i> Waiting On Customer</span>
                                 <span style="font-size:0.75rem; color:var(--text-light); font-weight:600;">#TK-8007</span>
@@ -181,20 +181,20 @@
                         <div class="inspector-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-color); padding-bottom:1.25rem; margin-bottom:1.25rem;">
                             <div style="min-width:0;">
                                 <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.4rem; flex-wrap:wrap;">
-                                    <span class="badge-status urgent">SLA URGENT</span>
-                                    <span style="font-size:0.85rem; color:var(--text-light); font-weight:700;">TICKET #TK-8021</span>
+                                    <span class="badge-status urgent" id="ticketInspectorBadge">SLA URGENT</span>
+                                    <span id="ticketInspectorId" style="font-size:0.85rem; color:var(--text-light); font-weight:700;">TICKET #TK-8021</span>
                                 </div>
-                                <h2 style="font-size:1.35rem; font-weight:800; color:var(--secondary-color); word-break:break-word;">SSO SAML Authentication Failing (Loop 500)</h2>
-                                <p style="font-size:0.88rem; color:var(--text-light); margin-top:0.25rem; word-break:break-word;">Customer: <strong style="color:var(--secondary-color);">Alex Rivera</strong> (alex.rivera@cloudtech.corp) • Tier: Enterprise Plus</p>
+                                <h2 id="ticketInspectorTitle" style="font-size:1.35rem; font-weight:800; color:var(--secondary-color); word-break:break-word;">SSO SAML Authentication Failing (Loop 500)</h2>
+                                <p id="ticketInspectorCustomer" style="font-size:0.88rem; color:var(--text-light); margin-top:0.25rem; word-break:break-word;">Customer: <strong style="color:var(--secondary-color);">Alex Rivera</strong> (alex.rivera@cloudtech.corp) • Tier: Enterprise Plus</p>
                             </div>
                             <div class="inspector-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-share-nodes"></i> Escalate to L3</button>
-                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-phone"></i> Direct Call</button>
+                                <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-share-nodes"></i> Escalate to L3</button>
+                                <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-phone"></i> Direct Call</button>
                             </div>
                         </div>
 
                         <!-- Ticket Conversation Timeline -->
-                        <div style="background:var(--bg-main); border-radius:0.75rem; padding:1.25rem; margin-bottom:1.5rem; border:1px solid var(--border-color); max-height:260px; overflow-y:auto;">
+                        <div id="ticketInspectorTimeline" style="background:var(--bg-main); border-radius:0.75rem; padding:1.25rem; margin-bottom:1.5rem; border:1px solid var(--border-color); max-height:260px; overflow-y:auto;">
                             <div style="margin-bottom:1.25rem;">
                                 <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:0.35rem;">
                                     <strong><i class="fa-solid fa-user-circle mr-1"></i> Alex Rivera (Customer)</strong>
@@ -220,7 +220,7 @@
                         <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:0.75rem; color:var(--secondary-color);">
                             <i class="fa-solid fa-reply mr-1"></i> Submit Ticket Response & Status
                         </h3>
-                        <form novalidate>
+                        <form id="ticketInspectorForm" novalidate>
                             <div class="form-row-grid">
                                 <div class="form-group" style="margin-bottom:0;">
                                     <label class="form-label" for="replyType">Response Type</label>
@@ -253,8 +253,8 @@
 
                             <div class="form-actions-row">
                                 <div class="btn-group">
-                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-paperclip"></i> Attach File</button>
-                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-bolt"></i> Insert Macro</button>
+                                    <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-paperclip"></i> Attach File</button>
+                                    <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-bolt"></i> Insert Macro</button>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.75rem;">
                                     <i class="fa-solid fa-paper-plane mr-1"></i> Send Reply & Update
@@ -274,8 +274,8 @@
                         <p class="text-light" style="font-size: 0.95rem;">Real-time instant customer communication across Web, WhatsApp, and In-App SDK.</p>
                     </div>
                     <div class="panel-actions">
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-volume-high"></i> Sound Alerts: ON</button>
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-user-plus"></i> Accept Incoming Chat</button>
+                        <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-volume-high"></i> Sound Alerts: ON</button>
+                        <button type="button" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-user-plus"></i> Accept Incoming Chat</button>
                     </div>
                 </div>
 
@@ -285,7 +285,7 @@
                         <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:0.75rem;">Active Conversations (3)</h3>
 
                         <!-- Chat session 1 (Active) -->
-                        <div class="chat-session-item active">
+                        <div class="chat-session-item active" data-chat="0">
                             <div style="position:relative;">
                                 <img src="assets/user-1.webp" alt="David Kim" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
                                 <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#10b981; border-radius:50%; border:2px solid white;"></span>
@@ -301,7 +301,7 @@
                         </div>
 
                         <!-- Chat session 2 -->
-                        <div class="chat-session-item">
+                        <div class="chat-session-item" data-chat="1">
                             <div style="position:relative;">
                                 <img src="assets/user-2.webp" alt="Maria Garcia" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
                                 <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#10b981; border-radius:50%; border:2px solid white;"></span>
@@ -317,7 +317,7 @@
                         </div>
 
                         <!-- Chat session 3 -->
-                        <div class="chat-session-item">
+                        <div class="chat-session-item" data-chat="2">
                             <div style="position:relative;">
                                 <img src="assets/user-3.webp" alt="James Wilson" style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
                                 <span style="position:absolute; bottom:0; right:0; width:10px; height:10px; background:#f59e0b; border-radius:50%; border:2px solid white;"></span>
@@ -350,20 +350,20 @@
                     <div class="section-panel" style="margin-bottom:0;">
                         <div class="chat-header-row" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; border-bottom:1px solid var(--border-color); padding-bottom:1rem; margin-bottom:1rem;">
                             <div style="display:flex; align-items:center; gap:0.75rem; min-width:0;">
-                                <img src="assets/user-1.webp" alt="David Kim" style="width:42px; height:42px; border-radius:50%; object-fit:cover; flex-shrink:0;">
+                                <img id="liveChatAvatar" src="assets/user-1.webp" alt="David Kim" style="width:42px; height:42px; border-radius:50%; object-fit:cover; flex-shrink:0;">
                                 <div style="overflow:hidden;">
-                                    <strong style="font-size:1.05rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">David Kim</strong>
-                                    <span style="font-size:0.78rem; color:var(--text-light); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Customer ID: #CUST-9921 • Pro Plan ($49/mo)</span>
+                                    <strong id="liveChatCustomerName" style="font-size:1.05rem; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">David Kim</strong>
+                                    <span id="liveChatCustomerMeta" style="font-size:0.78rem; color:var(--text-light); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Customer ID: #CUST-9921 • Pro Plan ($49/mo)</span>
                                 </div>
                             </div>
                             <div class="chat-header-actions" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-desktop"></i> Screen Share</button>
-                                <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transfer Chat</button>
+                                <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-desktop"></i> Screen Share</button>
+                                <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transfer Chat</button>
                             </div>
                         </div>
 
                         <!-- Live Message Stream -->
-                        <div class="chat-stream mb-4">
+                        <div id="liveChatStream" class="chat-stream mb-4">
                             <div class="chat-bubble customer">
                                 <p>Hi Sarah! I am trying to export all customer contacts from the dashboard to a CSV file, but the download link returns a blank page.</p>
                                 <span style="font-size:0.7rem; color:#94a3b8; display:block; margin-top:0.35rem;">11:15 AM</span>
@@ -387,7 +387,7 @@
                         <h4 style="font-size:1rem; font-weight:700; margin-bottom:0.75rem; color:var(--secondary-color);">
                             <i class="fa-solid fa-paper-plane mr-1"></i> Send Instant Live Reply
                         </h4>
-                        <form novalidate>
+                        <form id="liveChatForm" novalidate>
                             <div class="form-row-grid">
                                 <div class="form-group" style="margin-bottom:0;">
                                     <label class="form-label" for="chatChannel">Active Dispatch Channel</label>
@@ -419,8 +419,8 @@
 
                             <div class="form-actions-row">
                                 <div class="btn-group">
-                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-face-smile"></i> Emoji</button>
-                                    <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-image"></i> Media</button>
+                                    <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-face-smile"></i> Emoji</button>
+                                    <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-image"></i> Media</button>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.75rem;">
                                     <i class="fa-solid fa-paper-plane mr-1"></i> Send Message
@@ -440,8 +440,8 @@
                         <p class="text-light" style="font-size: 0.95rem;">Rapid response templates, troubleshooting scripts, and automated snippet shortcuts.</p>
                     </div>
                     <div class="panel-actions">
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-download"></i> Export Macro Pack</button>
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Rephrase</button>
+                        <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-download"></i> Export Macro Pack</button>
+                        <button type="button" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Rephrase</button>
                     </div>
                 </div>
 
@@ -461,7 +461,7 @@
                         </div>
                         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
                             <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 142 times</span>
-                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                            <button type="button" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
                         </div>
                     </div>
 
@@ -479,7 +479,7 @@
                         </div>
                         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
                             <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 89 times</span>
-                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                            <button type="button" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
                         </div>
                     </div>
 
@@ -497,7 +497,7 @@
                         </div>
                         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:0.75rem;">
                             <span style="font-size:0.78rem; color:var(--text-light);"><i class="fa-solid fa-check mr-1"></i> Used 210 times</span>
-                            <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
+                            <button type="button" class="btn-cta btn-cta-outline btn-sm" data-cta="true"><i class="fa-regular fa-copy"></i> Use Template</button>
                         </div>
                     </div>
                 </div>
@@ -558,8 +558,8 @@
                         <p class="text-light" style="font-size: 0.95rem;">Full customer journey history, account health, enterprise plan attributes, and security flags.</p>
                     </div>
                     <div class="panel-actions">
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-id-badge"></i> View Contract</button>
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-lock-open"></i> Issue 2FA Bypass</button>
+                        <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-id-badge"></i> View Contract</button>
+                        <button type="button" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-lock-open"></i> Issue 2FA Bypass</button>
                     </div>
                 </div>
 
@@ -675,8 +675,8 @@
                         <p class="text-light" style="font-size: 0.95rem;">Track personal KPIs, resolution velocity, shift handover logs, and daily targets.</p>
                     </div>
                     <div class="panel-actions">
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-calendar-days"></i> Roster Calendar</button>
-                        <button type="button" onclick="window.location.href='404.html'" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-mug-hot"></i> Request 15m Break</button>
+                        <button type="button" class="btn-cta btn-cta-outline" data-cta="true"><i class="fa-solid fa-calendar-days"></i> Roster Calendar</button>
+                        <button type="button" class="btn-cta btn-cta-primary" data-cta="true"><i class="fa-solid fa-mug-hot"></i> Request 15m Break</button>
                     </div>
                 </div>
 

@@ -580,3 +580,22 @@ body.dashboard-body {
   }
 }
 
+/* Dashboard Form Validation Styles */
+.error-message {
+  color: #ef4444 !important;
+  font-size: 0.825rem !important;
+  margin-top: 0.35rem !important;
+  display: none;
+  font-weight: 500 !important;
+}
+.form-control.error, input.error, select.error, textarea.error {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.03) !important;
+}
+.form-control.error + .error-message,
+.form-control.error ~ .error-message,
+.error-message.show {
+  display: block !important;
+}
+
+

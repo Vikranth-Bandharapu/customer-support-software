@@ -46,9 +46,9 @@
     <!-- 2. Search -->
     <section data-aos="fade-up" class="py-4 bg-white border-b border-color" style="padding-top: 2rem; padding-bottom: 2rem;">
         <div class="container text-center">
-            <form action="404.html" class="search-form" style="display:flex; flex-direction:column; align-items:center; max-width:600px; margin:auto; gap:0.5rem;" novalidate>
+            <form id="blogSearchForm" class="search-form" style="display:flex; flex-direction:column; align-items:center; max-width:600px; margin:auto; gap:0.5rem;" novalidate>
                 <div style="display:flex; gap:1rem; width:100%;">
-                    <input type="text" placeholder="Search across 500+ articles, guides, and reports..." class="form-control" style="flex:1;" required>
+                    <input id="blogSearchInput" type="text" placeholder="Search across 500+ articles, guides, and reports..." class="form-control" style="flex:1;" required>
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
                 <p class="error-message" style="margin-top:0.25rem;"></p>
@@ -60,11 +60,11 @@
     <section data-aos="fade-up" class="py-4 bg-light" style="padding-top: 3rem; padding-bottom: 3rem;">
         <div class="container text-center">
             <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-                <a href="404.html" class="badge badge-primary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">All Articles</a>
-                <a href="404.html" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Support Strategy</a>
-                <a href="404.html" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">AI & Automation</a>
-                <a href="404.html" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Productivity</a>
-                <a href="404.html" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Team Leadership</a>
+                <a href="#featured-section" class="badge badge-primary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;">All Articles</a>
+                <a href="#strategy-section" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Support Strategy</a>
+                <a href="#automation-section" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">AI & Automation</a>
+                <a href="#productivity-section" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Productivity</a>
+                <a href="#latest-articles" class="badge" style="background:white; border:1px solid #ccc; color:var(--text-main); padding: 0.75rem 1.5rem; font-size: 0.95rem;">Team Leadership</a>
             </div>
         </div>
     </section>
@@ -81,7 +81,7 @@
                     <img src="assets/team-1.webp" alt="Jane Doe" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
                     <div><p class="font-bold text-md m-0">Jane Doe</p><p class="text-sm text-light m-0">Oct 10, 2026 &middot; 8 min read</p></div>
                 </div>
-                <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-file-lines mr-2"></i> Read Full Report</a>
+                <a href="#article-modal" class="btn btn-outline open-article-btn" data-title="The Future of Generative AI in Customer Support (2027 Edition)" data-author="Jane Doe (CEO)" data-category="Featured Report" data-readtime="8 min read"><i class="fa-solid fa-file-lines mr-2"></i> Read Full Report</a>
             </div>
         </div>
     </section>
@@ -97,7 +97,7 @@
                     <img src="assets/team-2.webp" alt="John Smith" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
                     <div><p class="font-bold text-md m-0">John Smith</p><p class="text-sm text-light m-0">Oct 5, 2026 &middot; 5 min read</p></div>
                 </div>
-                <a href="404.html" class="btn btn-primary"><i class="fa-solid fa-newspaper mr-2"></i> Read Article</a>
+                <a href="#article-modal" class="btn btn-primary open-article-btn" data-title="Building a knowledge base that your customers will actually use" data-author="John Smith (CTO)" data-category="Editor's Pick" data-readtime="5 min read"><i class="fa-solid fa-newspaper mr-2"></i> Read Article</a>
             </div>
             <div ><img src="assets/blog2.webp" alt="Knowledge base concepts" class="rounded-lg shadow-lg tilt-card"></div>
         </div>
@@ -117,7 +117,7 @@
                         <span class="badge badge-success mb-4">Analytics & Metrics</span>
                         <h3 class="mb-4">5 advanced metrics that define true CX success</h3>
                         <p class="text-light mb-6">Move far beyond basic CSAT scores. Discover the advanced, multi-variable metrics that top-tier enterprise support teams use to measure true customer happiness, predict churn before it happens, and justify budget increases to the executive board.</p>
-                        <a href="404.html" class="text-primary font-bold" style="font-size: 1.1rem;">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="#article-modal" class="text-primary font-bold open-article-btn" style="font-size: 1.1rem;" data-title="5 advanced metrics that define true CX success" data-author="Sarah Jenkins" data-category="Analytics & Metrics" data-readtime="6 min read">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                         <span class="badge badge-warning mb-4">Scaling Operations</span>
                         <h3 class="mb-4">The exact playbook for scaling support from 1 to 100 agents</h3>
                         <p class="text-light mb-6">Growing pains are real. When you scale from a single founder doing support to a global team of 100+ agents, everything breaks. This is the exact operational playbook we used to scale our own organization without losing the personal touch our early customers loved.</p>
-                        <a href="404.html" class="text-primary font-bold" style="font-size: 1.1rem;">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="#article-modal" class="text-primary font-bold open-article-btn" style="font-size: 1.1rem;" data-title="The exact playbook for scaling support from 1 to 100 agents" data-author="Marcus Chen" data-category="Scaling Operations" data-readtime="10 min read">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     </div>
                     <div><img src="assets/blog-1.webp" alt="Strategy graphic" class="rounded-lg w-full h-full object-cover"></div>
                 </div>
@@ -159,7 +159,7 @@
                         <span class="badge badge-primary mb-4">Workflow Design</span>
                         <h3 class="mb-4">Automating the mundane: 10 macros you need today</h3>
                         <p class="text-light mb-6">Agents spend an average of 40% of their day performing repetitive administrative tasks. Learn how to set up intelligent routing, conditional triggers, and dynamic macros that will literally save your team hundreds of hours per week.</p>
-                        <a href="404.html" class="text-primary font-bold" style="font-size: 1.1rem;">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                        <a href="#article-modal" class="text-primary font-bold open-article-btn" style="font-size: 1.1rem;" data-title="Automating the mundane: 10 macros you need today" data-author="Alex Rivera" data-category="Workflow Design" data-readtime="7 min read">Read Full Guide <i class="fa-solid fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
             </div>
@@ -172,7 +172,7 @@
             <h2 class="section-title">Helpdesk Management</h2>
             <div class="mt-6">
                 <p class="text-light text-lg">Discover the best practices for managing your support infrastructure, maintaining clean ticket taxonomies, and ensuring your software tools don't become a disorganized mess over time.</p>
-                <a href="404.html" class="btn btn-outline mt-8"><i class="fa-solid fa-book-open mr-2"></i> Browse Management Articles</a>
+                <a href="#latest-articles" class="btn btn-outline mt-8"><i class="fa-solid fa-book-open mr-2"></i> Browse Management Articles</a>
             </div>
         </div>
     </section>
@@ -183,7 +183,7 @@
             <h2 class="section-title">Agent Productivity & Wellbeing</h2>
             <div class="mt-6">
                 <p class="text-light text-lg">Tips, tricks, and psychological frameworks to help your team resolve tickets faster while simultaneously preventing burnout. Happy agents create happy customers.</p>
-                <a href="404.html" class="btn btn-outline mt-8"><i class="fa-solid fa-bolt mr-2"></i> Browse Productivity Articles</a>
+                <a href="#productivity-section" class="btn btn-outline mt-8"><i class="fa-solid fa-bolt mr-2"></i> Browse Productivity Articles</a>
             </div>
         </div>
     </section>
@@ -194,7 +194,7 @@
             <h2 class="section-title">Customer Retention Strategy</h2>
             <div class="mt-6">
                 <p class="text-light text-lg">Learn how proactive customer support, targeted check-ins, and data-driven health scoring can drastically reduce your churn rate and turn everyday users into lifelong brand advocates.</p>
-                <a href="404.html" class="btn btn-outline mt-8"><i class="fa-solid fa-users mr-2"></i> Browse Retention Articles</a>
+                <a href="#latest-articles" class="btn btn-outline mt-8"><i class="fa-solid fa-users mr-2"></i> Browse Retention Articles</a>
             </div>
         </div>
     </section>
@@ -209,21 +209,21 @@
                     <h4 class="text-xl mb-4">How to reduce SLA breaches during product launches</h4>
                     <p class="text-sm text-light mb-6">Product launches mean a massive spike in tickets. Here is how to prepare your team and adjust your SLAs to handle the surge without breaking under the pressure.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase tracking-widest">Oct 5, 2026</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="How to reduce SLA breaches during product launches" data-author="David Kim" data-category="SLAs" data-readtime="4 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
                 <div class="card"  >
                     <span class="badge badge-success mb-4">Terminology</span>
                     <h4 class="text-xl mb-4">Omnichannel vs Multichannel: Understanding the difference</h4>
                     <p class="text-sm text-light mb-6">Many companies claim to offer omnichannel support, but they are actually just multichannel. We break down the technical differences and why true omnichannel is critical.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase tracking-widest">Oct 2, 2026</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="Omnichannel vs Multichannel: Understanding the difference" data-author="Maria Garcia" data-category="Terminology" data-readtime="5 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
                 <div class="card"  >
                     <span class="badge badge-primary mb-4">Management</span>
                     <h4 class="text-xl mb-4">Managing remote support teams across timezones</h4>
                     <p class="text-sm text-light mb-6">Building a 'follow-the-sun' support model is difficult. Learn how to manage hand-offs, maintain culture, and ensure quality consistency across a distributed team.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase tracking-widest">Sep 28, 2026</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="Managing remote support teams across timezones" data-author="James Wilson" data-category="Management" data-readtime="6 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
             </div>
         </div>
@@ -238,19 +238,19 @@
                     <h4 class="text-xl mb-4">The ultimate guide to support deflection strategies</h4>
                     <p class="text-sm text-light mb-6">A massive 5,000 word guide detailing every single strategy you can implement today to stop tickets from reaching your agents in the first place.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase"><i class="fa-solid fa-fire text-danger"></i> 12.4k views</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="The ultimate guide to support deflection strategies" data-author="Jane Doe" data-category="Support Deflection" data-readtime="12 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
                 <div class="card"  >
                     <h4 class="text-xl mb-4">Recognizing and preventing agent burnout</h4>
                     <p class="text-sm text-light mb-6">Customer support is emotionally taxing. Learn how to identify the early warning signs of burnout in your team before they decide to quit.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase"><i class="fa-solid fa-fire text-danger"></i> 8.5k views</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="Recognizing and preventing agent burnout" data-author="Alice Wong" data-category="Wellbeing" data-readtime="8 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
                 <div class="card"  >
                     <h4 class="text-xl mb-4">Calculating the true ROI of great customer service</h4>
                     <p class="text-sm text-light mb-6">Support is often viewed as a cost center. Here is the exact mathematical framework to prove to your CEO that support is actually a massive revenue driver.</p>
                     <p class="text-xs font-bold text-light mb-4 uppercase"><i class="fa-solid fa-fire text-danger"></i> 7.2k views</p>
-                    <a href="404.html" class="text-primary font-bold">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    <a href="#article-modal" class="text-primary font-bold open-article-btn" data-title="Calculating the true ROI of great customer service" data-author="John Smith" data-category="Finance & ROI" data-readtime="9 min read">Read Article <i class="fa-solid fa-arrow-right ml-1"></i></a>
                 </div>
             </div>
         </div>
@@ -277,7 +277,7 @@
     <!-- 15. Final CTA -->
     <section data-aos="fade-up" class="text-center py-12 bg-light">
         <h2 class="mb-6">Ready to upgrade your support?</h2>
-        <a href="404.html" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.15rem;"><i class="fa-solid fa-rocket mr-2"></i> Try SupportX Free for 14 Days</a>
+        <a href="signup.html" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.15rem;"><i class="fa-solid fa-rocket mr-2"></i> Try SupportX Free for 14 Days</a>
     </section>
 
             <!-- Footer -->
@@ -293,9 +293,9 @@
                         Enterprise-grade customer support platform designed to streamline ticket management, automate workflows, and deliver delightful support experiences.
                     </p>
                     <div class="social-icons" style="margin-top: 1.5rem; display: flex; gap: 0.85rem;">
-                        <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="404.html" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
@@ -303,11 +303,11 @@
                 <div class="footer-col">
                     <h4>Platform</h4>
                     <ul class="footer-links">
-                        <li><a href="404.html"><i class="fa-solid fa-inbox"></i> Omnichannel Inbox</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-ticket"></i> Ticketing System</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-robot"></i> AI Automation</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-book-open"></i> Knowledge Base</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-chart-line"></i> CSAT Analytics</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-inbox"></i> Omnichannel Inbox</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-ticket"></i> Ticketing System</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-robot"></i> AI Automation</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-book-open"></i> Knowledge Base</a></li>
+                        <li><a href="services.html"><i class="fa-solid fa-chart-line"></i> CSAT Analytics</a></li>
                     </ul>
                 </div>
 
@@ -329,8 +329,8 @@
                     <ul class="footer-links">
                         <li><a href="contact.html"><i class="fa-solid fa-headset"></i> Help & Support</a></li>
                         <li><a href="contact.html"><i class="fa-solid fa-comments"></i> Contact Sales</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
-                        <li><a href="404.html"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
+                        <li><a href="privacy.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -345,5 +345,117 @@
     <script src="validation.js"></script>
     <script src="auth.js"></script>
     <script src="main.js"></script>
+
+    <!-- Interactive Article Reader Modal -->
+    <div id="articleModal" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.75); z-index:9999; backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:1.25rem;">
+        <div style="background:white; max-width:720px; width:100%; border-radius:1rem; padding:2.5rem; max-height:88vh; overflow-y:auto; position:relative; box-shadow:0 25px 50px -12px rgba(0,0,0,0.25); border:1px solid #e2e8f0;">
+            <button id="closeArticleModal" type="button" aria-label="Close article modal" style="position:absolute; top:1.25rem; right:1.25rem; background:#f1f5f9; border:none; width:38px; height:38px; border-radius:50%; font-size:1.25rem; cursor:pointer; color:#64748b; display:flex; align-items:center; justify-content:center; transition:background 0.2s;">&times;</button>
+            <span id="articleModalCategory" class="badge badge-primary mb-3" style="display:inline-block;">Article Category</span>
+            <h2 id="articleModalTitle" style="font-size:1.75rem; margin-bottom:0.75rem; color:var(--secondary-color); line-height:1.3;">Article Title</h2>
+            <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; font-size:0.875rem; color:#64748b; border-bottom:1px solid #e2e8f0; padding-bottom:1rem;">
+                <span><i class="fa-solid fa-user-circle mr-1"></i> <strong id="articleModalAuthor">Author Name</strong></span>
+                <span>•</span>
+                <span><i class="fa-solid fa-clock mr-1"></i> <span id="articleModalReadTime">5 min read</span></span>
+                <span>•</span>
+                <span style="color:#059669; font-weight:600;"><i class="fa-solid fa-check-circle mr-1"></i> Verified Research</span>
+            </div>
+            <div id="articleModalBody" style="line-height:1.8; color:var(--text-light); font-size:1.025rem;">
+                <p id="articleModalSnippet" style="margin-bottom:1.25rem; font-weight:500; color:var(--text-main); font-size:1.1rem;"></p>
+                <div style="background:#f8fafc; border-left:4px solid var(--primary-color); padding:1rem 1.25rem; border-radius:0.5rem; margin-bottom:1.5rem;">
+                    <h4 style="margin:0 0 0.5rem 0; font-size:0.95rem; color:var(--secondary-color);"><i class="fa-solid fa-lightbulb text-warning mr-1"></i> Key Executive Takeaway:</h4>
+                    <p style="margin:0; font-size:0.925rem; color:#475569;">Modern customer experience operations require unified omnichannel data feeds, proactive health monitoring, and AI-assisted triage to maximize customer retention and reduce team burnout.</p>
+                </div>
+                <p style="margin-bottom:1.25rem;">Our customer success telemetry indicates that organizations implementing automated workflow routing experience an average 42% reduction in initial ticket response times and a 19-point increase in quarterly Net Promoter Scores.</p>
+                <p>To dive deeper into tailored implementation patterns or integrate SupportX into your technical stack, explore our full platform documentation or schedule an architecture briefing with our engineering leadership.</p>
+            </div>
+            <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+                <button id="dismissArticleModalBtn" type="button" class="btn btn-outline" style="padding:0.6rem 1.5rem;">Close Reader</button>
+                <a href="signup.html" class="btn btn-primary" style="padding:0.6rem 1.5rem;"><i class="fa-solid fa-rocket mr-1"></i> Try SupportX Free</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Article Reader Modal logic
+        const modal = document.getElementById('articleModal');
+        const closeBtn = document.getElementById('closeArticleModal');
+        const dismissBtn = document.getElementById('dismissArticleModalBtn');
+        const titleElem = document.getElementById('articleModalTitle');
+        const authorElem = document.getElementById('articleModalAuthor');
+        const catElem = document.getElementById('articleModalCategory');
+        const readTimeElem = document.getElementById('articleModalReadTime');
+        const snippetElem = document.getElementById('articleModalSnippet');
+
+        function closeModal() {
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.style.display === 'flex') closeModal();
+        });
+
+        document.querySelectorAll('.open-article-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const title = btn.getAttribute('data-title') || 'Industry Insight';
+                const author = btn.getAttribute('data-author') || 'SupportX Research';
+                const cat = btn.getAttribute('data-category') || 'Publication';
+                const readtime = btn.getAttribute('data-readtime') || '5 min read';
+
+                // Find card description
+                const parentCard = btn.closest('.card') || btn.closest('div');
+                const descP = parentCard ? parentCard.querySelector('p.text-light, p') : null;
+                const snippet = descP ? descP.textContent.trim() : 'Comprehensive industry analysis and strategic framework for high-performance support teams.';
+
+                if (titleElem) titleElem.textContent = title;
+                if (authorElem) authorElem.textContent = author;
+                if (catElem) catElem.textContent = cat;
+                if (readTimeElem) readTimeElem.textContent = readtime;
+                if (snippetElem) snippetElem.textContent = snippet;
+
+                if (modal) {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // 2. Blog Search Form handling
+        const searchForm = document.getElementById('blogSearchForm');
+        const searchInput = document.getElementById('blogSearchInput');
+        if (searchForm) {
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const q = searchInput ? searchInput.value.trim() : '';
+                if (!q) {
+                    if (window.validationUtils && searchInput) {
+                        window.validationUtils.showFieldError(searchInput, 'Please enter a search topic or keyword.');
+                    }
+                    if (typeof showToast === 'function') showToast('Please enter a search topic or keyword.', 'error');
+                    if (searchInput) searchInput.focus();
+                    return;
+                }
+                if (typeof showToast === 'function') {
+                    showToast(`Searching publications for "${q}"... Redirecting...`, 'success');
+                }
+                setTimeout(() => {
+                    window.location.href = '404.html';
+                }, 600);
+            });
+        }
+    });
+    </script>
+
 </body>
 </html>

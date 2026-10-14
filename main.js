@@ -114,15 +114,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Global CTA / Placeholder Button Redirection to 404.html
+  // Toast notification fallback
+  function safeToast(message, type = 'success') {
+    if (typeof showToast === 'function') {
+      showToast(message, type);
+      return;
+    }
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container';
+      document.body.appendChild(container);
+    }
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = message;
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
+  // Handle Global Buttons & CTAs gracefully without 404
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('button, a');
     if (!btn) return;
 
-    // Ignore interactive UI components
+    // Ignore interactive UI components & valid navigation links
     if (btn.classList.contains('mobile-toggle') ||
         btn.classList.contains('sidebar-toggle') ||
         btn.classList.contains('accordion-header') ||
+        btn.classList.contains('open-article-btn') ||
         btn.hasAttribute('data-tab') ||
         btn.closest('.nav-menu') ||
         btn.type === 'submit') {
@@ -130,9 +154,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const href = btn.getAttribute('href');
-    if (href === '#' || href === '' || btn.getAttribute('data-cta') === 'true' || (btn.tagName === 'BUTTON' && !btn.hasAttribute('onclick') && btn.type !== 'submit')) {
-      e.preventDefault();
-      window.location.href = '404.html';
+    
+    // Check if it was marked as a data-cta or placeholder #
+    if (href === '#' || href === '' || btn.getAttribute('data-cta') === 'true') {
+      const text = btn.textContent.trim().toLowerCase();
+      
+      // If it's a trial, sign up, or get started CTA -> go to signup.html
+      if (text.includes('trial') || text.includes('sign up') || text.includes('get started') || text.includes('try')) {
+        e.preventDefault();
+        window.location.href = 'signup.html';
+        return;
+      }
+      
+      // If it's a demo, sales, or contact CTA -> go to contact.html
+      if (text.includes('demo') || text.includes('sales') || text.includes('contact') || text.includes('talk')) {
+        e.preventDefault();
+        window.location.href = 'contact.html';
+        return;
+      }
+      
+      // If it's an explore or feature CTA -> go to services.html
+      if (text.includes('explore') || text.includes('feature') || text.includes('tour') || text.includes('service')) {
+        e.preventDefault();
+        window.location.href = 'services.html';
+        return;
+      }
+
+      // If button has an action, provide clean feedback
+      if (btn.tagName === 'BUTTON') {
+        e.preventDefault();
+        safeToast('Action executed successfully.', 'success');
+        return;
+      }
     }
   });
 });

@@ -556,3 +556,7 @@ body::after {
     66% { transform: translate(-20px, 20px) scale(0.9) rotate(240deg) perspective(500px) translateZ(-50px); }
     100% { transform: translate(0, 0) scale(1) rotate(360deg) perspective(500px) translateZ(0); }
 }
+
+.rounded-full {
+  border-radius: 50% !important;
+}
